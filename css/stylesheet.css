@@ -48,7 +48,7 @@ h3 {
     border-top-right-radius: 50px;
 }
 
-.bb {
+.pm {
     background-color: #a0c1ff;
 }
 
@@ -59,7 +59,7 @@ h3 {
     border-top-right-radius: 50px;
 }
 
-.gb {
+.am {
     background-color: #c5fcbe;
 }
 
@@ -125,6 +125,9 @@ article > p {
     margin: 0;
 }
 
+.hidden {
+    display: none;
+}
 .grid-row-span-2 {
     grid-row: span 2;
 }
