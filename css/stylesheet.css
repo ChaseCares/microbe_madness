@@ -125,8 +125,15 @@ article > p {
     margin: 0;
 }
 
-
-
+.grid-row-span-2 {
+    grid-row: span 2;
+}
+.grid-row-span-3 {
+    grid-row: span 3;
+}
+.grid-row-span-4 {
+    grid-row: span 4;
+}
 
 .col-1 {
     grid-column-start: 1;
