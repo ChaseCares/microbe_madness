@@ -8,96 +8,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/stylesheet.css?v=0.0.1">
+    <script src="./js/include.js" defer></script>
     <link href="./img/favicon.ico" rel="icon" type="image/x-icon">
     <title>Create Bracket</title>
 </head>
 <body>
-    <h1>Microbe Madness</h1>
-    <h2>Antibiotic Awareness Week 2022</h2><br>
-    <a style="font-size: 2rem;" href="mailto:microbe-madness@chase.slmail.me?subject=Microbe Madness Test&body=My prediction:1101101010">Send Test Email</a>
+    <h2>Microbe Madness</h2>
+    <h4>Make your own bracket</h4><br>
+    <div class="create_bracket">
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Chase C">
+            <input type="radio" id="am_bracket" name="bracket" value="am_bracket" onchange="toggleBracket('am')" checked>
+            <label for="am_bracket">AM bracket</label>
+            <input type="radio" id="pm_bracket" name="bracket" value="pm_bracket" onchange="toggleBracket('pm')">
+            <label for="pm_bracket">PM bracket</label>
 
-    <!-- <div class="container">
+        </form>
+        <input type="submit" value="Submit" onclick="verifyBracketComplete()">
+    </div>
+    <!-- <a style="font-size: 2rem;" href="mailto:microbe-madness@chase.slmail.me?subject=Microbe Madness Test&body=My prediction:1101101010">Send Test Email</a> -->
+
+    <div class="container">
         <div class="am_bracket_container">
-            <br><br>
+            <br>
             <h3 class="am_bracket">Your AM Bracket</h3>
             <h3 class="pm_bracket hidden">Your PM Bracket</h3>
             <div class="am grid">
-                <div class="col-1 row-1 am grid-item"><a href="#Common_Cold">Common Cold</a></div>
-                <div class="col-1 row-2 am b-top b-right b-bottom"></div>
-                <div class="col-1 row-3 am grid-item winner"><a href="#Aspergillus_species">Aspergillus species</a></div>
-                <div class="col-1 row-5 am grid-item"><a href="#Bacteroides_fragilis">Bacteroides fragilis</a></div>
-                <div class="col-1 row-6 am b-top b-right b-bottom"></div>
-                <div class="col-1 row-7 am grid-item"><a href="#Cryptococcus_species">Cryptococcus species</a></div>
-                <div class="col-1 row-9 am grid-item"><a href="#Pseudomonas_aeruginosa">Pseudomonas aeruginosa</a></div>
-                <div class="col-1 row-10 am b-top b-right b-bottom"></div>
-                <div class="col-1 row-11 am grid-item"><a href="#COVID">COVID</a></div>
-                <div class="col-1 row-13 am grid-item"><a href="#Enterococcus_faecalis">Enterococcus faecalis</a></div>
-                <div class="col-1 row-14 am b-top b-right b-bottom"></div>
-                <div class="col-1 row-15 am grid-item"><a href="#Staphylococcus_aureus">Staphylococcus aureus</a></div>
+                <div class="col-1 row-1 grid-item bout-1">Common Cold</div>
+                <div class="col-1 row-2 b-top b-right b-bottom"></div>
+                <div class="col-1 row-3 grid-item bout-1">Aspergillus species</div>
+                <div class="col-1 row-5 grid-item bout-2">Bacteroides fragilis</div>
+                <div class="col-1 row-6 b-top b-right b-bottom"></div>
+                <div class="col-1 row-7 grid-item bout-2">Cryptococcus species</div>
+                <div class="col-1 row-9 grid-item bout-3">Pseudomonas aeruginosa</div>
+                <div class="col-1 row-10 b-top b-right b-bottom"></div>
+                <div class="col-1 row-11 grid-item bout-3">COVID</div>
+                <div class="col-1 row-13 grid-item bout-4">Enterococcus faecalis</div>
+                <div class="col-1 row-14 b-top b-right b-bottom"></div>
+                <div class="col-1 row-15 grid-item bout-4">Staphylococcus aureus</div>
 
-                <div class="col-2 row-2 am grid-item" "></div>
-                    <div class=" col-2 row-3 am b-top b-right"></div>
-                <div class="col-2 row-4 am b-right"></div>
-                <div class="col-2 row-5 am b-bottom b-right"></div>
-                <div class="col-2 row-6 am grid-item"></div>
-                <div class="col-2 row-10 am grid-item"></div>
-                <div class="col-2 row-11 am b-top b-right"></div>
-                <div class="col-2 row-12 am b-right"></div>
-                <div class="col-2 row-13 am b-bottom b-right"></div>
-                <div class="col-2 row-14 am grid-item"></div>
+                <div id="position-0" class="col-2 row-2 grid-item bout-5"></div>
+                <div class="col-2 row-3 b-top b-right"></div>
+                <div class="col-2 row-4 b-right"></div>
+                <div class="col-2 row-5 b-bottom b-right"></div>
+                <div id="position-1" class="col-2 row-6 grid-item bout-5"></div>
+                <div id="position-2" class="col-2 row-10 grid-item bout-6"></div>
+                <div class="col-2 row-11 b-top b-right"></div>
+                <div class="col-2 row-12 b-right"></div>
+                <div class="col-2 row-13 b-bottom b-right"></div>
+                <div id="position-3" class="col-2 row-14 grid-item bout-6"></div>
 
-                <div class="col-3 row-4 am grid-item"></div>
-                <div class="col-3 row-5 am b-top b-right"></div>
-                <div class="col-3 row-6 am b-right"></div>
-                <div class="col-3 row-7 am b-right"></div>
-                <div class="col-3 row-8 am b-right"></div>
-                <div class="col-3 row-9 am b-right"></div>
-                <div class="col-3 row-10 am b-right"></div>
-                <div class="col-3 row-11 am b-bottom b-right"></div>
-                <div class="col-3 row-12 am grid-item"></div>
+                <div id="position-4" class="col-3 row-4 grid-item bout-7"></div>
+                <div class="col-3 row-5 b-top b-right"></div>
+                <div class="col-3 row-6 b-right"></div>
+                <div class="col-3 row-7 b-right"></div>
+                <div class="col-3 row-8 b-right"></div>
+                <div class="col-3 row-9 b-right"></div>
+                <div class="col-3 row-10 b-right"></div>
+                <div class="col-3 row-11 b-bottom b-right"></div>
+                <div id="position-5" class="col-3 row-12 grid-item bout-7"></div>
 
-                <div class="col-4 row-6 am grid-item"></div>
-                <div class="col-4 row-8 am b-top b-bottom"></div>
-                <div class="col-4 row-10 am grid-item"></div>
+                <div id="position-6" class="col-4 row-6 grid-item bout-8"></div>
+                <div id="position-7" class="col-4 row-8 b-top b-bottom winner"></div>
+                <div id="position-8" class="col-4 row-10 grid-item bout-8"></div>
 
-                <div class="col-5 row-4 am grid-item"></div>
-                <div class="col-5 row-5 am b-top b-left"></div>
-                <div class="col-5 row-6 am b-left"></div>
-                <div class="col-5 row-7 am b-left"></div>
-                <div class="col-5 row-8 am b-left"></div>
-                <div class="col-5 row-9 am b-left"></div>
-                <div class="col-5 row-10 am b-left"></div>
-                <div class="col-5 row-11 am b-bottom b-left"></div>
-                <div class="col-5 row-12 am grid-item"></div>
+                <div id="position-9" class="col-5 row-4 grid-item bout-9"></div>
+                <div class="col-5 row-5 b-top b-left"></div>
+                <div class="col-5 row-6 b-left"></div>
+                <div class="col-5 row-7 b-left"></div>
+                <div class="col-5 row-8 b-left"></div>
+                <div class="col-5 row-9 b-left"></div>
+                <div class="col-5 row-10 b-left"></div>
+                <div class="col-5 row-11 b-bottom b-left"></div>
+                <div id="position-10" class="col-5 row-12 grid-item bout-9"></div>
 
-                <div class="col-6 row-2 am grid-item"></div>
-                <div class="col-6 row-3 am b-top b-left"></div>
-                <div class="col-6 row-4 am b-left"></div>
-                <div class="col-6 row-5 am b-bottom b-left"></div>
-                <div class="col-6 row-6 am grid-item"></div>
-                <div class="col-6 row-10 am grid-item"></div>
-                <div class="col-6 row-11 am b-top b-left"></div>
-                <div class="col-6 row-12 am b-left"></div>
-                <div class="col-6 row-13 am b-bottom b-left"></div>
-                <div class="col-6 row-14 am grid-item"></div>
+                <div id="position-11" class="col-6 row-2 grid-item bout-10"></div>
+                <div class="col-6 row-3 b-top b-left"></div>
+                <div class="col-6 row-4 b-left"></div>
+                <div class="col-6 row-5 b-bottom b-left"></div>
+                <div id="position-12" class="col-6 row-6 grid-item bout-10"></div>
+                <div id="position-13" class="col-6 row-10 grid-item bout-11"></div>
+                <div class="col-6 row-11 b-top b-left"></div>
+                <div class="col-6 row-12 b-left"></div>
+                <div class="col-6 row-13 b-bottom b-left"></div>
+                <div id="position-14" class="col-6 row-14 grid-item bout-11"></div>
 
-                <div class="col-7 row-1 am grid-item"><a href="#E_coli">E. coli</a></div>
-                <div class="col-7 row-2 am b-top b-left b-bottom"></div>
-                <div class="col-7 row-3 am grid-item"><a href="#Candida_albicans">Candida albicans</a></div>
-                <div class="col-7 row-5 am grid-item"><a href="#Clostridioides_difficile">Clostridioides difficile</a></div>
-                <div class="col-7 row-6 am b-top b-left b-bottom"></div>
-                <div class="col-7 row-7 am grid-item"><a href="#HIV">HIV</a></div>
-                <div class="col-7 row-9 am grid-item"><a href="#Enterococcus_faecium">Enterococcus faecium</a></div>
-                <div class="col-7 row-10 am b-top b-left b-bottom"></div>
-                <div class="col-7 row-11 am grid-item"><a href="#Streptococcus_pneumoniae">Streptococcus pneumoniae</a>
-                </div>
-                <div class="col-7 row-13 am grid-item"><a href="#Streptococcus_pyogenes">Streptococcus pyogenes</a></div>
-                <div class="col-7 row-14 am b-top b-left b-bottom"></div>
-                <div class="col-7 row-15 am grid-item"><a href="#Staphylococcus_lugdunensis">Staphylococcus lugdunensis</a>
-                </div>
+                <div class="col-7 row-1 grid-item bout-12">E. coli</div>
+                <div class="col-7 row-2 b-top b-left b-bottom"></div>
+                <div class="col-7 row-3 grid-item bout-12">Candida albicans</div>
+                <div class="col-7 row-5 grid-item bout-13">Clostridioides difficile</div>
+                <div class="col-7 row-6 b-top b-left b-bottom"></div>
+                <div class="col-7 row-7 grid-item bout-13">HIV</div>
+                <div class="col-7 row-9 grid-item bout-14">Enterococcus faecium</div>
+                <div class="col-7 row-10 b-top b-left b-bottom"></div>
+                <div class="col-7 row-11 grid-item bout-14">Streptococcus pneumoniae</div>
+                <div class="col-7 row-13 grid-item bout-15">Streptococcus pyogenes</div>
+                <div class="col-7 row-14 b-top b-left b-bottom"></div>
+                <div class="col-7 row-15 grid-item bout-15">Staphylococcus lugdunensis</div>
             </div>
-        </div> -->
+        </div>
 </body>
 
-<script src="./js/include.js"></script>
 </html>
