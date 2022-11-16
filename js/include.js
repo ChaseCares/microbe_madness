@@ -1,45 +1,42 @@
-const bout_1 = document.querySelectorAll('.bout-1');
-const bout_2 = document.querySelectorAll('.bout-2');
-const bout_3 = document.querySelectorAll('.bout-3');
-const bout_4 = document.querySelectorAll('.bout-4');
-const bout_5 = document.querySelectorAll('.bout-5');
-const bout_6 = document.querySelectorAll('.bout-6');
-const bout_7 = document.querySelectorAll('.bout-7');
-const bout_8 = document.querySelectorAll('.bout-8');
-const bout_9 = document.querySelectorAll('.bout-9');
-const bout_10 = document.querySelectorAll('.bout-10');
-const bout_11 = document.querySelectorAll('.bout-11');
-const bout_12 = document.querySelectorAll('.bout-12');
-const bout_13 = document.querySelectorAll('.bout-13');
-const bout_14 = document.querySelectorAll('.bout-14');
-const bout_15 = document.querySelectorAll('.bout-15');
-const winner = document.querySelector('.winner');
+const BOUT_1 = document.querySelectorAll('.bout-1');
+const BOUT_2 = document.querySelectorAll('.bout-2');
+const BOUT_3 = document.querySelectorAll('.bout-3');
+const BOUT_4 = document.querySelectorAll('.bout-4');
+const BOUT_5 = document.querySelectorAll('.bout-5');
+const BOUT_6 = document.querySelectorAll('.bout-6');
+const BOUT_7 = document.querySelectorAll('.bout-7');
+const BOUT_8 = document.querySelectorAll('.bout-8');
+const BOUT_9 = document.querySelectorAll('.bout-9');
+const BOUT_10 = document.querySelectorAll('.bout-10');
+const BOUT_11 = document.querySelectorAll('.bout-11');
+const BOUT_12 = document.querySelectorAll('.bout-12');
+const BOUT_13 = document.querySelectorAll('.bout-13');
+const BOUT_14 = document.querySelectorAll('.bout-14');
+const BOUT_15 = document.querySelectorAll('.bout-15');
+const WINNER = document.querySelector('.winner');
 
-const position_1 = document.getElementById('position-1');
-const position_2 = document.getElementById('position-2');
-const position_3 = document.getElementById('position-3');
-const position_4 = document.getElementById('position-4');
-const position_5 = document.getElementById('position-5');
-const position_6 = document.getElementById('position-6');
-const position_7 = document.getElementById('position-7');
-const position_8 = document.getElementById('position-8');
-const position_9 = document.getElementById('position-9');
-const position_10 = document.getElementById('position-10');
-const position_11 = document.getElementById('position-11');
-const position_12 = document.getElementById('position-12');
-const position_13 = document.getElementById('position-13');
-const position_14 = document.getElementById('position-14');
+const POSITION_4 = document.getElementById('position-4');
+const POSITION_5 = document.getElementById('position-5');
+const POSITION_6 = document.getElementById('position-6');
+const POSITION_7 = document.getElementById('position-7');
+const POSITION_8 = document.getElementById('position-8');
+const POSITION_9 = document.getElementById('position-9');
+const POSITION_10 = document.getElementById('position-10');
 
+const BRACKET_FORM = document.getElementById('bracketForm');
+const AM_BRACKET_INPUT = document.getElementById('am_bracket');
+const PM_BRACKET_INPUT = document.getElementById('pm_bracket');
+const CC_EMAIL_CONTAINER = document.getElementById('cc_email_container');
+const CC_EMAIL = document.getElementById('cc_email');
+const ENCODED_SEED = document.getElementById('encoded_seed');
+const ENCODED_SEED_URL = document.getElementById('encoded_seed_url');
+const RAW_SEED = document.getElementById('raw_seed');
 
-const am_bracket_title = document.querySelector('.am_bracket');
-const pm_bracket_title = document.querySelector('.pm_bracket');
-const grid = document.querySelector('.grid');
+const AM_BRACKET_TITLE = document.querySelector('.am-bracket');
+const PM_BRACKET_TITLE = document.querySelector('.pm-bracket');
+const GRID = document.querySelector('.grid');
 
-const am_bracket_input = document.getElementById('am_bracket');
-const pm_bracket_input = document.getElementById('pm_bracket');
-
-
-const combatants = ["",
+const COMBATANTS = ["",
     "Common Cold",
     "Aspergillus species",
     "Bacteroides fragilis",
@@ -57,11 +54,14 @@ const combatants = ["",
     "Streptococcus pyogenes",
     "Staphylococcus lugdunensis"];
 
+var root_url;
+var bracket = 'am';
+var seed = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+
 function getDataFromURL() {
     const url = window.location.href;
-    const root_url = url.split('?')[0];
-    let seed = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let bracket = 'am';
+    root_url = url.split('?')[0];
 
     if (url.includes('bracket')) {
         bracket = url.split('?')[1].split('&')[0].split('=')[1];
@@ -69,63 +69,73 @@ function getDataFromURL() {
     if (url.includes('seed')) {
         seed = atob(url.split('?')[1].split('&')[1].split('=')[1]).split(',').map(Number);
     }
-    return [root_url, bracket, seed];
-
 }
-
-
-const data = getDataFromURL();
-const root_url = data[0];
-let bracket = data[1];
-let seed = data[2];
 
 
 function setURL(bracket, seed) {
-    const url = root_url + '?bracket=' + bracket + '&seed=' + btoa(seed);
-    window.history.pushState({}, '', url);
+    window.history.pushState({}, '', root_url + '?bracket=' + bracket + '&seed=' + btoa(seed));
 }
+
 
 function setCombatants() {
     for (let i = 0; i < 15; i++) {
-        document.getElementById(`position-${i}`).innerHTML = combatants[seed[i]];
+        document.getElementById(`position-${i}`).innerHTML = COMBATANTS[seed[i]];
     }
 }
 
+function addButtonCSS() {
+    let element;
+    for (let i = 0; i < 15; i++) {
+        element = document.getElementById(`position-${i}`);
+        if (element.innerHTML === '') {
+            element.classList.add('empty');
+            element.classList.remove('grid-item-button');
+        } else {
+            element.classList.add('grid-item-button');
+            element.classList.remove('empty');
+        }
+    }
+}
 
 function setBracket() {
     if (bracket === 'am') {
-        am_bracket_title.classList.remove('hidden');
-        pm_bracket_title.classList.add('hidden');
-        grid.classList.add('am');
-        grid.classList.remove('pm');
-        am_bracket_input.checked = true;
+        AM_BRACKET_TITLE.classList.remove('hidden');
+        PM_BRACKET_TITLE.classList.add('hidden');
+        GRID.classList.add('am');
+        GRID.classList.remove('pm');
+        AM_BRACKET_INPUT.checked = true;
     } else {
-        am_bracket_title.classList.add('hidden');
-        pm_bracket_title.classList.remove('hidden');
-        grid.classList.remove('am');
-        grid.classList.add('pm');
-        pm_bracket_input.checked = true;
+        AM_BRACKET_TITLE.classList.add('hidden');
+        PM_BRACKET_TITLE.classList.remove('hidden');
+        GRID.classList.remove('am');
+        GRID.classList.add('pm');
+        PM_BRACKET_INPUT.checked = true;
     }
 }
+
 
 function addClickListeners(from, to, nextBoutPos, index) {
     from.forEach((bout) => {
         bout.addEventListener('click', () => {
             to[nextBoutPos].innerHTML = bout.innerHTML;
-            seed[index] = combatants.indexOf(bout.innerHTML);
+            // to[nextBoutPos].classList.toggle('grid-item-button');
+            seed[index] = COMBATANTS.indexOf(bout.innerHTML);
+
             verifyValidBracket();
             verifyValidBracket();
             verifyValidBracket();
             verifyValidBracket();
+            addButtonCSS();
         });
     });
 }
+
 
 function addWinner(from, to, index) {
     from.forEach((bout) => {
         bout.addEventListener('click', () => {
             to.innerHTML = bout.innerHTML;
-            seed[index] = combatants.indexOf(bout.innerHTML);
+            seed[index] = COMBATANTS.indexOf(bout.innerHTML);
             verifyValidBracket();
         });
     });
@@ -133,104 +143,129 @@ function addWinner(from, to, index) {
 
 
 function toggleBracket(bracket) {
-    am_bracket_title.classList.toggle('hidden');
-    pm_bracket_title.classList.toggle('hidden');
-    grid.classList.toggle('am');
-    grid.classList.toggle('pm');
+    AM_BRACKET_TITLE.classList.toggle('hidden');
+    PM_BRACKET_TITLE.classList.toggle('hidden');
+    GRID.classList.toggle('am');
+    GRID.classList.toggle('pm');
     setURL(bracket, seed);
 }
 
+
 function verifyValidBracket() {
     let testSeed = [
-    [seed[0], seed[1], seed[2], seed[3]], // [0]
-    [seed[4], seed[5]],  // [1]
+    [seed[0], seed[1], seed[2], seed[3]],
+    [seed[4], seed[5]],
     [seed[6],
     seed[7],
-    seed[8]],  // [2]
-    [seed[9], seed[10]],   // [3]
-    [seed[11], seed[12], seed[13], seed[14]]   // [4]
-    ];
+    seed[8]],
+    [seed[9], seed[10]],
+    [seed[11], seed[12], seed[13], seed[14]]];
 
     if (!testSeed[0].includes(testSeed[1][0])) {
-        position_4.innerHTML = '';
+        POSITION_4.innerHTML = '';
         seed[4] = 0;
     }
     if (!testSeed[0].includes(testSeed[1][1])) {
-        position_5.innerHTML = '';
+        POSITION_5.innerHTML = '';
         seed[5] = 0;
     }
 
     if (!testSeed[1].includes(testSeed[2][0])) {
-        position_6.innerHTML = '';
+        POSITION_6.innerHTML = '';
         seed[6] = 0;
     }
 
     if (testSeed[2][1] !== testSeed[2][0] && testSeed[2][1] !== testSeed[2][2] ) {
-        position_7.innerHTML = '';
+        POSITION_7.innerHTML = '';
         seed[7] = 0;
     }
 
     if (!testSeed[3].includes(testSeed[2][2])) {
-        position_8.innerHTML = '';
+        POSITION_8.innerHTML = '';
         seed[8] = 0;
     }
 
     if (!testSeed[4].includes(testSeed[3][0])) {
-        position_9.innerHTML = '';
+        POSITION_9.innerHTML = '';
         seed[9] = 0;
     }
     if (!testSeed[4].includes(testSeed[3][1])) {
-        position_10.innerHTML = '';
+        POSITION_10.innerHTML = '';
         seed[10] = 0;
     }
     setURL(bracket, seed);
+    showIncomplete(true);
+    addButtonCSS();
 }
+
 
 function verifyBracketComplete() {
     if (seed.includes(0)) {
-        console.log('bracket not complete');
+        showIncomplete();
+        return false;
     } else {
-        console.log('bracket complete');
+        return true;
     }
-    showIncomplete();
 }
 
-function showIncomplete() {
-    let element = '';
+
+function showIncomplete(onlyRemove=false) {
+    let element;
     for (let i = 0; i < seed.length; i++) {
-        element = document.getElementById(`position-${i}`)
+        element = document.getElementById(`position-${i}`);
         if (element.innerHTML === '') {
-            element.classList.add('incomplete');
+            if (!onlyRemove) {
+                element.classList.add('incomplete');
+            }
         } else {
             element.classList.remove('incomplete');
         }
     }
 }
 
-setBracket();
-setCombatants();
-verifyValidBracket();
 
-addClickListeners(bout_1, bout_5, 0, 0);
-addClickListeners(bout_2, bout_5, 1, 1);
-addClickListeners(bout_3, bout_6, 0, 2);
-addClickListeners(bout_4, bout_6, 1, 3);
+BRACKET_FORM.addEventListener('submit', (e) => {
+    if (verifyBracketComplete()) {
+        ENCODED_SEED.value = btoa(seed);
+        ENCODED_SEED_URL.value = window.location.href;
+        RAW_SEED.value = seed;
+        if (CC_EMAIL.value == '') {
+            CC_EMAIL_CONTAINER.innerHTML = '';
+        }
+    } else {
+        e.preventDefault();
+        console.log('bracket not complete');
+    }
+});
 
-addClickListeners(bout_5, bout_7, 0, 4);
-addClickListeners(bout_6, bout_7, 1, 5);
+function init() {
+    getDataFromURL();
+    setBracket();
+    setCombatants();
+    verifyValidBracket();
+    addButtonCSS();
 
-addClickListeners(bout_7, bout_8, 0, 6);
+    addClickListeners(BOUT_1, BOUT_5, 0, 0);
+    addClickListeners(BOUT_2, BOUT_5, 1, 1);
+    addClickListeners(BOUT_3, BOUT_6, 0, 2);
+    addClickListeners(BOUT_4, BOUT_6, 1, 3);
 
-addWinner(bout_8, winner, 7);
+    addClickListeners(BOUT_5, BOUT_7, 0, 4);
+    addClickListeners(BOUT_6, BOUT_7, 1, 5);
 
-addClickListeners(bout_9, bout_8, 1, 8);
+    addClickListeners(BOUT_7, BOUT_8, 0, 6);
 
-addClickListeners(bout_10, bout_9, 0, 9);
-addClickListeners(bout_11, bout_9, 1, 10);
+    addWinner(BOUT_8, WINNER, 7);
 
-addClickListeners(bout_12, bout_10, 0, 11);
-addClickListeners(bout_13, bout_10, 1, 12);
-addClickListeners(bout_14, bout_11, 0, 13);
-addClickListeners(bout_15, bout_11, 1, 14);
+    addClickListeners(BOUT_9, BOUT_8, 1, 8);
 
+    addClickListeners(BOUT_10, BOUT_9, 0, 9);
+    addClickListeners(BOUT_11, BOUT_9, 1, 10);
 
+    addClickListeners(BOUT_12, BOUT_10, 0, 11);
+    addClickListeners(BOUT_13, BOUT_10, 1, 12);
+    addClickListeners(BOUT_14, BOUT_11, 0, 13);
+    addClickListeners(BOUT_15, BOUT_11, 1, 14);
+}
+
+init();
