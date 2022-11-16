@@ -32,8 +32,8 @@ const ENCODED_SEED = document.getElementById('encoded_seed');
 const ENCODED_SEED_URL = document.getElementById('encoded_seed_url');
 const RAW_SEED = document.getElementById('raw_seed');
 
-const AM_BRACKET_TITLE = document.querySelector('.am-bracket');
-const PM_BRACKET_TITLE = document.querySelector('.pm-bracket');
+const AM_BRACKET_TITLE = document.querySelector('.am');
+const PM_BRACKET_TITLE = document.querySelector('.pm');
 const GRID = document.querySelector('.grid');
 
 const COMBATANTS = ["",
