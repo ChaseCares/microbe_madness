@@ -99,12 +99,17 @@ Date.prototype.customFormat = function(formatString){
 function getDataFromURL() {
     const url = window.location.href;
     root_url = url.split('?')[0];
-
-    if (url.includes('bracket')) {
-        bracket = url.split('?')[1].split('&')[0].split('=')[1];
+    try {
+        if (url.includes('bracket')) {
+            bracket = url.split('?')[1].split('&')[0].split('=')[1];
+        }
+        if (url.includes('seed')) {
+            seed = atob(url.split('?')[1].split('&')[1].split('=')[1]).split(',').map(Number);
+        }
     }
-    if (url.includes('seed')) {
-        seed = atob(url.split('?')[1].split('&')[1].split('=')[1]).split(',').map(Number);
+    catch(err) {
+        console.log(err);
+        setURL(bracket, seed);
     }
 }
 
