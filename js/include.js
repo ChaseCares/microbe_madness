@@ -109,7 +109,7 @@ function getDataFromURL() {
     }
     catch(err) {
         console.log(err);
-        setURL(bracket, seed);
+        setURL('am', 'MCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDA=');
     }
 }
 
@@ -300,7 +300,7 @@ function addBracketsToPageHelper(bracket) {
         displayDate = date.customFormat("#DDD# #MMM# #DD# #YYYY# #hh#:#mm# #AMPM#");
     }
 
-    PREVIOUS_BRACKETS.innerHTML += `<input type="button" value="Load ${fName}, ${Array.from(lName)[0]}'s ${displayBracket} bracket, submitted on ${displayDate}" onclick="loadBracket('${bracket}')">`;
+    PREVIOUS_BRACKETS.innerHTML += `<input type="button" value="Load ${fName} ${Array.from(lName)[0]}'s ${displayBracket} bracket, submitted on ${displayDate}" onclick="loadBracket('${bracket}')">`;
 }
 
 
