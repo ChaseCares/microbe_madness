@@ -251,7 +251,7 @@ function checkForNumOfBracket(bracket) {
 
 function saveBracket() {
     if (!checkForBracket(bracket)) {
-        localStorage.setItem(bracket, [FIRST_NAME.value, LAST_NAME.value, OVERALL_WINNER.value, btoa(seed)]);
+        localStorage.setItem(bracket, [FIRST_NAME.value, LAST_NAME.value, OVERALL_WINNER.value, btoa(seed), Date.now()]);
     } else {
         localStorage.setItem(`${bracket}-${checkForNumOfBracket(bracket)}`, [FIRST_NAME.value, LAST_NAME.value, OVERALL_WINNER.value, btoa(seed), Date.now()]);
     }

@@ -323,7 +323,9 @@ h4 {
     }
     .instructions {
         padding-bottom: 20px;
+        margin: 0;
         margin-bottom: 30px;
+        width: auto;
     }
     .info-container {
         display: block;
