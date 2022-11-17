@@ -24,10 +24,14 @@ const POSITION_9 = document.getElementById('position-9');
 const POSITION_10 = document.getElementById('position-10');
 
 const BRACKET_FORM = document.getElementById('bracketForm');
+const FIRST_NAME = document.getElementById('first_name');
+const LAST_NAME = document.getElementById('last_name');
 const AM_BRACKET_INPUT = document.getElementById('am_bracket');
 const PM_BRACKET_INPUT = document.getElementById('pm_bracket');
+const OVERALL_WINNER = document.getElementById('overall_winner');
 const CC_EMAIL_CONTAINER = document.getElementById('cc_email_container');
 const CC_EMAIL = document.getElementById('cc_email');
+
 const ENCODED_SEED = document.getElementById('encoded_seed');
 const ENCODED_SEED_URL = document.getElementById('encoded_seed_url');
 const RAW_SEED = document.getElementById('raw_seed');
@@ -35,6 +39,9 @@ const RAW_SEED = document.getElementById('raw_seed');
 const AM_BRACKET_TITLE = document.querySelector('.am');
 const PM_BRACKET_TITLE = document.querySelector('.pm');
 const GRID = document.querySelector('.grid');
+
+const PREVIOUS_BRACKETS = document.getElementById('previous');
+const PREVIOUS_BRACKETS_CONTAINER = document.querySelector('.previous-container');
 
 const COMBATANTS = ["",
     "Common Cold",
@@ -118,7 +125,6 @@ function addClickListeners(from, to, nextBoutPos, index) {
     from.forEach((bout) => {
         bout.addEventListener('click', () => {
             to[nextBoutPos].innerHTML = bout.innerHTML;
-            // to[nextBoutPos].classList.toggle('grid-item-button');
             seed[index] = COMBATANTS.indexOf(bout.innerHTML);
 
             verifyValidBracket();
@@ -142,7 +148,8 @@ function addWinner(from, to, index) {
 }
 
 
-function toggleBracket(bracket) {
+function toggleBracket(value) {
+    bracket = value;
     AM_BRACKET_TITLE.classList.toggle('hidden');
     PM_BRACKET_TITLE.classList.toggle('hidden');
     GRID.classList.toggle('am');
@@ -224,6 +231,75 @@ function showIncomplete(onlyRemove=false) {
 }
 
 
+function checkForBracket(bracket) {
+    if (localStorage.getItem(bracket)){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+function checkForNumOfBracket(bracket) {
+    for (let i = 0; i <= localStorage.length; i++) {
+        if (!localStorage.getItem(`${bracket}-${i}`)) {
+            return i;
+        }
+    }
+}
+
+
+function saveBracket() {
+    if (!checkForBracket(bracket)) {
+        localStorage.setItem(bracket, [FIRST_NAME.value, LAST_NAME.value, OVERALL_WINNER.value, btoa(seed)]);
+    } else {
+        localStorage.setItem(`${bracket}-${checkForNumOfBracket(bracket)}`, [FIRST_NAME.value, LAST_NAME.value, OVERALL_WINNER.value, btoa(seed), Date.now()]);
+    }
+}
+
+function addBracketsToPageHelper(bracket) {
+    PREVIOUS_BRACKETS.innerHTML += `<input type="button" value="Load ${localStorage.getItem(bracket).split(',')[0]}, ${Array.from(localStorage.getItem(bracket).split(',')[1])[0]}'s ${bracket.toUpperCase()} bracket" onclick="loadBracket('${bracket}')">`;
+}
+
+
+function loadBracket(LocBracket) {
+    const LOC_BRACKET_DATA = localStorage.getItem(LocBracket).split(',');
+    FIRST_NAME.value = LOC_BRACKET_DATA[0];
+    OVERALL_WINNER.value = LOC_BRACKET_DATA[2];
+    seed = atob(LOC_BRACKET_DATA[3]).split(',').map(Number);
+    bracket = LocBracket;
+    console.log(LocBracket.split('-')[0]);
+    setURL(LocBracket.split('-')[0], seed);
+    toggleBracket(bracket);
+    setCombatants();
+}
+
+function addBracketsToPage() {
+    let bracketFound = false;
+    if (checkForBracket('am')) {
+        addBracketsToPageHelper('am');
+        for (let i = 0; i <= localStorage.length; i++) {
+            if (localStorage.getItem(`am-${i}`)) {
+                addBracketsToPageHelper(`am-${i}`);
+            }
+        }
+        bracketFound = true;
+    }
+    if (checkForBracket('pm')) {
+        addBracketsToPageHelper('pm');
+        for (let i = 0; i <= localStorage.length; i++) {
+            if (localStorage.getItem(`pm-${i}`)) {
+                addBracketsToPageHelper(`pm-${i}`);
+            }
+        }
+        bracketFound = true;
+    }
+    if (bracketFound) {
+        PREVIOUS_BRACKETS_CONTAINER.classList.remove('hidden');
+    }
+}
+
+
 BRACKET_FORM.addEventListener('submit', (e) => {
     if (verifyBracketComplete()) {
         ENCODED_SEED.value = btoa(seed);
@@ -232,6 +308,7 @@ BRACKET_FORM.addEventListener('submit', (e) => {
         if (CC_EMAIL.value == '') {
             CC_EMAIL_CONTAINER.innerHTML = '';
         }
+        saveBracket();
     } else {
         e.preventDefault();
         console.log('bracket not complete');
@@ -239,6 +316,7 @@ BRACKET_FORM.addEventListener('submit', (e) => {
 });
 
 function init() {
+    // addBracketsToPage();
     getDataFromURL();
     setBracket();
     setCombatants();
