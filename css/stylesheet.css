@@ -126,14 +126,22 @@ h4 {
     margin-bottom: 30px;
 }
 
-.instructions{
+.instructions {
     background-color: #fff;
     border-radius: 50px;
     margin-right: 15px;
     font-size: 1.5em;
     width: 100%;
     text-align: center;
-    padding: 1.5rem;
+}
+
+.instructions > p {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.instructions > h3 {
+    padding: 10px;
 }
 
 .previous-container {
