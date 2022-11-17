@@ -288,12 +288,11 @@ function addBracketsToPageHelper(bracket) {
     const fName = data[0];
     const lName = data[1];
     const displayBracket = bracket.split('-')[0].toUpperCase();
+    let displayDate = 'No Date';
 
     if (data.length === 5) {
         const date = new Date(Number(data[4]));
-        const displayDate = date.customFormat("#DDD# #MMM# #DD# #YYYY# #hh#:#mm# #AMPM#");
-    } else {
-        const date = 'No Date';
+        displayDate = date.customFormat("#DDD# #MMM# #DD# #YYYY# #hh#:#mm# #AMPM#");
     }
 
     PREVIOUS_BRACKETS.innerHTML += `<input type="button" value="Load ${fName}, ${Array.from(lName)[0]}'s ${displayBracket} bracket, submitted on ${displayDate}" onclick="loadBracket('${bracket}')">`;
