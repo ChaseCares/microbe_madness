@@ -80,7 +80,7 @@ function getDataFromURL() {
 
 
 function setURL(bracket, seed) {
-    window.history.pushState({}, '', root_url + '?bracket=' + bracket + '&seed=' + btoa(seed));
+    history.replaceState({}, '', root_url + '?bracket=' + bracket + '&seed=' + btoa(seed));
 }
 
 
