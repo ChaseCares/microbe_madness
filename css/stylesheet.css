@@ -1,608 +1,608 @@
 body {
-    background-color: #353535;
-    margin: 2px;
+	background-color: #353535;
+	margin: 2px;
 }
 
 a:visited {
-    color: #003eaa;
+	color: #003eaa;
 }
 
 .bug-stat {
-    padding-bottom: 1rem;
+	padding-bottom: 1rem;
 }
 
-.info>div {
-    text-align: center;
-    padding: 15px;
+.info > div {
+	text-align: center;
+	padding: 15px;
 }
 
 .info > div > a {
-    text-align: center;
-    font-size: 1.5em;
+	text-align: center;
+	font-size: 1.5em;
 }
 hr {
-    border: 2px solid #000;
-    border-radius: 4px;
+	border: 2px solid #000;
+	border-radius: 4px;
 }
-.info >hr {
-    width: 85%;
+.info > hr {
+	width: 85%;
 }
 
 .home {
-    font-size: 2.5em;
-    padding: 20px;
+	font-size: 2.5em;
+	padding: 20px;
 }
 
 input {
-    border-radius: 7px;
-    border: 1px solid #000;
-    padding: 5px;
-    background-color: #ddd;
+	border-radius: 7px;
+	border: 1px solid #000;
+	padding: 5px;
+	background-color: #ddd;
 }
 
-input[type="button"] {
-    border: 1px solid #000;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 7px;
-    text-transform: capitalize;
+input[type='button'] {
+	border: 1px solid #000;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 7px;
+	text-transform: capitalize;
 }
 
 input#am-bracket {
-    background-color: #000;
+	background-color: #000;
 }
 
-input[type="submit"] {
-    border-radius: 7px;
+input[type='submit'] {
+	border-radius: 7px;
 }
 
 #overall_winner {
-    padding: 5px;
-    border-radius: 7px;
-    border: 1px solid #000;
+	padding: 5px;
+	border-radius: 7px;
+	border: 1px solid #000;
 }
 
 article {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 30px;
-    padding-top: 0;
-    margin: 0;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 30px;
+	padding-top: 0;
+	margin: 0;
 }
 
-article>p {
-    padding-bottom: 1rem;
-    margin: 0;
+article > p {
+	padding-bottom: 1rem;
+	margin: 0;
 }
 
 h1 {
-    font-size: 5em;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    text-shadow: 0 0 10px #000;
+	font-size: 5em;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	text-shadow: 0 0 10px #000;
 }
 
-h2{
-    font-size: 2em;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    text-shadow: 0 0 10px #000;
+h2 {
+	font-size: 2em;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	text-shadow: 0 0 10px #000;
 }
 
 h3 {
-    font-size: 2em;
-    text-align: center;
-    margin: 0;
-    padding: 10px;
+	font-size: 2em;
+	text-align: center;
+	margin: 0;
+	padding: 10px;
 }
 
 h4 {
-    font-size: 1.5em;
-    text-align: center;
-    margin: 0;
-    color: #fff;
-    text-shadow: 0 0 10px #000;
+	font-size: 1.5em;
+	text-align: center;
+	margin: 0;
+	color: #fff;
+	text-shadow: 0 0 10px #000;
 }
 
 .empty {
-    background-color: #fff;
-    border-radius: 12px;
-    min-height: 23px;
+	background-color: #fff;
+	border-radius: 12px;
+	min-height: 23px;
 }
 
 .container {
-    margin: 0px auto;
-    width: 90%;
+	margin: 0px auto;
+	width: 90%;
 }
 
 .banner-container {
-    margin: 0px auto;
-    width: 90%;
-    display: flex;
-    margin-bottom: 30px;
+	margin: 0px auto;
+	width: 90%;
+	display: flex;
+	margin-bottom: 30px;
 }
 
 .instructions {
-    background-color: #fff;
-    border-radius: 50px;
-    margin-right: 15px;
-    font-size: 1.5em;
-    width: 100%;
-    text-align: center;
+	background-color: #fff;
+	border-radius: 50px;
+	margin-right: 15px;
+	font-size: 1.5em;
+	width: 100%;
+	text-align: center;
 }
 
 .instructions > p {
-    padding-left: 2rem;
-    padding-right: 2rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
 
 .instructions > h3 {
-    padding: 10px;
+	padding: 10px;
 }
 
 .previous-container {
-    width: 90%;
-    margin: 0px auto;
-    padding-bottom: 1rem;
+	width: 90%;
+	margin: 0px auto;
+	padding-bottom: 1rem;
 }
 
 .create-bracket {
-    background-color: #fff;
-    border-radius: 50px;
-    margin-left: 15px;
-    font-size: 1.5em;
-    color: #000;
-    width: 100%;
-    display: flex-box;
-    padding-bottom: 10px;
-    text-align: center;
+	background-color: #fff;
+	border-radius: 50px;
+	margin-left: 15px;
+	font-size: 1.5em;
+	color: #000;
+	width: 100%;
+	display: flex-box;
+	padding-bottom: 10px;
+	text-align: center;
 }
 
-.create-bracket>h3 {
-    font-size: 1em;
+.create-bracket > h3 {
+	font-size: 1em;
 }
 
 .instructions > h3 {
-    font-size: 1em;
+	font-size: 1em;
 }
 
 #name {
-    border: none;
-    font-size: 1em;
-    color: #000;
-    background-color: #ddd;
-    border-radius: 50px;
-    padding-left: 20px;
+	border: none;
+	font-size: 1em;
+	color: #000;
+	background-color: #ddd;
+	border-radius: 50px;
+	padding-left: 20px;
 }
 
 #name:focus {
-    outline: none;
+	outline: none;
 }
 
 .pm {
-    background-color: #a0c1ff;
+	background-color: #a0c1ff;
 }
 
 .am {
-    background-color: #c5fcbe;
+	background-color: #c5fcbe;
 }
 
-.bracket{
-    margin-top: 30px;
-    padding-top: 30px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px
+.bracket {
+	margin-top: 30px;
+	padding-top: 30px;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(15, 1fr);
-    margin: auto;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    padding: 50px;
+.grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: repeat(15, 1fr);
+	margin: auto;
+	border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 50px;
+	padding: 50px;
 }
 
 .grid-item {
-    text-transform: uppercase;
-    text-align: center;
-    align-items: center;
-    margin: 5px
+	text-transform: uppercase;
+	text-align: center;
+	align-items: center;
+	margin: 5px;
 }
 
 .grid-item-button {
-    text-transform: uppercase;
-    text-align: center;
-    background-color: #adadad;
-    border-radius: 12px;
-    border: #7c7c7c 2px solid;
-    cursor: pointer;
-    margin:5px
+	text-transform: uppercase;
+	text-align: center;
+	background-color: #adadad;
+	border-radius: 12px;
+	border: #7c7c7c 2px solid;
+	cursor: pointer;
+	margin: 5px;
 }
 
 .info {
-    background-color: #fff;
-    border-radius: 50px;
-    margin: 0px auto;
-    width: 90%;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+	background-color: #fff;
+	border-radius: 50px;
+	margin: 0px auto;
+	width: 90%;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
 }
 
 .info > p {
-    font-size: 1.5em;
-    text-align: center;
-    margin: 0;
-    padding: 1.2rem;
-    color: #000;
+	font-size: 1.5em;
+	text-align: center;
+	margin: 0;
+	padding: 1.2rem;
+	color: #000;
 }
 
 .info-container {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0px auto;
+	display: flex;
+	justify-content: space-evenly;
+	margin: 0px auto;
 }
 
 .info-container > div {
-    width: 30%;
-    padding: 2rem;
-    padding-top: 0;
-    font-size: 1.2rem;
-    margin: 0;
+	width: 30%;
+	padding: 2rem;
+	padding-top: 0;
+	font-size: 1.2rem;
+	margin: 0;
 }
-.info-container>div > h4 {
-    font-size: 1.6rem;
-    color: #000;
-    text-shadow: none;
+.info-container > div > h4 {
+	font-size: 1.6rem;
+	color: #000;
+	text-shadow: none;
 }
 .bugs {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    margin: auto;
-    width: 90%;
-    grid-gap: 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	margin: auto;
+	width: 90%;
+	grid-gap: 20px;
 }
 
 .dist {
-    border: #000 2px solid;
+	border: #000 2px solid;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
 .incomplete {
-    background-color: #ff0000;
-    min-height: 23px;
+	background-color: #ff0000;
+	min-height: 23px;
 }
-.download{
-    text-align: center;
-    margin: 7em auto;
+.download {
+	text-align: center;
+	margin: 7em auto;
 }
 .download > a {
-    color: #ddd;
-    font-size:4em;
-    margin: auto;
+	color: #ddd;
+	font-size: 4em;
+	margin: auto;
 }
 
 @media only screen and (max-width: 1000px) {
-    .info-container > hr {
-        display: none;
-    }
-    .info{
-        width: 100%;
-    }
-    .container {
-        width: 100%;
-        font-size: 0.7em;
-    }
-    .grid-item {
-        min-height: 1rem;
-    }
-    .bugs {
-        width: 100%;
-    }
-    .create-bracket {
-        width: 100%;
-        display: block;
-        margin: auto;
-    }
-    .create-bracket > form {
-        display: block;
-        padding: 10px;
-    }
-    .create-bracket > form > input {
-        display: block;
-        margin: 0 auto;
-        border-radius: 0;
-    }
-    form > div {
-        text-align: center;
-        padding: 5px;
-    }
-    .banner-container {
-        display: block;
-        width: 100%;
-    }
-    .instructions {
-        padding-bottom: 20px;
-        margin: 0;
-        margin-bottom: 30px;
-        width: auto;
-    }
-    .info-container {
-        display: block;
-    }
+	.info-container > hr {
+		display: none;
+	}
+	.info {
+		width: 100%;
+	}
+	.container {
+		width: 100%;
+		font-size: 0.7em;
+	}
+	.grid-item {
+		min-height: 1rem;
+	}
+	.bugs {
+		width: 100%;
+	}
+	.create-bracket {
+		width: 100%;
+		display: block;
+		margin: auto;
+	}
+	.create-bracket > form {
+		display: block;
+		padding: 10px;
+	}
+	.create-bracket > form > input {
+		display: block;
+		margin: 0 auto;
+		border-radius: 0;
+	}
+	form > div {
+		text-align: center;
+		padding: 5px;
+	}
+	.banner-container {
+		display: block;
+		width: 100%;
+	}
+	.instructions {
+		padding-bottom: 20px;
+		margin: 0;
+		margin-bottom: 30px;
+		width: auto;
+	}
+	.info-container {
+		display: block;
+	}
 
-    .info-container>div {
-        width: 90%;
-        padding: 15px;
-    }
+	.info-container > div {
+		width: 90%;
+		padding: 15px;
+	}
 }
 
 #confettis {
-    overflow: hidden;
-    position: absolute;
-    height: 100%;
-    width: 100%;
+	overflow: hidden;
+	position: absolute;
+	height: 100%;
+	width: 100%;
 }
 
 .confetti {
-    left: 50%;
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    transform-origin: left top;
-    animation: confetti 5s ease-in-out -2s infinite;
+	left: 50%;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	transform-origin: left top;
+	animation: confetti 5s ease-in-out -2s infinite;
 }
 
 @keyframes confetti {
-    0% {
-        transform: rotateZ(15deg) rotateY(0deg) translate(0, 0);
-    }
+	0% {
+		transform: rotateZ(15deg) rotateY(0deg) translate(0, 0);
+	}
 
-    25% {
-        transform: rotateZ(5deg) rotateY(360deg) translate(-5vw, 20vh);
-    }
+	25% {
+		transform: rotateZ(5deg) rotateY(360deg) translate(-5vw, 20vh);
+	}
 
-    50% {
-        transform: rotateZ(15deg) rotateY(720deg) translate(5vw, 60vh);
-    }
+	50% {
+		transform: rotateZ(15deg) rotateY(720deg) translate(5vw, 60vh);
+	}
 
-    75% {
-        transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw, 80vh);
-    }
+	75% {
+		transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw, 80vh);
+	}
 
-    100% {
-        transform: rotateZ(15deg) rotateY(1440deg) translate(10vw, 110vh);
-    }
+	100% {
+		transform: rotateZ(15deg) rotateY(1440deg) translate(10vw, 110vh);
+	}
 }
 
 .confetti:nth-child(1) {
-    left: 10%;
-    animation-delay: 0;
-    background-color: #fc0120;
+	left: 10%;
+	animation-delay: 0;
+	background-color: #fc0120;
 }
 
 .confetti:nth-child(2) {
-    left: 20%;
-    animation-delay: -5s;
-    background-color: #8257e6;
+	left: 20%;
+	animation-delay: -5s;
+	background-color: #8257e6;
 }
 
 .confetti:nth-child(3) {
-    left: 30%;
-    animation-delay: -3s;
-    background-color: #ffbf4d;
+	left: 30%;
+	animation-delay: -3s;
+	background-color: #ffbf4d;
 }
 
 .confetti:nth-child(4) {
-    left: 40%;
-    animation-delay: -2.5s;
-    background-color: #fe5d7a;
+	left: 40%;
+	animation-delay: -2.5s;
+	background-color: #fe5d7a;
 }
 
 .confetti:nth-child(5) {
-    left: 50%;
-    animation-delay: -4s;
-    background-color: #45ec9c;
+	left: 50%;
+	animation-delay: -4s;
+	background-color: #45ec9c;
 }
 
 .confetti:nth-child(6) {
-    left: 60%;
-    animation-delay: -6s;
-    background-color: #f6e327;
+	left: 60%;
+	animation-delay: -6s;
+	background-color: #f6e327;
 }
 
 .confetti:nth-child(7) {
-    left: 70%;
-    animation-delay: -1.5s;
-    background-color: #f769ce;
+	left: 70%;
+	animation-delay: -1.5s;
+	background-color: #f769ce;
 }
 
 .confetti:nth-child(8) {
-    left: 80%;
-    animation-delay: -2s;
-    background-color: #007de7;
+	left: 80%;
+	animation-delay: -2s;
+	background-color: #007de7;
 }
 
 .confetti:nth-child(9) {
-    left: 90%;
-    animation-delay: -3.5s;
-    background-color: #63b4fc;
+	left: 90%;
+	animation-delay: -3.5s;
+	background-color: #63b4fc;
 }
 
 .confetti:nth-child(10) {
-    left: 100%;
-    animation-delay: 2.5s;
-    background-color: #f9c4ea;
+	left: 100%;
+	animation-delay: 2.5s;
+	background-color: #f9c4ea;
 }
 
 .confetti:nth-child(11) {
-    left: 10%;
-    animation-delay: 1s;
-    background-color: #fc0120;
+	left: 10%;
+	animation-delay: 1s;
+	background-color: #fc0120;
 }
 
 .confetti:nth-child(12) {
-    left: 20%;
-    animation-delay: 4s;
-    background-color: #8257e6;
+	left: 20%;
+	animation-delay: 4s;
+	background-color: #8257e6;
 }
 
 .confetti:nth-child(13) {
-    left: 30%;
-    animation-delay: 2s;
-    background-color: #ffbf4d;
+	left: 30%;
+	animation-delay: 2s;
+	background-color: #ffbf4d;
 }
 
 .confetti:nth-child(14) {
-    left: 40%;
-    animation-delay: 1.5s;
-    background-color: #fe5d7a;
+	left: 40%;
+	animation-delay: 1.5s;
+	background-color: #fe5d7a;
 }
 
 .confetti:nth-child(15) {
-    left: 50%;
-    animation-delay: 3s;
-    background-color: #45ec9c;
+	left: 50%;
+	animation-delay: 3s;
+	background-color: #45ec9c;
 }
 
 .confetti:nth-child(16) {
-    left: 60%;
-    animation-delay: 5s;
-    background-color: #f6e327;
+	left: 60%;
+	animation-delay: 5s;
+	background-color: #f6e327;
 }
 
 .confetti:nth-child(17) {
-    left: 70%;
-    animation-delay: 0.5s;
-    background-color: #f769ce;
+	left: 70%;
+	animation-delay: 0.5s;
+	background-color: #f769ce;
 }
 
 .confetti:nth-child(18) {
-    left: 80%;
-    animation-delay: 1s;
-    background-color: #007de7;
+	left: 80%;
+	animation-delay: 1s;
+	background-color: #007de7;
 }
 
 .confetti:nth-child(19) {
-    left: 90%;
-    animation-delay: 2.5s;
-    background-color: #63b4fc;
+	left: 90%;
+	animation-delay: 2.5s;
+	background-color: #63b4fc;
 }
 
 .confetti:nth-child(20) {
-    left: 100%;
-    animation-delay: 1.5s;
-    background-color: #f9c4ea;
+	left: 100%;
+	animation-delay: 1.5s;
+	background-color: #f9c4ea;
 }
 
 .b-left {
-    border-left: 3px solid rgb(0, 0, 0);
+	border-left: 3px solid rgb(0, 0, 0);
 }
 
 .b-right {
-    border-right: 3px solid rgb(0, 0, 0);
+	border-right: 3px solid rgb(0, 0, 0);
 }
 
 .b-top {
-    border-top: 3px solid rgb(0, 0, 0);
+	border-top: 3px solid rgb(0, 0, 0);
 }
 
 .b-bottom {
-    border-bottom: 3px solid rgb(0, 0, 0);
+	border-bottom: 3px solid rgb(0, 0, 0);
 }
 
 .col-1 {
-    grid-column-start: 1;
+	grid-column-start: 1;
 }
 
 .col-2 {
-    grid-column-start: 2;
+	grid-column-start: 2;
 }
 
 .col-3 {
-    grid-column-start: 3;
+	grid-column-start: 3;
 }
 
 .col-4 {
-    grid-column-start: 4;
+	grid-column-start: 4;
 }
 
 .col-5 {
-    grid-column-start: 5;
+	grid-column-start: 5;
 }
 
 .col-6 {
-    grid-column-start: 6;
+	grid-column-start: 6;
 }
 
 .col-7 {
-    grid-column-start: 7;
+	grid-column-start: 7;
 }
 
 .row-1 {
-    grid-row-start: 1;
+	grid-row-start: 1;
 }
 
 .row-2 {
-    grid-row-start: 2;
+	grid-row-start: 2;
 }
 
 .row-3 {
-    grid-row-start: 3;
+	grid-row-start: 3;
 }
 
 .row-4 {
-    grid-row-start: 4;
+	grid-row-start: 4;
 }
 
 .row-5 {
-    grid-row-start: 5;
+	grid-row-start: 5;
 }
 
 .row-6 {
-    grid-row-start: 6;
+	grid-row-start: 6;
 }
 
 .row-7 {
-    grid-row-start: 7;
+	grid-row-start: 7;
 }
 
 .row-8 {
-    grid-row-start: 8;
+	grid-row-start: 8;
 }
 
 .row-9 {
-    grid-row-start: 9;
+	grid-row-start: 9;
 }
 
 .row-10 {
-    grid-row-start: 10;
+	grid-row-start: 10;
 }
 
 .row-11 {
-    grid-row-start: 11;
+	grid-row-start: 11;
 }
 
 .row-12 {
-    grid-row-start: 12;
+	grid-row-start: 12;
 }
 
 .row-13 {
-    grid-row-start: 13;
+	grid-row-start: 13;
 }
 
 .row-14 {
-    grid-row-start: 14;
+	grid-row-start: 14;
 }
 
 .row-15 {
-    grid-row-start: 15;
+	grid-row-start: 15;
 }
