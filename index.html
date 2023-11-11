@@ -1,386 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<!-- © 2022 Chase Curtis. All rights reserved. -->
+		<meta charset="UTF-8" />
+		<meta name="description" content="Microbe Madness" />
+		<meta name="author" content="Chase Curtis" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/stylesheet.css?v=0.0.2" />
+		<link href="./img/favicon.ico" rel="icon" type="image/x-icon" />
+		<title>Microbe Madness</title>
+	</head>
+	<body>
+		<h1>Microbe Madness</h1>
+		<br />
+		<div class="info">
+			<h3>About</h3>
+			<p>
+				Antimicrobial Awareness Week is part of a global campaign that occurs annually (this year November 18-24) to improve awareness and understanding of
+				antimicrobial resistance and the importance of appropriate antibiotic use. The CDC has many educational resources and can be found at
+				<a href="https://www.cdc.gov/antibiotic-use/week/" target="_blank">cdc.gov/antibiotic-use/week</a>. <br />
+				Microbe Madness celebrates some of the micro-organisms that we know and love. These organisms will compete in two March Madness-style tournaments as
+				reflected in the AM and PM brackets.
+			</p>
+			<hr />
+			<div class="info-container">
+				<div>
+					<h4>When?</h4>
+					<p>
+						The AM tournament rounds will occur in the DRAH inpatient pharmacy after the 0730 morning inpatient pharmacy huddles on 11/18, 11/21, 11/22, and
+						11/23. The PM tournament rounds will occur these same days in the afternoons as time allows.
+					</p>
+				</div>
+				<hr />
+				<div>
+					<h4>Rules</h4>
+					<p>
+						You can submit as many dashboards as you like and may submit for both the AM and PM tournaments, but only your last bracket submitted before the
+						deadline (<time datetime="2022-11-18T07:30">11/18/22 at 0730</time> for AM bracket, <time datetime="2022-11-18T15:30">11/18/22 at 1530</time> for PM
+						bracket) will be eligible for prizes.
+					</p>
+				</div>
+				<hr />
+				<div>
+					<h4>Prizes</h4>
+					<p>
+						Prizes will be available for <b>DRAH pharmacy department employee</b> participants (all shifts, inpatient and outpatient) who select the winning
+						organism as well as for who has the most accurate bracket.
+					</p>
+				</div>
+			</div>
 
-<head>
-    <!-- © 2022 Chase Curtis. All rights reserved. -->
-    <meta charset="UTF-8">
-    <meta name="description" content="Microbe Madness">
-    <meta name="author" content="Chase Curtis">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/stylesheet.css?v=0.0.2">
-    <link href="./img/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Microbe Madness</title>
-</head>
-<body>
-    <h1>Microbe Madness</h1><br>
-    <div class="info">
-        <h3>About</h3>
-        <p>
-            Antimicrobial Awareness Week is part of a global campaign that occurs annually (this year November 18-24) to improve awareness and understanding of antimicrobial resistance and the importance of appropriate antibiotic use.
-            The CDC has many educational resources and can be found at <a href="https://www.cdc.gov/antibiotic-use/week/" target="_blank">cdc.gov/antibiotic-use/week</a>.
-            <br> Microbe Madness celebrates some of the micro-organisms that we know and love.
-            These organisms will compete in two March Madness-style tournaments as reflected in the AM and PM brackets.
-        </p>
-        <hr>
-        <div class="info-container">
-            <div>
-                <h4>When?</h4>
-                <p>
-                    The AM tournament rounds will occur in the DRAH inpatient pharmacy after the 0730 morning inpatient pharmacy huddles on 11/18, 11/21, 11/22, and 11/23.
-                    The PM tournament rounds will occur these same days in the afternoons as time allows.
-                </p>
-            </div>
-            <hr>
-            <div>
-                <h4>Rules</h4>
-                <p>
-                    You can submit as many dashboards as you like and may submit for both the AM and PM tournaments, but only your
-                    last bracket submitted before the deadline (<time datetime="2022-11-18T07:30">11/18/22 at 0730</time> for AM bracket, <time datetime="2022-11-18T15:30">11/18/22 at 1530</time> for PM bracket) will be eligible for prizes.
-                </p>
-            </div>
-            <hr>
-            <div>
-                <h4>Prizes</h4>
-                <p>
-                    Prizes will be available for <b>DRAH pharmacy department employee</b> participants (all shifts, inpatient and outpatient) who select the winning organism as well as for who has the most accurate
-                    bracket.
-                </p>
-            </div>
-        </div>
+			<div><a href="/create.html">Create Your Own Bracket Here</a></div>
+		</div>
+		<div class="container">
+			<div>
+				<h3 class="am bracket">AM Bracket</h3>
+				<div class="am grid">
+					<div class="col-1 row-1 grid-item"><a href="#Common_Cold">Common Cold</a></div>
+					<div class="col-1 row-2 b-top b-right b-bottom"></div>
+					<div class="col-1 row-3 grid-item"><a href="#Aspergillus_species">Aspergillus species</a></div>
+					<div class="col-1 row-5 grid-item"><a href="#Bacteroides_fragilis">Bacteroides fragilis</a></div>
+					<div class="col-1 row-6 b-top b-right b-bottom"></div>
+					<div class="col-1 row-7 grid-item"><a href="#Cryptococcus_species">Cryptococcus species</a></div>
+					<div class="col-1 row-9 grid-item"><a href="#Pseudomonas_aeruginosa">Pseudomonas aeruginosa</a></div>
+					<div class="col-1 row-10 b-top b-right b-bottom"></div>
+					<div class="col-1 row-11 grid-item"><a href="#COVID">COVID</a></div>
+					<div class="col-1 row-13 grid-item"><a href="#Enterococcus_faecalis">Enterococcus faecalis</a></div>
+					<div class="col-1 row-14 b-top b-right b-bottom"></div>
+					<div class="col-1 row-15 grid-item"><a href="#Staphylococcus_aureus">Staphylococcus aureus</a></div>
 
-        <div><a href="/create.html">Create Your Own Bracket Here</a></div>
-    </div>
-    <div class="container">
-        <div>
-            <h3 class="am bracket">AM Bracket</h3>
-            <div class="am grid">
-                <div class="col-1 row-1 grid-item" ><a href="#Common_Cold">Common Cold</a></div>
-                <div class="col-1 row-2 b-top b-right b-bottom"></div>
-                <div class="col-1 row-3 grid-item"><a href="#Aspergillus_species">Aspergillus species</a></div>
-                <div class="col-1 row-5 grid-item"><a href="#Bacteroides_fragilis">Bacteroides fragilis</a></div>
-                <div class="col-1 row-6 b-top b-right b-bottom"></div>
-                <div class="col-1 row-7 grid-item"><a href="#Cryptococcus_species">Cryptococcus species</a></div>
-                <div class="col-1 row-9 grid-item"><a href="#Pseudomonas_aeruginosa">Pseudomonas aeruginosa</a></div>
-                <div class="col-1 row-10 b-top b-right b-bottom"></div>
-                <div class="col-1 row-11 grid-item"><a href="#COVID">COVID</a></div>
-                <div class="col-1 row-13 grid-item"><a href="#Enterococcus_faecalis">Enterococcus faecalis</a></div>
-                <div class="col-1 row-14 b-top b-right b-bottom"></div>
-                <div class="col-1 row-15 grid-item"><a href="#Staphylococcus_aureus">Staphylococcus aureus</a></div>
+					<div class="col-2 row-2 grid-item">Common Cold</div>
+					<div class="col-2 row-3 b-top b-right"></div>
+					<div class="col-2 row-4 b-right"></div>
+					<div class="col-2 row-5 b-bottom b-right"></div>
+					<div class="col-2 row-6 grid-item">Cryptococcus species</div>
+					<div class="col-2 row-10 grid-item">COVID</div>
+					<div class="col-2 row-11 b-top b-right"></div>
+					<div class="col-2 row-12 b-right"></div>
+					<div class="col-2 row-13 b-bottom b-right"></div>
+					<div class="col-2 row-14 grid-item">Staphylococcus aureus</div>
 
-                <div class="col-2 row-2 grid-item" ">Common Cold</div>
-                <div class="col-2 row-3 b-top b-right"></div>
-                <div class="col-2 row-4 b-right"></div>
-                <div class="col-2 row-5 b-bottom b-right"></div>
-                <div class="col-2 row-6 grid-item">Cryptococcus species</div>
-                <div class="col-2 row-10 grid-item">COVID</div>
-                <div class="col-2 row-11 b-top b-right"></div>
-                <div class="col-2 row-12 b-right"></div>
-                <div class="col-2 row-13 b-bottom b-right"></div>
-                <div class="col-2 row-14 grid-item">Staphylococcus aureus</div>
+					<div class="col-3 row-4 grid-item">Common Cold</div>
+					<div class="col-3 row-5 b-top b-right"></div>
+					<div class="col-3 row-6 b-right"></div>
+					<div class="col-3 row-7 b-right"></div>
+					<div class="col-3 row-8 b-right"></div>
+					<div class="col-3 row-9 b-right"></div>
+					<div class="col-3 row-10 b-right"></div>
+					<div class="col-3 row-11 b-bottom b-right"></div>
+					<div class="col-3 row-12 grid-item">COVID</div>
 
-                <div class="col-3 row-4 grid-item">Common Cold</div>
-                <div class="col-3 row-5 b-top b-right"></div>
-                <div class="col-3 row-6 b-right"></div>
-                <div class="col-3 row-7 b-right"></div>
-                <div class="col-3 row-8 b-right"></div>
-                <div class="col-3 row-9 b-right"></div>
-                <div class="col-3 row-10 b-right"></div>
-                <div class="col-3 row-11 b-bottom b-right"></div>
-                <div class="col-3 row-12 grid-item">COVID</div>
+					<div class="col-4 row-6 grid-item">COVID</div>
+					<div class="col-4 row-7 b-bottom"></div>
+					<div class="col-4 row-8 grid-item">🏆 COVID 🏆</div>
+					<div class="col-4 row-9 b-top"></div>
+					<div class="col-4 row-10 grid-item">Streptococcus pneumoniae</div>
 
-                <div class="col-4 row-6 grid-item">COVID</div>
-                <div class="col-4 row-7 b-bottom"></div>
-                <div class="col-4 row-8 grid-item">🏆 COVID 🏆</div>
-                <div class="col-4 row-9 b-top"></div>
-                <div class="col-4 row-10 grid-item">Streptococcus pneumoniae</div>
+					<div class="col-5 row-4 grid-item">HIV</div>
+					<div class="col-5 row-5 b-top b-left"></div>
+					<div class="col-5 row-6 b-left"></div>
+					<div class="col-5 row-7 b-left"></div>
+					<div class="col-5 row-8 b-left"></div>
+					<div class="col-5 row-9 b-left"></div>
+					<div class="col-5 row-10 b-left"></div>
+					<div class="col-5 row-11 b-bottom b-left"></div>
+					<div class="col-5 row-12 grid-item">Streptococcus pneumoniae</div>
 
-                <div class="col-5 row-4 grid-item">HIV</div>
-                <div class="col-5 row-5 b-top b-left"></div>
-                <div class="col-5 row-6 b-left"></div>
-                <div class="col-5 row-7 b-left"></div>
-                <div class="col-5 row-8 b-left"></div>
-                <div class="col-5 row-9 b-left"></div>
-                <div class="col-5 row-10 b-left"></div>
-                <div class="col-5 row-11 b-bottom b-left"></div>
-                <div class="col-5 row-12 grid-item">Streptococcus pneumoniae</div>
+					<div class="col-6 row-2 grid-item">E. coli</div>
+					<div class="col-6 row-3 b-top b-left"></div>
+					<div class="col-6 row-4 b-left"></div>
+					<div class="col-6 row-5 b-bottom b-left"></div>
+					<div class="col-6 row-6 grid-item">HIV</div>
+					<div class="col-6 row-10 grid-item">Streptococcus pneumoniae</div>
+					<div class="col-6 row-11 b-top b-left"></div>
+					<div class="col-6 row-12 b-left"></div>
+					<div class="col-6 row-13 b-bottom b-left"></div>
+					<div class="col-6 row-14 grid-item">Staphylococcus lugdunensis</div>
 
-                <div class="col-6 row-2 grid-item">E. coli</div>
-                <div class="col-6 row-3 b-top b-left"></div>
-                <div class="col-6 row-4 b-left"></div>
-                <div class="col-6 row-5 b-bottom b-left"></div>
-                <div class="col-6 row-6 grid-item">HIV</div>
-                <div class="col-6 row-10 grid-item">Streptococcus pneumoniae</div>
-                <div class="col-6 row-11 b-top b-left"></div>
-                <div class="col-6 row-12 b-left"></div>
-                <div class="col-6 row-13 b-bottom b-left"></div>
-                <div class="col-6 row-14 grid-item">Staphylococcus lugdunensis</div>
+					<div class="col-7 row-1 grid-item"><a href="#E_coli">E. coli</a></div>
+					<div class="col-7 row-2 b-top b-left b-bottom"></div>
+					<div class="col-7 row-3 grid-item"><a href="#Candida_albicans">Candida albicans</a></div>
+					<div class="col-7 row-5 grid-item"><a href="#Clostridioides_difficile">Clostridioides difficile</a></div>
+					<div class="col-7 row-6 b-top b-left b-bottom"></div>
+					<div class="col-7 row-7 grid-item"><a href="#HIV">HIV</a></div>
+					<div class="col-7 row-9 grid-item"><a href="#Enterococcus_faecium">Enterococcus faecium</a></div>
+					<div class="col-7 row-10 b-top b-left b-bottom"></div>
+					<div class="col-7 row-11 grid-item"><a href="#Streptococcus_pneumoniae">Streptococcus pneumoniae</a></div>
+					<div class="col-7 row-13 grid-item"><a href="#Streptococcus_pyogenes">Streptococcus pyogenes</a></div>
+					<div class="col-7 row-14 b-top b-left b-bottom"></div>
+					<div class="col-7 row-15 grid-item"><a href="#Staphylococcus_lugdunensis">Staphylococcus lugdunensis</a></div>
+				</div>
+			</div>
+			<div>
+				<h3 class="pm bracket">PM Bracket</h3>
+				<div class="pm grid">
+					<div class="col-1 row-1 grid-item"><a href="#Common_Cold">Common Cold</a></div>
+					<div class="col-1 row-2 b-top b-right b-bottom"></div>
+					<div class="col-1 row-3 grid-item"><a href="#Aspergillus_species">Aspergillus species</a></div>
+					<div class="col-1 row-5 grid-item"><a href="#Bacteroides_fragilis">Bacteroides fragilis</a></div>
+					<div class="col-1 row-6 b-top b-right b-bottom"></div>
+					<div class="col-1 row-7 grid-item"><a href="#Cryptococcus_species">Cryptococcus species</a></div>
+					<div class="col-1 row-9 grid-item"><a href="#Pseudomonas_aeruginosa">Pseudomonas aeruginosa</a></div>
+					<div class="col-1 row-10 b-top b-right b-bottom"></div>
+					<div class="col-1 row-11 grid-item"><a href="#COVID">COVID</a></div>
+					<div class="col-1 row-13 grid-item"><a href="#Enterococcus_faecalis">Enterococcus faecalis</a></div>
+					<div class="col-1 row-14 b-top b-right b-bottom"></div>
+					<div class="col-1 row-15 grid-item"><a href="#Staphylococcus_aureus">Staphylococcus aureus</a></div>
 
-                <div class="col-7 row-1 grid-item"><a href="#E_coli">E. coli</a></div>
-                <div class="col-7 row-2 b-top b-left b-bottom"></div>
-                <div class="col-7 row-3 grid-item"><a href="#Candida_albicans">Candida albicans</a></div>
-                <div class="col-7 row-5 grid-item"><a href="#Clostridioides_difficile">Clostridioides difficile</a></div>
-                <div class="col-7 row-6 b-top b-left b-bottom"></div>
-                <div class="col-7 row-7 grid-item"><a href="#HIV">HIV</a></div>
-                <div class="col-7 row-9 grid-item"><a href="#Enterococcus_faecium">Enterococcus faecium</a></div>
-                <div class="col-7 row-10 b-top b-left b-bottom"></div>
-                <div class="col-7 row-11 grid-item"><a href="#Streptococcus_pneumoniae">Streptococcus pneumoniae</a></div>
-                <div class="col-7 row-13 grid-item"><a href="#Streptococcus_pyogenes">Streptococcus pyogenes</a></div>
-                <div class="col-7 row-14 b-top b-left b-bottom"></div>
-                <div class="col-7 row-15 grid-item"><a href="#Staphylococcus_lugdunensis">Staphylococcus lugdunensis</a></div>
-            </div>
-        </div>
-        <div>
-            <h3 class="pm bracket">PM Bracket</h3>
-            <div class="pm grid">
-                <div class="col-1 row-1 grid-item"><a href="#Common_Cold">Common Cold</a></div>
-                <div class="col-1 row-2 b-top b-right b-bottom"></div>
-                <div class="col-1 row-3 grid-item"><a href="#Aspergillus_species">Aspergillus species</a></div>
-                <div class="col-1 row-5 grid-item"><a href="#Bacteroides_fragilis">Bacteroides fragilis</a></div>
-                <div class="col-1 row-6 b-top b-right b-bottom"></div>
-                <div class="col-1 row-7 grid-item"><a href="#Cryptococcus_species">Cryptococcus species</a></div>
-                <div class="col-1 row-9 grid-item"><a href="#Pseudomonas_aeruginosa">Pseudomonas aeruginosa</a></div>
-                <div class="col-1 row-10 b-top b-right b-bottom"></div>
-                <div class="col-1 row-11 grid-item"><a href="#COVID">COVID</a></div>
-                <div class="col-1 row-13 grid-item"><a href="#Enterococcus_faecalis">Enterococcus faecalis</a></div>
-                <div class="col-1 row-14 b-top b-right b-bottom"></div>
-                <div class="col-1 row-15 grid-item"><a href="#Staphylococcus_aureus">Staphylococcus aureus</a></div>
+					<div class="col-2 row-2 grid-item">Common Cold</div>
+					<div class="col-2 row-3 b-top b-right"></div>
+					<div class="col-2 row-4 b-right"></div>
+					<div class="col-2 row-5 b-bottom b-right"></div>
+					<div class="col-2 row-6 grid-item">Cryptococcus species</div>
+					<div class="col-2 row-10 grid-item">COVID</div>
+					<div class="col-2 row-11 b-top b-right"></div>
+					<div class="col-2 row-12 b-right"></div>
+					<div class="col-2 row-13 b-bottom b-right"></div>
+					<div class="col-2 row-14 grid-item">Enterococcus faecalis</div>
 
-                <div class="col-2 row-2 grid-item" ">Common Cold</div>
-                <div class="col-2 row-3 b-top b-right"></div>
-                <div class="col-2 row-4 b-right"></div>
-                <div class="col-2 row-5 b-bottom b-right"></div>
-                <div class="col-2 row-6 grid-item">Cryptococcus species</div>
-                <div class="col-2 row-10 grid-item">COVID</div>
-                <div class="col-2 row-11 b-top b-right"></div>
-                <div class="col-2 row-12 b-right"></div>
-                <div class="col-2 row-13 b-bottom b-right"></div>
-                <div class="col-2 row-14 grid-item">Enterococcus faecalis</div>
+					<div class="col-3 row-4 grid-item">Common Cold</div>
+					<div class="col-3 row-5 b-top b-right"></div>
+					<div class="col-3 row-6 b-right"></div>
+					<div class="col-3 row-7 b-right"></div>
+					<div class="col-3 row-8 b-right"></div>
+					<div class="col-3 row-9 b-right"></div>
+					<div class="col-3 row-10 b-right"></div>
+					<div class="col-3 row-11 b-bottom b-right"></div>
+					<div class="col-3 row-12 grid-item">COVID</div>
 
-                <div class="col-3 row-4 grid-item">Common Cold</div>
-                <div class="col-3 row-5 b-top b-right"></div>
-                <div class="col-3 row-6 b-right"></div>
-                <div class="col-3 row-7 b-right"></div>
-                <div class="col-3 row-8 b-right"></div>
-                <div class="col-3 row-9 b-right"></div>
-                <div class="col-3 row-10 b-right"></div>
-                <div class="col-3 row-11 b-bottom b-right"></div>
-                <div class="col-3 row-12 grid-item">COVID</div>
+					<div class="col-4 row-6 grid-item">COVID</div>
+					<div class="col-4 row-7 b-bottom"></div>
+					<div class="col-4 row-8 grid-item">🏆 COVID 🏆</div>
+					<div class="col-4 row-9 b-top"></div>
+					<div class="col-4 row-10 grid-item">Clostridioides difficile</div>
 
-                <div class="col-4 row-6 grid-item">COVID</div>
-                <div class="col-4 row-7 b-bottom"></div>
-                <div class="col-4 row-8 grid-item">🏆 COVID 🏆</div>
-                <div class="col-4 row-9 b-top"></div>
-                <div class="col-4 row-10 grid-item">Clostridioides difficile</div>
+					<div class="col-5 row-4 grid-item">Clostridioides difficile</div>
+					<div class="col-5 row-5 b-top b-left"></div>
+					<div class="col-5 row-6 b-left"></div>
+					<div class="col-5 row-7 b-left"></div>
+					<div class="col-5 row-8 b-left"></div>
+					<div class="col-5 row-9 b-left"></div>
+					<div class="col-5 row-10 b-left"></div>
+					<div class="col-5 row-11 b-bottom b-left"></div>
+					<div class="col-5 row-12 grid-item">Streptococcus pyogenes</div>
 
-                <div class="col-5 row-4 grid-item">Clostridioides difficile</div>
-                <div class="col-5 row-5 b-top b-left"></div>
-                <div class="col-5 row-6 b-left"></div>
-                <div class="col-5 row-7 b-left"></div>
-                <div class="col-5 row-8 b-left"></div>
-                <div class="col-5 row-9 b-left"></div>
-                <div class="col-5 row-10 b-left"></div>
-                <div class="col-5 row-11 b-bottom b-left"></div>
-                <div class="col-5 row-12 grid-item">Streptococcus pyogenes</div>
+					<div class="col-6 row-2 grid-item">E. coli</div>
+					<div class="col-6 row-3 b-top b-left"></div>
+					<div class="col-6 row-4 b-left"></div>
+					<div class="col-6 row-5 b-bottom b-left"></div>
+					<div class="col-6 row-6 grid-item">Clostridioides difficile</div>
+					<div class="col-6 row-10 grid-item">Enterococcus faecium</div>
+					<div class="col-6 row-11 b-top b-left"></div>
+					<div class="col-6 row-12 b-left"></div>
+					<div class="col-6 row-13 b-bottom b-left"></div>
+					<div class="col-6 row-14 grid-item">Streptococcus pyogenes</div>
 
-                <div class="col-6 row-2 grid-item">E. coli</div>
-                <div class="col-6 row-3 b-top b-left"></div>
-                <div class="col-6 row-4 b-left"></div>
-                <div class="col-6 row-5 b-bottom b-left"></div>
-                <div class="col-6 row-6 grid-item">Clostridioides difficile</div>
-                <div class="col-6 row-10 grid-item">Enterococcus faecium</div>
-                <div class="col-6 row-11 b-top b-left"></div>
-                <div class="col-6 row-12 b-left"></div>
-                <div class="col-6 row-13 b-bottom b-left"></div>
-                <div class="col-6 row-14 grid-item">Streptococcus pyogenes</div>
+					<div class="col-7 row-1 grid-item"><a href="#E_coli">E. coli</a></div>
+					<div class="col-7 row-2 b-top b-left b-bottom"></div>
+					<div class="col-7 row-3 grid-item"><a href="#Candida_albicans">Candida albicans</a></div>
+					<div class="col-7 row-5 grid-item"><a href="#Clostridioides_difficile">Clostridioides difficile</a></div>
+					<div class="col-7 row-6 b-top b-left b-bottom"></div>
+					<div class="col-7 row-7 grid-item"><a href="#HIV">HIV</a></div>
+					<div class="col-7 row-9 grid-item"><a href="#Enterococcus_faecium">Enterococcus faecium</a></div>
+					<div class="col-7 row-10 b-top b-left b-bottom"></div>
+					<div class="col-7 row-11 grid-item"><a href="#Streptococcus_pneumoniae">Streptococcus pneumoniae</a></div>
+					<div class="col-7 row-13 grid-item"><a href="#Streptococcus_pyogenes">Streptococcus pyogenes</a></div>
+					<div class="col-7 row-14 b-top b-left b-bottom"></div>
+					<div class="col-7 row-15 grid-item"><a href="#Staphylococcus_lugdunensis">Staphylococcus lugdunensis</a></div>
+				</div>
+			</div>
+		</div>
+		<br /><br />
+		<h1>Organisms</h1>
+		<br />
+		<div class="bugs">
+			<article id="Common_Cold">
+				<h3>Common Cold</h3>
+				<div class="bug-stat">
+					<a href="https://www.cdc.gov/dotw/common-cold/index.html" target="_blank">More Information</a>
+				</div>
+				<p>Caused by over 200 different viruses, including rhinovirus (~50%), influenza, coronavirus, RSV, and parainfluenza virus.</p>
+				<p>Only 2% of viral upper respiratory tract infections are complicated by bacterial sinus infections.</p>
+				<p>Antibiotics will not help viral infections; however, nasal decongestants, antihistamines, anti-inflammatory agents, or zinc lozenges may!</p>
+				<p>If symptoms are lasting longer than 7 days or getting worse, a bacterial infection may have set in. Antibiotics could help with that!</p>
+				<p>Most adults suffer from colds 2 or 3 times a year while kids may get it every month.</p>
+			</article>
 
-                <div class="col-7 row-1 grid-item"><a href="#E_coli">E. coli</a></div>
-                <div class="col-7 row-2 b-top b-left b-bottom"></div>
-                <div class="col-7 row-3 grid-item"><a href="#Candida_albicans">Candida albicans</a></div>
-                <div class="col-7 row-5 grid-item"><a href="#Clostridioides_difficile">Clostridioides difficile</a></div>
-                <div class="col-7 row-6 b-top b-left b-bottom"></div>
-                <div class="col-7 row-7 grid-item"><a href="#HIV">HIV</a></div>
-                <div class="col-7 row-9 grid-item"><a href="#Enterococcus_faecium">Enterococcus faecium</a></div>
-                <div class="col-7 row-10 b-top b-left b-bottom"></div>
-                <div class="col-7 row-11 grid-item"><a href="#Streptococcus_pneumoniae">Streptococcus pneumoniae</a></div>
-                <div class="col-7 row-13 grid-item"><a href="#Streptococcus_pyogenes">Streptococcus pyogenes</a></div>
-                <div class="col-7 row-14 b-top b-left b-bottom"></div>
-                <div class="col-7 row-15 grid-item"><a href="#Staphylococcus_lugdunensis">Staphylococcus lugdunensis</a></div>
-            </div>
-        </div>
-    </div>
-    <br><br>
-    <h1>Organisms</h1><br>
-    <div class="bugs">
-        <article id="Common_Cold">
-            <h3>Common Cold</h3>
-            <div class="bug-stat">
-                <a href="https://www.cdc.gov/dotw/common-cold/index.html" target="_blank">More Information</a>
-            </div>
-            <p>Caused by over 200 different viruses, including rhinovirus (~50%), influenza, coronavirus, RSV, and parainfluenza virus.</p>
-            <p>Only 2% of viral upper respiratory tract infections are complicated by bacterial sinus infections.</p>
-            <p>Antibiotics will not help viral infections; however, nasal decongestants, antihistamines, anti-inflammatory agents, or zinc lozenges may!</p>
-            <p>If symptoms are lasting longer than 7 days or getting worse, a bacterial infection may have set in. Antibiotics could help with that!</p>
-            <p>Most adults suffer from colds 2 or 3 times a year while kids may get it every month.</p>
-        </article>
+			<article id="Aspergillus_species">
+				<h3>Aspergillus species</h3>
+				<div class="bug-stat">
+					<a href="https://www.cdc.gov/fungal/diseases/aspergillosis/index.html" target="_blank">More Information</a>
+				</div>
+				<p>This is the most common pathogenic mold isolated in humans.</p>
+				<p>Echinocandins do have some coverage of Aspergillus, though traditionally voriconazole tends to be first line therapy.</p>
+				<p>
+					Aspergillus is everywhere in the environment, including colonizing the respiratory tract of some humans. Construction sites within hospitals must be
+					carefully contained in order to keep susceptible people safe from organisms like Aspergillus.
+				</p>
+				<p>Aspergillosis most commonly infects the lungs. A classic "Halo sign" may be seen on CT for some patients.</p>
+				<p>Galactomannan antigen testing may help rule out Aspergillosus since it is a component of the cell wall.</p>
+			</article>
 
-        <article id="Aspergillus_species">
-            <h3>Aspergillus species</h3>
-            <div class="bug-stat">
-                <a href="https://www.cdc.gov/fungal/diseases/aspergillosis/index.html" target="_blank">More Information</a>
-            </div>
-            <p>This is the most common pathogenic mold isolated in humans.</p>
-            <p>Echinocandins do have some coverage of Aspergillus, though traditionally voriconazole tends to be first line therapy.</p>
-            <p>Aspergillus is everywhere in the environment, including colonizing the respiratory tract of some humans. Construction sites within hospitals must be carefully contained in order to keep susceptible people safe from organisms like Aspergillus.</p>
-            <p>Aspergillosis most commonly infects the lungs. A classic "Halo sign" may be seen on CT for some patients.</p>
-            <p>Galactomannan antigen testing may help rule out Aspergillosus since it is a component of the cell wall.</p>
-        </article>
-
-        <article class="" id="Bacteroides_fragilis">
-            <h3>Bacteroides fragilis</h3>
-            <p>Gram negative rod, obligate anaerobe, usually found in the gut. When we say we want to cover anaerobes, this is usually the organism we are talking about.</p>
-            <p>Often contains a beta lactamase enzyme that inactivates penicillin, but can be treated with beta lactam/beta lactamase inhibitor combinations</p>
-            <p>In-house susceptibility testing is difficult and not performed for anaerobes.</p>
-            <p>Over 99% of bacteria in the intestine are anaerobes. This is why anaerobic coverage is always added if there is concern for an infection involving the intestine.</p>
-            <p>Most anaerobes are resistant to clindamycin (67%) but Flagyl (100%), Zosyn (94%), and meropenem (95%) work just fine.</p>
-            <p></p>
-        </article>
-        <article class="" id="Cryptococcus_species">
-            <h3>Cryptococcus species</h3>
-            <div class="bug-stat">
-                <a href="https://www.cdc.gov/fungal/diseases/cryptococcosis-neoformans/index.html" target="_blank">More Information</a>
-            </div>
-            <p>This yeast has an affinity for the brain, so if it is found in the blood, a spinal tap is warranted for cerebrospinal fluid (CSF) analysis even if a patient does not have central nervous system (CNS) symptoms.</p>
-            <p>Can be identified on birdseed agar.</p>
-            <p>There are two main species: C. neoformans (~80% of infections) and C. gattii (~20% of infections).</p>
-            <p>This is usually an opportunistic infection in severely immunocompromised patients (i.e., HIV with CD4 count < 200), though C. gattii is known to cause infections in patients with no known immunocompromising conditions.</p>
-            <p>Water-loving organism that can find a home in shoes, showers, and live plants.</p>
-        </article>
-        <article class="" id="Pseudomonas_aeruginosa">
-            <h3>Pseudomonas aeruginosa</h3>
-            <div class="bug-stat">
-                <a href="https://www.cdc.gov/hai/organisms/pseudomonas.html" target="_blank">More
-                    Information</a>
-            </div>
-            <p>Gram negative, non-lactose-fermenting rod, that is the one of the most common nosocomially-acquired organisms o concern.</p>
-            <p>The only oral treatment options are fluoroquinolones, though moxifloxacin should not be used without proven susceptibility testing.</p>
-            <p>Can have a green sheen in culture, like an oil slick</p>
-            <p>Is not part of the human normal flora, which is why risk factors are useful when determining which patients should receive empiric coverage for Pseudomonas infections.</p>
-            <p>Water-loving organism that can find a home in shoes, showers, and live plants.</p>
-        </article>
-        <article id="COVID">
-            <h3>COVID</h3>
-            <div class="bug-stat">
-                <a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" target="_blank">More Information</a>
-            </div>
-            <p>Needs no introduction.</p>
-        </article>
-        <article class="" id="Enterococcus_faecalis">
-            <h3>Enterococcus faecalis</h3>
-            <p>Gram positive cocci in pairs or chains that is part of the normal human gut flora.</p>
-            <p>Usually susceptible to ampicillin. In fact, if it is not susceptible to ampicillin, it is likely not susceptible to vancomycin, either.</p>
-            <p>Enterococcus is often left over after killing off other normal flora since many oral antibiotics (i.e., Bactrim and cephalosporins) do not have activity against it.</p>
-            <p>Enterococcus can form biofilms and colonize the urethra, which is why you may see someone having Enterococcus in their urine cultures over and over again. This is also why it is so important to change out urinary catheters - biofilms are extremely difficult if not impossible to get rid of with medications alone!</p>
-            <p>E. faecalis is much more common than its more resistant cousin, E. faecium, with five times the number of isolates at
-            DRAH in 2021.</p>
-        </article>
-        <article class="" id="Staphylococcus_aureus">
-            <h3>Staphylococcus aureus</h3>
-            <div class="bug-stat">
-                <a href="https://www.cdc.gov/mrsa/" target="_blank">More Information</a>
-            </div>
-            <p>Gram positive cocci in clusters that is a facultative anaerobe which is why you can see it grow from the anaerobic bottle of blood cultures.</p>
-            <p>Pay close attention when patients complain of pain, especially back pain, when they have blood cultures growing S. aureus. The pain may indicate an area of uncontrolled infection so should always be investigated.</p>
-            <p>The species name "aureus" relates to the gold color of the colonies in culture. In fact, between its gold color, being Gram positive, and testing positive on the coagulase test, the microbiology lab can identify S. aureus without additional testing.</p>
-            <p>Providers sometimes want to call S. aureus in one blood culture a contaminant, but due to its destructive nature and long-term consequences, ID specialists (almost) never consider this organism a contaminant.</p>
-            <p>MSSA is slightly more common than MRSAat DRAH with MSSA making up about 60% of the S. aureus isolates in 2021.</p>
-        </article>
-        <article class="" id="E_coli">
-            <h3>E. coli</h3>
-            <div class="bug-stat">
-                <a href="https://www.cdc.gov/ecoli/index.html" target="_blank">More Information</a>
-            </div>
-            <p>Gram negative rod that is usually found in the human gut.</p>
-            <p>The most common cause of urinary tract infections.</p>
-            <p>2nd most common carbapenem-resistant Enterobacteriaceae (CRE) species after Klebsiella</p>
-            <p>E. coli only takes 20 minutes to double in the lab, so if E. coli is in a specimen, it should grow. Compare this to 90 minutes for S. aureus or up to 16 hours for tuberculosis.</p>
-            <p>E. coli O157:H7 and some other strains can produce Shiga toxin and cause bloody diarrhea and hemolytic-uremic syndrome. Antibiotics should NOT be used for these infections because some can enhance toxin production and make the condition worse.</p>
-        </article>
-        <article class="" id="Candida_albicans">
-            <h3>Candida albicans</h3>
-            <div class="bug-stat">
-                <a href="https://www.cdc.gov/fungal/diseases/candidiasis/index.html" target="_blank">More Information</a>
-            </div>
-            <p>This yeast is the most common species of Candida to cause infections in humans.</p>
-            <p>It is (almost) always susceptible to fluconazole.</p>
-            <p>C. albicans is part of the human normal flora. Since antibiotics are not active against this yeast, killing off a human's bacteria can lead to yeast overgrowth and infection (i.e., thrush, vaginal yeast infections, fungemia).</p>
-            <p>It is vanishingly rare to have a Candida pneumonia. If you see a yeast growing in a respiratory culture, it is very likely a contaminant from the patient's mouth or esophagus that occurred during specimen collection.</p>
-            <p>Candida species like the eyes. It was previously recommended that any patient with candidemia undergo an eye exam to rule out endophthalmitis, but recommendations are slowly changing to include only patients who report symptoms or are unable to report symptoms.</p>
-        </article>
-        <article class="" id="Clostridioides_difficile">
-            <h3>Clostridioides difficile</h3>
-            <div class="bug-stat">
-                <a href="https://www.cdc.gov/cdiff/index.html" target="_blank">More Information</a>
-            </div>
-            <p>This Gram positive anaerobe has very few treatment options and can be devasting to a patient's quality of life.</p>
-            <p>The most common cause of C. difficile infections is recent use of antibiotics, but other risk factors contribute: age 65+ years old, recent hospitalization or nursing home stay, weakened immune system, or history of C. diff.</p>
-            <p>Previously "Clostridium" difficile, this organism produces two toxins (A and B) that cause havoc in the gut. Other Clostridium species are also known for their toxins that cause gangrene, botulism, and tetanus.</p>
-            <p>Testing has changed over time. PCR-based testing looks for the gene that can produce the toxin, not the toxin itself, so can over-diagnose the infection. This is why many institutions utilize a two-step process, first looking for toxin, then looking for the gene.</p>
-            <p>C diff infection almost always affects the colon. Small bowel involvement is extremely rare. If a patient does not have a colon, they are unlikely to get C diff.</p>
-        </article>
-        <article class="" id="HIV">
-            <h3>HIV</h3>
-            <div class="bug-stat">
-                <a href="https://clinicalinfo.hiv.gov/en/guidelines" target="_blank">More Information</a>
-            </div>
-            <p>HIV is a single-stranded RNA virus that uses the human body to copy its RNA into DNA using the enzyme reverse transcriptase in CD4 lymphocytes, slowly destroying these cells. HIV is generally not curable (only 5 people so far after stem cell transplants). This is mainly due to the latent HIV reservoir - antiretrovirals cannot clear the reservoir, so this is a chronic, though manageable, infection.</p>
-            <p>Always double check drug-drug interactions when patients are prescribed antiretrovirals. Some great references are the Liverpool HIV Drug Interactions Checker (<a href="https://www.hiv-druginteractions.org/" target="_blank">hiv-druginteractions.org</a>) and the Drug-Drug Interactions section of the DHHS guidelines (<a href="https://clinicalinfo.hiv.gov/en/guidelines/hiv-clinical-guidelines-adult-and-adolescent-arv/overview?view=full" target="_blank">hiv-druginteractions.org</a>).</p>
-            <p>The first cases in the US were reported in the 1980s with zidovudine being the first antiretroviral therapy available in 1987. Using multiple agents did not become the standard of care until the mid-1990s. In 2006, Atripla became the first one-pill once daily regimen.</p>
-            <p>The virus itself does not kill patients; rather, opportunistic infections occurring after the virus depletes a patient's immune system are what prove fatal.</p>
-            <p>Treating HIV and getting viral loads to undetectable levels is very effective in preventing transmission. This is where the treatment as prevention, or undetectable = untransmittable (U=U), initiative came from.</p>
-        </article>
-        <article class="" id="Enterococcus_faecium">
-            <h3>Enterococcus faecium</h3>
-            <div class="bug-stat">
-                <a href="https://www.cdc.gov/hai/organisms/vre/vre.html" target="_blank">More Information</a>
-            </div>
-            <p>This Gram positive cocci exists in pairs or chains and is part of the normal human gut flora. It is less common than its cousin E. faecalis and usually resistant to vancomycin and ampicillin.</p>
-            <p>E. faecium infections have high mortality rates associated with them, but usually these patients have had an extensive antibiotic exposure history due to many previous infections.</p>
-            <p>E. faecium meningitis has very limited treatment options with linezolid being first-line and quinupristin/dalfopristin being second-line.</p>
-            <p>Less common than its cousin E. faecalis, it is usually resistant to vancomycin (56% resistant) and ampicillin (76% resistant). Linezolid and daptomycin are likely still effective, though daptomycin needs susceptibility testing due to some cross-resistance in vancomycin-resistant isolates.</p>
-            <p>Enterococcus species are known for their ability to produce biofilms and love to stick to heart valves. Always rule out endocarditis in adults who present with Enterococcal bacteremia from the community since the duration of bacteremia is unknown - the longer bacteremic, the more likely it has made a home on a heart valve.</p>
-        </article>
-        <article class="" id="Streptococcus_pneumoniae">
-            <h3>Streptococcus pneumoniae</h3>
-            <div class="bug-stat">
-                <a href="https://www.cdc.gov/pneumococcal/index.html" target="_blank">More Information</a>
-            </div>
-            <p>This Gram positive cocci is famous for being in lancet-shaped pairs. This is why one of its nicknames is "the Diplococcus."</p>
-            <p>Not only is this an extremely common cause of community-acquired pneumonia (hence "pneumoniae" as the species name), but it is also an extremely common cause of community-acquired meningitis.</p>
-            <p>S. pneumoniae is extremely susceptible to penicillin, even if susceptibility testing indicates intermediate susceptibility.</p>
-            <p>Another nickname is "The captain of the men of death"</p>
-            <p>Streptococcus pneumoniae is an alpha-hemolytic strep species, unlike the beta (groups A, B, C, etc) or gamma streps
-            (Enterococcus species, Strep gallolyticus).</p>
-        </article>
-        <article class="" id="Streptococcus_pyogenes">
-            <h3>Streptococcus pyogenes</h3>
-            <div class="bug-stat">
-                <a href="https://www.cdc.gov/streplab/groupa-strep/index.html" target="_blank">More Information</a>
-            </div>
-            <p>This Gram positive cocci can be found in chains and is also known as Group A Strep</p>
-            <p>Common cause of Strep throat and toxic shock syndrome</p>
-            <p>Normal flora of the upper respiratory tract, genital mucosa, and skin, with 2-3% of adults colonized with it.</p>
-            <p>ALL GAS is susceptible to penicillin; therefore, it is first-line therapy and does not require susceptibility testing.</p>
-            <p>Clindamycin is added to therapy for severe GAS infections (i.e., toxic shock) to suppress toxin and cytokine production.</p>
-        </article>
-        <article class="" id="Staphylococcus_lugdunensis">
-            <h3>Staphylococcus lugdunensis</h3>
-            <p>This Gram positive cocci exists in clusters and is a coagulase negative Staphylococcus species</p>
-            <p>This organism is known to be as destructive as Staphylococcus aureus so should be taken as seriously.</p>
-            <p>Second most common cause of CONS endocarditis after Staphylococcus epidermidis and has a predilection for native valves over prosthetic valves.</p>
-            <p>Unlike S. aureus, it is most commonly oxacillin susceptible. mecA gene presence indicates resistance, same as with S. aureus.</p>
-            <p>The frequency of S. lugdunensis infections is likely under-appreciated since not all laboratories differentiate it from other CONS species.</p>
-        </article>
-        </div>
-</body>
+			<article class="" id="Bacteroides_fragilis">
+				<h3>Bacteroides fragilis</h3>
+				<p>
+					Gram negative rod, obligate anaerobe, usually found in the gut. When we say we want to cover anaerobes, this is usually the organism we are talking
+					about.
+				</p>
+				<p>Often contains a beta lactamase enzyme that inactivates penicillin, but can be treated with beta lactam/beta lactamase inhibitor combinations</p>
+				<p>In-house susceptibility testing is difficult and not performed for anaerobes.</p>
+				<p>
+					Over 99% of bacteria in the intestine are anaerobes. This is why anaerobic coverage is always added if there is concern for an infection involving the
+					intestine.
+				</p>
+				<p>Most anaerobes are resistant to clindamycin (67%) but Flagyl (100%), Zosyn (94%), and meropenem (95%) work just fine.</p>
+				<p></p>
+			</article>
+			<article class="" id="Cryptococcus_species">
+				<h3>Cryptococcus species</h3>
+				<div class="bug-stat">
+					<a href="https://www.cdc.gov/fungal/diseases/cryptococcosis-neoformans/index.html" target="_blank">More Information</a>
+				</div>
+				<p>
+					This yeast has an affinity for the brain, so if it is found in the blood, a spinal tap is warranted for cerebrospinal fluid (CSF) analysis even if a
+					patient does not have central nervous system (CNS) symptoms.
+				</p>
+				<p>Can be identified on birdseed agar.</p>
+				<p>There are two main species: C. neoformans (~80% of infections) and C. gattii (~20% of infections).</p>
+				<p>
+					This is usually an opportunistic infection in severely immunocompromised patients (i.e., HIV with CD4 count < 200), though C. gattii is known to cause
+					infections in patients with no known immunocompromising conditions.
+				</p>
+				<p>Water-loving organism that can find a home in shoes, showers, and live plants.</p>
+			</article>
+			<article class="" id="Pseudomonas_aeruginosa">
+				<h3>Pseudomonas aeruginosa</h3>
+				<div class="bug-stat">
+					<a href="https://www.cdc.gov/hai/organisms/pseudomonas.html" target="_blank">More Information</a>
+				</div>
+				<p>Gram negative, non-lactose-fermenting rod, that is the one of the most common nosocomially-acquired organisms o concern.</p>
+				<p>The only oral treatment options are fluoroquinolones, though moxifloxacin should not be used without proven susceptibility testing.</p>
+				<p>Can have a green sheen in culture, like an oil slick</p>
+				<p>
+					Is not part of the human normal flora, which is why risk factors are useful when determining which patients should receive empiric coverage for
+					Pseudomonas infections.
+				</p>
+				<p>Water-loving organism that can find a home in shoes, showers, and live plants.</p>
+			</article>
+			<article id="COVID">
+				<h3>COVID</h3>
+				<div class="bug-stat">
+					<a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" target="_blank">More Information</a>
+				</div>
+				<p>Needs no introduction.</p>
+			</article>
+			<article class="" id="Enterococcus_faecalis">
+				<h3>Enterococcus faecalis</h3>
+				<p>Gram positive cocci in pairs or chains that is part of the normal human gut flora.</p>
+				<p>Usually susceptible to ampicillin. In fact, if it is not susceptible to ampicillin, it is likely not susceptible to vancomycin, either.</p>
+				<p>
+					Enterococcus is often left over after killing off other normal flora since many oral antibiotics (i.e., Bactrim and cephalosporins) do not have
+					activity against it.
+				</p>
+				<p>
+					Enterococcus can form biofilms and colonize the urethra, which is why you may see someone having Enterococcus in their urine cultures over and over
+					again. This is also why it is so important to change out urinary catheters - biofilms are extremely difficult if not impossible to get rid of with
+					medications alone!
+				</p>
+				<p>E. faecalis is much more common than its more resistant cousin, E. faecium, with five times the number of isolates at DRAH in 2021.</p>
+			</article>
+			<article class="" id="Staphylococcus_aureus">
+				<h3>Staphylococcus aureus</h3>
+				<div class="bug-stat">
+					<a href="https://www.cdc.gov/mrsa/" target="_blank">More Information</a>
+				</div>
+				<p>Gram positive cocci in clusters that is a facultative anaerobe which is why you can see it grow from the anaerobic bottle of blood cultures.</p>
+				<p>
+					Pay close attention when patients complain of pain, especially back pain, when they have blood cultures growing S. aureus. The pain may indicate an
+					area of uncontrolled infection so should always be investigated.
+				</p>
+				<p>
+					The species name "aureus" relates to the gold color of the colonies in culture. In fact, between its gold color, being Gram positive, and testing
+					positive on the coagulase test, the microbiology lab can identify S. aureus without additional testing.
+				</p>
+				<p>
+					Providers sometimes want to call S. aureus in one blood culture a contaminant, but due to its destructive nature and long-term consequences, ID
+					specialists (almost) never consider this organism a contaminant.
+				</p>
+				<p>MSSA is slightly more common than MRSAat DRAH with MSSA making up about 60% of the S. aureus isolates in 2021.</p>
+			</article>
+			<article class="" id="E_coli">
+				<h3>E. coli</h3>
+				<div class="bug-stat">
+					<a href="https://www.cdc.gov/ecoli/index.html" target="_blank">More Information</a>
+				</div>
+				<p>Gram negative rod that is usually found in the human gut.</p>
+				<p>The most common cause of urinary tract infections.</p>
+				<p>2nd most common carbapenem-resistant Enterobacteriaceae (CRE) species after Klebsiella</p>
+				<p>
+					E. coli only takes 20 minutes to double in the lab, so if E. coli is in a specimen, it should grow. Compare this to 90 minutes for S. aureus or up to
+					16 hours for tuberculosis.
+				</p>
+				<p>
+					E. coli O157:H7 and some other strains can produce Shiga toxin and cause bloody diarrhea and hemolytic-uremic syndrome. Antibiotics should NOT be used
+					for these infections because some can enhance toxin production and make the condition worse.
+				</p>
+			</article>
+			<article class="" id="Candida_albicans">
+				<h3>Candida albicans</h3>
+				<div class="bug-stat">
+					<a href="https://www.cdc.gov/fungal/diseases/candidiasis/index.html" target="_blank">More Information</a>
+				</div>
+				<p>This yeast is the most common species of Candida to cause infections in humans.</p>
+				<p>It is (almost) always susceptible to fluconazole.</p>
+				<p>
+					C. albicans is part of the human normal flora. Since antibiotics are not active against this yeast, killing off a human's bacteria can lead to yeast
+					overgrowth and infection (i.e., thrush, vaginal yeast infections, fungemia).
+				</p>
+				<p>
+					It is vanishingly rare to have a Candida pneumonia. If you see a yeast growing in a respiratory culture, it is very likely a contaminant from the
+					patient's mouth or esophagus that occurred during specimen collection.
+				</p>
+				<p>
+					Candida species like the eyes. It was previously recommended that any patient with candidemia undergo an eye exam to rule out endophthalmitis, but
+					recommendations are slowly changing to include only patients who report symptoms or are unable to report symptoms.
+				</p>
+			</article>
+			<article class="" id="Clostridioides_difficile">
+				<h3>Clostridioides difficile</h3>
+				<div class="bug-stat">
+					<a href="https://www.cdc.gov/cdiff/index.html" target="_blank">More Information</a>
+				</div>
+				<p>This Gram positive anaerobe has very few treatment options and can be devasting to a patient's quality of life.</p>
+				<p>
+					The most common cause of C. difficile infections is recent use of antibiotics, but other risk factors contribute: age 65+ years old, recent
+					hospitalization or nursing home stay, weakened immune system, or history of C. diff.
+				</p>
+				<p>
+					Previously "Clostridium" difficile, this organism produces two toxins (A and B) that cause havoc in the gut. Other Clostridium species are also known
+					for their toxins that cause gangrene, botulism, and tetanus.
+				</p>
+				<p>
+					Testing has changed over time. PCR-based testing looks for the gene that can produce the toxin, not the toxin itself, so can over-diagnose the
+					infection. This is why many institutions utilize a two-step process, first looking for toxin, then looking for the gene.
+				</p>
+				<p>
+					C diff infection almost always affects the colon. Small bowel involvement is extremely rare. If a patient does not have a colon, they are unlikely to
+					get C diff.
+				</p>
+			</article>
+			<article class="" id="HIV">
+				<h3>HIV</h3>
+				<div class="bug-stat">
+					<a href="https://clinicalinfo.hiv.gov/en/guidelines" target="_blank">More Information</a>
+				</div>
+				<p>
+					HIV is a single-stranded RNA virus that uses the human body to copy its RNA into DNA using the enzyme reverse transcriptase in CD4 lymphocytes, slowly
+					destroying these cells. HIV is generally not curable (only 5 people so far after stem cell transplants). This is mainly due to the latent HIV
+					reservoir - antiretrovirals cannot clear the reservoir, so this is a chronic, though manageable, infection.
+				</p>
+				<p>
+					Always double check drug-drug interactions when patients are prescribed antiretrovirals. Some great references are the Liverpool HIV Drug Interactions
+					Checker (<a href="https://www.hiv-druginteractions.org/" target="_blank">hiv-druginteractions.org</a>) and the Drug-Drug Interactions section of the
+					DHHS guidelines (<a
+						href="https://clinicalinfo.hiv.gov/en/guidelines/hiv-clinical-guidelines-adult-and-adolescent-arv/overview?view=full"
+						target="_blank"
+						>hiv-druginteractions.org</a
+					>).
+				</p>
+				<p>
+					The first cases in the US were reported in the 1980s with zidovudine being the first antiretroviral therapy available in 1987. Using multiple agents
+					did not become the standard of care until the mid-1990s. In 2006, Atripla became the first one-pill once daily regimen.
+				</p>
+				<p>
+					The virus itself does not kill patients; rather, opportunistic infections occurring after the virus depletes a patient's immune system are what prove
+					fatal.
+				</p>
+				<p>
+					Treating HIV and getting viral loads to undetectable levels is very effective in preventing transmission. This is where the treatment as prevention,
+					or undetectable = untransmittable (U=U), initiative came from.
+				</p>
+			</article>
+			<article class="" id="Enterococcus_faecium">
+				<h3>Enterococcus faecium</h3>
+				<div class="bug-stat">
+					<a href="https://www.cdc.gov/hai/organisms/vre/vre.html" target="_blank">More Information</a>
+				</div>
+				<p>
+					This Gram positive cocci exists in pairs or chains and is part of the normal human gut flora. It is less common than its cousin E. faecalis and
+					usually resistant to vancomycin and ampicillin.
+				</p>
+				<p>
+					E. faecium infections have high mortality rates associated with them, but usually these patients have had an extensive antibiotic exposure history due
+					to many previous infections.
+				</p>
+				<p>E. faecium meningitis has very limited treatment options with linezolid being first-line and quinupristin/dalfopristin being second-line.</p>
+				<p>
+					Less common than its cousin E. faecalis, it is usually resistant to vancomycin (56% resistant) and ampicillin (76% resistant). Linezolid and
+					daptomycin are likely still effective, though daptomycin needs susceptibility testing due to some cross-resistance in vancomycin-resistant isolates.
+				</p>
+				<p>
+					Enterococcus species are known for their ability to produce biofilms and love to stick to heart valves. Always rule out endocarditis in adults who
+					present with Enterococcal bacteremia from the community since the duration of bacteremia is unknown - the longer bacteremic, the more likely it has
+					made a home on a heart valve.
+				</p>
+			</article>
+			<article class="" id="Streptococcus_pneumoniae">
+				<h3>Streptococcus pneumoniae</h3>
+				<div class="bug-stat">
+					<a href="https://www.cdc.gov/pneumococcal/index.html" target="_blank">More Information</a>
+				</div>
+				<p>This Gram positive cocci is famous for being in lancet-shaped pairs. This is why one of its nicknames is "the Diplococcus."</p>
+				<p>
+					Not only is this an extremely common cause of community-acquired pneumonia (hence "pneumoniae" as the species name), but it is also an extremely
+					common cause of community-acquired meningitis.
+				</p>
+				<p>S. pneumoniae is extremely susceptible to penicillin, even if susceptibility testing indicates intermediate susceptibility.</p>
+				<p>Another nickname is "The captain of the men of death"</p>
+				<p>
+					Streptococcus pneumoniae is an alpha-hemolytic strep species, unlike the beta (groups A, B, C, etc) or gamma streps (Enterococcus species, Strep
+					gallolyticus).
+				</p>
+			</article>
+			<article class="" id="Streptococcus_pyogenes">
+				<h3>Streptococcus pyogenes</h3>
+				<div class="bug-stat">
+					<a href="https://www.cdc.gov/streplab/groupa-strep/index.html" target="_blank">More Information</a>
+				</div>
+				<p>This Gram positive cocci can be found in chains and is also known as Group A Strep</p>
+				<p>Common cause of Strep throat and toxic shock syndrome</p>
+				<p>Normal flora of the upper respiratory tract, genital mucosa, and skin, with 2-3% of adults colonized with it.</p>
+				<p>ALL GAS is susceptible to penicillin; therefore, it is first-line therapy and does not require susceptibility testing.</p>
+				<p>Clindamycin is added to therapy for severe GAS infections (i.e., toxic shock) to suppress toxin and cytokine production.</p>
+			</article>
+			<article class="" id="Staphylococcus_lugdunensis">
+				<h3>Staphylococcus lugdunensis</h3>
+				<p>This Gram positive cocci exists in clusters and is a coagulase negative Staphylococcus species</p>
+				<p>This organism is known to be as destructive as Staphylococcus aureus so should be taken as seriously.</p>
+				<p>Second most common cause of CONS endocarditis after Staphylococcus epidermidis and has a predilection for native valves over prosthetic valves.</p>
+				<p>Unlike S. aureus, it is most commonly oxacillin susceptible. mecA gene presence indicates resistance, same as with S. aureus.</p>
+				<p>The frequency of S. lugdunensis infections is likely under-appreciated since not all laboratories differentiate it from other CONS species.</p>
+			</article>
+		</div>
+	</body>
 </html>

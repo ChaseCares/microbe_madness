@@ -1,175 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- © 2022 Chase Curtis. All rights reserved. -->
-        <meta charset="UTF-8">
-        <meta name="description" content="Create your own Microbe Madness bracket!">
-        <meta name="author" content="Chase Curtis">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/stylesheet.css?v=0.0.2">
-        <script src="./js/include.js?v=0.0.4" defer></script>
-        <link href="./img/favicon.ico" rel="icon" type="image/x-icon">
-        <title>Create Bracket</title>
-    </head>
-    <body>
-        <h2>Microbe Madness</h2>
-        <h4>Make your own bracket</h4><br>
-        <div class="banner-container">
-            <div class="instructions">
-                <h3>Instructions</h3>
-                <p>Click on the organisms to add them to the bracket.</p>
-                <p>All bracket places need to be filled in to submit the bracket.</p>
-                <p>Remember to select a winning organism from the drop down in the "Your Info" section.
-                    It does not have to match the winning organism on your bracket.</p>
-            </div>
+	<head>
+		<!-- © 2022 Chase Curtis. All rights reserved. -->
+		<meta charset="UTF-8" />
+		<meta name="description" content="Create your own Microbe Madness bracket!" />
+		<meta name="author" content="Chase Curtis" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/stylesheet.css?v=0.0.2" />
+		<script src="./js/include.js?v=0.0.4" defer></script>
+		<link href="./img/favicon.ico" rel="icon" type="image/x-icon" />
+		<title>Create Bracket</title>
+	</head>
+	<body>
+		<h2>Microbe Madness</h2>
+		<h4>Make your own bracket</h4>
+		<br />
+		<div class="banner-container">
+			<div class="instructions">
+				<h3>Instructions</h3>
+				<p>Click on the organisms to add them to the bracket.</p>
+				<p>All bracket places need to be filled in to submit the bracket.</p>
+				<p>
+					Remember to select a winning organism from the drop down in the "Your Info" section. It does not have to match the winning organism on your bracket.
+				</p>
+			</div>
 
-            <div class="create-bracket">
-                <h3>Your Info</h3>
-                <form>
-                    <div>
-                        <label for="first_name">First Name:</label>
-                        <input type="text" id="first_name" name="first_name" required>
-                    </div>
-                    <div>
-                        <label for="last_name">Last Name:</label>
-                        <input type="text" id="last_name" name="last_name" required>
-                    </div>
-                    <div>
-                        <input type="radio" id="am_bracket" name="bracket" value="am" onchange="toggleBracket('am')" checked>
-                        <label for="am_bracket">AM bracket</label>
-                        <input type="radio" id="pm_bracket" name="bracket" value="pm" onchange="toggleBracket('pm')">
-                        <label for="pm_bracket">PM bracket</label>
-                    </div>
-                    <div>
-                        <label for="overall_winner">Overall Winner:</label>
-                        <select name="overall_winner" id="overall_winner">
-                            <option value=""></option>
-                            <option value="Common Cold">Common Cold</option>
-                            <option value="Aspergillus species">Aspergillus species</option>
-                            <option value="Bacteroides fragilis">Bacteroides fragilis</option>
-                            <option value="Cryptococcus species">Cryptococcus species</option>
-                            <option value="Pseudomonas aeruginosa">Pseudomonas aeruginosa</option>
-                            <option value="COVID">COVID</option>
-                            <option value="Enterococcus faecalis">Enterococcus faecalis</option>
-                            <option value="Staphylococcus aureus">Staphylococcus aureus</option>
-                            <option value="E. coli">E. coli</option>
-                            <option value="Candida albicans">Candida albicans</option>
-                            <option value="Clostridioides difficile">Clostridioides difficile</option>
-                            <option value="HIV">HIV</option>
-                            <option value="Enterococcus faecium">Enterococcus faecium</option>
-                            <option value="Streptococcus pneumoniae">Streptococcus pneumoniae</option>
-                            <option value="Streptococcus pyogenes">Streptococcus pyogenes</option>
-                            <option value="Staphylococcus lugdunensis">Staphylococcus lugdunensis</option>
-                        </select>
-                    </div>
-                    <div class="drah-checkbox">
-                        <label for="DRAH">DRAH pharmacy department employee?</label>
-                        <input type="checkbox" id="DRAH" name="DRAH_employee" value="true">
-                    </div>
-                    <div>
-                        <label for="first_name">Add your email if you want a copy of your bracket</label>
-                        <div id="cc_email_container">
-                            <input id="cc_email" type="email" name="_cc" value="" placeholder="Email">
-                        </div>
-                    </div>
-                    <input type="hidden" id="encoded_seed"  name="encoded_seed" type="text">
-                    <input type="hidden" id="encoded_seed_url" name="encoded_seed_url" type="text">
-                    <input type="hidden" id="raw_seed" name="raw_seed" type="text">
-                    <input type="hidden" name="_next" value="https://microbemadness.com/thank_you.html">
-                    <input type="hidden" name="_subject" value="New Microbe Madness Submission!">
-                    <input type="text" name="_honey" style="display:none">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <!-- <input type="submit" value="Submit Bracket"> -->
-                </form>
-            </div>
-        </div>
-        <div class="instructions previous-container hidden">
-            <h3>Previous brackets</h3>
-            <div id="previous"></div>
-        </div>
-        <div class="container">
-            <div>
-                <h3 class="am bracket">Your AM Bracket</h3>
-                <h3 class="pm bracket hidden">Your PM Bracket</h3>
-                <div class="am grid">
-                    <div class="col-1 row-1 grid-item-button bout-1">Common Cold</div>
-                    <div class="col-1 row-2 b-top b-right b-bottom"></div>
-                    <div class="col-1 row-3 grid-item-button bout-1">Aspergillus species</div>
-                    <div class="col-1 row-5 grid-item-button bout-2">Bacteroides fragilis</div>
-                    <div class="col-1 row-6 b-top b-right b-bottom"></div>
-                    <div class="col-1 row-7 grid-item-button bout-2">Cryptococcus species</div>
-                    <div class="col-1 row-9 grid-item-button bout-3">Pseudomonas aeruginosa</div>
-                    <div class="col-1 row-10 b-top b-right b-bottom"></div>
-                    <div class="col-1 row-11 grid-item-button bout-3">COVID</div>
-                    <div class="col-1 row-13 grid-item-button bout-4">Enterococcus faecalis</div>
-                    <div class="col-1 row-14 b-top b-right b-bottom"></div>
-                    <div class="col-1 row-15 grid-item-button bout-4">Staphylococcus aureus</div>
+			<div class="create-bracket">
+				<h3>Your Info</h3>
+				<form id="bracketForm">
+					<div>
+						<label for="first_name">First Name:</label>
+						<input type="text" id="first_name" name="first_name" required />
+					</div>
+					<div>
+						<label for="last_name">Last Name:</label>
+						<input type="text" id="last_name" name="last_name" required />
+					</div>
+					<div>
+						<input type="radio" id="am_bracket" name="bracket" value="am" onchange="toggleBracket('am')" checked />
+						<label for="am_bracket">AM bracket</label>
+						<input type="radio" id="pm_bracket" name="bracket" value="pm" onchange="toggleBracket('pm')" />
+						<label for="pm_bracket">PM bracket</label>
+					</div>
+					<div>
+						<label for="overall_winner">Overall Winner:</label>
+						<select name="overall_winner" id="overall_winner">
+							<option value=""></option>
+							<option value="Common Cold">Common Cold</option>
+							<option value="Aspergillus species">Aspergillus species</option>
+							<option value="Bacteroides fragilis">Bacteroides fragilis</option>
+							<option value="Cryptococcus species">Cryptococcus species</option>
+							<option value="Pseudomonas aeruginosa">Pseudomonas aeruginosa</option>
+							<option value="COVID">COVID</option>
+							<option value="Enterococcus faecalis">Enterococcus faecalis</option>
+							<option value="Staphylococcus aureus">Staphylococcus aureus</option>
+							<option value="E. coli">E. coli</option>
+							<option value="Candida albicans">Candida albicans</option>
+							<option value="Clostridioides difficile">Clostridioides difficile</option>
+							<option value="HIV">HIV</option>
+							<option value="Enterococcus faecium">Enterococcus faecium</option>
+							<option value="Streptococcus pneumoniae">Streptococcus pneumoniae</option>
+							<option value="Streptococcus pyogenes">Streptococcus pyogenes</option>
+							<option value="Staphylococcus lugdunensis">Staphylococcus lugdunensis</option>
+						</select>
+					</div>
+					<div class="drah-checkbox">
+						<label for="DRAH">DRAH pharmacy department employee?</label>
+						<input type="checkbox" id="DRAH" name="DRAH_employee" value="true" />
+					</div>
+					<div>
+						<label for="first_name">Add your email if you want a copy of your bracket</label>
+						<div id="cc_email_container">
+							<input id="cc_email" type="email" name="_cc" value="" placeholder="Email" />
+						</div>
+					</div>
+					<input type="hidden" id="encoded_seed" name="encoded_seed" type="text" />
+					<input type="hidden" id="encoded_seed_url" name="encoded_seed_url" type="text" />
+					<input type="hidden" id="raw_seed" name="raw_seed" type="text" />
+					<input type="hidden" name="_next" value="https://microbemadness.com/thank_you.html" />
+					<input type="hidden" name="_subject" value="New Microbe Madness Submission!" />
+					<input type="text" name="_honey" style="display: none" />
+					<input type="hidden" name="_captcha" value="false" />
+					<input type="hidden" name="_template" value="table" />
+					<!-- <input type="submit" value="Submit Bracket"> -->
+				</form>
+			</div>
+		</div>
+		<div class="instructions previous-container hidden">
+			<h3>Previous brackets</h3>
+			<div id="previous"></div>
+		</div>
+		<div class="container">
+			<div>
+				<h3 class="am bracket">Your AM Bracket</h3>
+				<h3 class="pm bracket hidden">Your PM Bracket</h3>
+				<div class="am grid">
+					<div class="col-1 row-1 grid-item-button bout-1">Common Cold</div>
+					<div class="col-1 row-2 b-top b-right b-bottom"></div>
+					<div class="col-1 row-3 grid-item-button bout-1">Aspergillus species</div>
+					<div class="col-1 row-5 grid-item-button bout-2">Bacteroides fragilis</div>
+					<div class="col-1 row-6 b-top b-right b-bottom"></div>
+					<div class="col-1 row-7 grid-item-button bout-2">Cryptococcus species</div>
+					<div class="col-1 row-9 grid-item-button bout-3">Pseudomonas aeruginosa</div>
+					<div class="col-1 row-10 b-top b-right b-bottom"></div>
+					<div class="col-1 row-11 grid-item-button bout-3">COVID</div>
+					<div class="col-1 row-13 grid-item-button bout-4">Enterococcus faecalis</div>
+					<div class="col-1 row-14 b-top b-right b-bottom"></div>
+					<div class="col-1 row-15 grid-item-button bout-4">Staphylococcus aureus</div>
 
-                    <div id="position-0" class="col-2 row-2 grid-item bout-5 empty"></div>
-                    <div class="col-2 row-3 b-top b-right"></div>
-                    <div class="col-2 row-4 b-right"></div>
-                    <div class="col-2 row-5 b-bottom b-right"></div>
-                    <div id="position-1" class="col-2 row-6 grid-item bout-5 empty"></div>
-                    <div id="position-2" class="col-2 row-10 grid-item bout-6 empty"></div>
-                    <div class="col-2 row-11 b-top b-right"></div>
-                    <div class="col-2 row-12 b-right"></div>
-                    <div class="col-2 row-13 b-bottom b-right"></div>
-                    <div id="position-3" class="col-2 row-14 grid-item bout-6 empty"></div>
+					<div id="position-0" class="col-2 row-2 grid-item bout-5 empty"></div>
+					<div class="col-2 row-3 b-top b-right"></div>
+					<div class="col-2 row-4 b-right"></div>
+					<div class="col-2 row-5 b-bottom b-right"></div>
+					<div id="position-1" class="col-2 row-6 grid-item bout-5 empty"></div>
+					<div id="position-2" class="col-2 row-10 grid-item bout-6 empty"></div>
+					<div class="col-2 row-11 b-top b-right"></div>
+					<div class="col-2 row-12 b-right"></div>
+					<div class="col-2 row-13 b-bottom b-right"></div>
+					<div id="position-3" class="col-2 row-14 grid-item bout-6 empty"></div>
 
-                    <div id="position-4" class="col-3 row-4 grid-item bout-7 empty"></div>
-                    <div class="col-3 row-5 b-top b-right"></div>
-                    <div class="col-3 row-6 b-right"></div>
-                    <div class="col-3 row-7 b-right"></div>
-                    <div class="col-3 row-8 b-right"></div>
-                    <div class="col-3 row-9 b-right"></div>
-                    <div class="col-3 row-10 b-right"></div>
-                    <div class="col-3 row-11 b-bottom b-right"></div>
-                    <div id="position-5" class="col-3 row-12 grid-item bout-7 empty"></div>
+					<div id="position-4" class="col-3 row-4 grid-item bout-7 empty"></div>
+					<div class="col-3 row-5 b-top b-right"></div>
+					<div class="col-3 row-6 b-right"></div>
+					<div class="col-3 row-7 b-right"></div>
+					<div class="col-3 row-8 b-right"></div>
+					<div class="col-3 row-9 b-right"></div>
+					<div class="col-3 row-10 b-right"></div>
+					<div class="col-3 row-11 b-bottom b-right"></div>
+					<div id="position-5" class="col-3 row-12 grid-item bout-7 empty"></div>
 
-                    <div id="position-6" class="col-4 row-6 grid-item bout-8 empty"></div>
-                    <div class="col-4 row-7 b-bottom"></div>
-                    <div id="position-7" class="col-4 row-8 grid-item winner"></div>
-                    <div class="col-4 row-9 b-top"></div>
-                    <div id="position-8" class="col-4 row-10 grid-item bout-8 empty"></div>
+					<div id="position-6" class="col-4 row-6 grid-item bout-8 empty"></div>
+					<div class="col-4 row-7 b-bottom"></div>
+					<div id="position-7" class="col-4 row-8 grid-item winner"></div>
+					<div class="col-4 row-9 b-top"></div>
+					<div id="position-8" class="col-4 row-10 grid-item bout-8 empty"></div>
 
-                    <div id="position-9" class="col-5 row-4 grid-item bout-9 empty"></div>
-                    <div class="col-5 row-5 b-top b-left"></div>
-                    <div class="col-5 row-6 b-left"></div>
-                    <div class="col-5 row-7 b-left"></div>
-                    <div class="col-5 row-8 b-left"></div>
-                    <div class="col-5 row-9 b-left"></div>
-                    <div class="col-5 row-10 b-left"></div>
-                    <div class="col-5 row-11 b-bottom b-left"></div>
-                    <div id="position-10" class="col-5 row-12 grid-item bout-9 empty"></div>
+					<div id="position-9" class="col-5 row-4 grid-item bout-9 empty"></div>
+					<div class="col-5 row-5 b-top b-left"></div>
+					<div class="col-5 row-6 b-left"></div>
+					<div class="col-5 row-7 b-left"></div>
+					<div class="col-5 row-8 b-left"></div>
+					<div class="col-5 row-9 b-left"></div>
+					<div class="col-5 row-10 b-left"></div>
+					<div class="col-5 row-11 b-bottom b-left"></div>
+					<div id="position-10" class="col-5 row-12 grid-item bout-9 empty"></div>
 
-                    <div id="position-11" class="col-6 row-2 grid-item bout-10 empty"></div>
-                    <div class="col-6 row-3 b-top b-left"></div>
-                    <div class="col-6 row-4 b-left"></div>
-                    <div class="col-6 row-5 b-bottom b-left"></div>
-                    <div id="position-12" class="col-6 row-6 grid-item bout-10 empty"></div>
-                    <div id="position-13" class="col-6 row-10 grid-item bout-11 empty"></div>
-                    <div class="col-6 row-11 b-top b-left"></div>
-                    <div class="col-6 row-12 b-left"></div>
-                    <div class="col-6 row-13 b-bottom b-left"></div>
-                    <div id="position-14" class="col-6 row-14 grid-item bout-11 empty"></div>
+					<div id="position-11" class="col-6 row-2 grid-item bout-10 empty"></div>
+					<div class="col-6 row-3 b-top b-left"></div>
+					<div class="col-6 row-4 b-left"></div>
+					<div class="col-6 row-5 b-bottom b-left"></div>
+					<div id="position-12" class="col-6 row-6 grid-item bout-10 empty"></div>
+					<div id="position-13" class="col-6 row-10 grid-item bout-11 empty"></div>
+					<div class="col-6 row-11 b-top b-left"></div>
+					<div class="col-6 row-12 b-left"></div>
+					<div class="col-6 row-13 b-bottom b-left"></div>
+					<div id="position-14" class="col-6 row-14 grid-item bout-11 empty"></div>
 
-                    <div class="col-7 row-1 grid-item-button bout-12">E. coli</div>
-                    <div class="col-7 row-2 b-top b-left b-bottom"></div>
-                    <div class="col-7 row-3 grid-item-button bout-12">Candida albicans</div>
-                    <div class="col-7 row-5 grid-item-button bout-13">Clostridioides difficile</div>
-                    <div class="col-7 row-6 b-top b-left b-bottom"></div>
-                    <div class="col-7 row-7 grid-item-button bout-13">HIV</div>
-                    <div class="col-7 row-9 grid-item-button bout-14">Enterococcus faecium</div>
-                    <div class="col-7 row-10 b-top b-left b-bottom"></div>
-                    <div class="col-7 row-11 grid-item-button bout-14">Streptococcus pneumoniae</div>
-                    <div class="col-7 row-13 grid-item-button bout-15">Streptococcus pyogenes</div>
-                    <div class="col-7 row-14 b-top b-left b-bottom"></div>
-                    <div class="col-7 row-15 grid-item-button bout-15">Staphylococcus lugdunensis</div>
-                </div>
-            </div>
-        </div>
-    </body>
-
+					<div class="col-7 row-1 grid-item-button bout-12">E. coli</div>
+					<div class="col-7 row-2 b-top b-left b-bottom"></div>
+					<div class="col-7 row-3 grid-item-button bout-12">Candida albicans</div>
+					<div class="col-7 row-5 grid-item-button bout-13">Clostridioides difficile</div>
+					<div class="col-7 row-6 b-top b-left b-bottom"></div>
+					<div class="col-7 row-7 grid-item-button bout-13">HIV</div>
+					<div class="col-7 row-9 grid-item-button bout-14">Enterococcus faecium</div>
+					<div class="col-7 row-10 b-top b-left b-bottom"></div>
+					<div class="col-7 row-11 grid-item-button bout-14">Streptococcus pneumoniae</div>
+					<div class="col-7 row-13 grid-item-button bout-15">Streptococcus pyogenes</div>
+					<div class="col-7 row-14 b-top b-left b-bottom"></div>
+					<div class="col-7 row-15 grid-item-button bout-15">Staphylococcus lugdunensis</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
