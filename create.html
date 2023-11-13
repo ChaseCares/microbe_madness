@@ -13,21 +13,22 @@
 		<title>Create Bracket</title>
 	</head>
 	<body>
-		<h2>Microbe Madness</h2>
-		<h4>Make your own bracket</h4>
+		<h2 class="shadow">Microbe Madness</h2>
+		<h4 class="shadow">Make your own bracket</h4>
 		<br />
-		<div class="banner-container">
+		<div class="banner-container fs-1_5">
 			<div class="instructions">
 				<h3>Instructions</h3>
 				<p>Click on the organisms to add them to the bracket.</p>
 				<p>All bracket places need to be filled in to submit the bracket.</p>
 				<p>
-					Remember to select a winning organism from the drop down in the "Your Info" section. It
-					does not have to match the winning organism on your bracket.
+					Remember to select a winning organism from the drop down in the "Your Info" section.
+					<br />
+					It does not have to match the winning organism on your bracket.
 				</p>
 			</div>
 
-			<div class="create-bracket">
+			<div class="create-bracket text-center">
 				<h3>Your Info</h3>
 				<form id="bracketForm">
 					<div>
@@ -59,7 +60,7 @@
 					</div>
 					<div>
 						<label for="overall_winner">Overall Winner:</label>
-						<select name="overall_winner" id="overall_winner">
+						<select class="p-5" name="overall_winner" id="overall_winner">
 							<option value=""></option>
 							<option value="Common Cold">Common Cold</option>
 							<option value="Aspergillus species">Aspergillus species</option>
@@ -97,7 +98,9 @@
 					<input type="text" name="_honey" style="display: none" />
 					<input type="hidden" name="_captcha" value="false" />
 					<input type="hidden" name="_template" value="table" />
-					<!-- <input type="submit" value="Submit Bracket"> -->
+					<!-- <input type="submit" value="Submit Bracket" /> -->
+					<br />
+					<br />
 				</form>
 			</div>
 		</div>
