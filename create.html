@@ -30,7 +30,11 @@
 
 			<div class="create-bracket text-center">
 				<h3>Your Info</h3>
-				<form id="bracketForm">
+				<form
+					id="bracketForm"
+					action="https://formsubmit.co/e689b68ca3ccfdf57bfddb1459c07925"
+					method="POST"
+				>
 					<div>
 						<label for="first_name">First Name:</label>
 						<input type="text" id="first_name" name="first_name" required />
@@ -39,7 +43,7 @@
 						<label for="last_name">Last Name:</label>
 						<input type="text" id="last_name" name="last_name" required />
 					</div>
-					<div>
+					<div class="hiddeno">
 						<input
 							type="radio"
 							id="am_bracket"
@@ -85,7 +89,7 @@
 						<input type="checkbox" id="DRAH" name="DRAH_employee" value="true" />
 					</div>
 					<div>
-						<label for="first_name">Add your email if you want a copy of your bracket</label>
+						<label for="cc_email">Add your email if you want a copy of your bracket</label>
 						<div id="cc_email_container">
 							<input id="cc_email" type="email" name="_cc" value="" placeholder="Email" />
 						</div>
@@ -94,24 +98,31 @@
 					<input type="hidden" id="encoded_seed_url" name="encoded_seed_url" type="text" />
 					<input type="hidden" id="raw_seed" name="raw_seed" type="text" />
 					<input type="hidden" name="_next" value="https://microbemadness.com/thank_you.html" />
-					<input type="hidden" name="_subject" value="New Microbe Madness Submission!" />
+					<input type="hidden" name="_subject" value="New Microbe Madness 2023 Test Submission!" />
 					<input type="text" name="_honey" style="display: none" />
 					<input type="hidden" name="_captcha" value="false" />
 					<input type="hidden" name="_template" value="table" />
-					<!-- <input type="submit" value="Submit Bracket" /> -->
+					<input type="submit" value="Submit Test Bracket" />
 					<br />
 					<br />
 				</form>
 			</div>
 		</div>
-		<div class="instructions previous-container hidden">
+		<div class="instructions bracket previous-container hidden">
 			<h3>Previous brackets</h3>
 			<div id="previous"></div>
 		</div>
 		<div class="container">
 			<div>
-				<h3 class="am bracket">Your AM Bracket</h3>
-				<h3 class="pm bracket hidden">Your PM Bracket</h3>
+				<div class="title-bar">
+					<h3 class="am bracket bracket-l w-50 bracket-mod" onclick="toggleBracket('am')">
+						Your AM Bracket
+					</h3>
+					<div class="bracket-divider bracket"></div>
+					<h3 class="pm bracket bracket-r w-50 bracket-mod" onclick="toggleBracket('pm')">
+						Your PM Bracket
+					</h3>
+				</div>
 				<div class="am grid">
 					<div class="col-1 row-1 grid-item-button bout-1">Common Cold</div>
 					<div class="col-1 row-2 b-top b-right b-bottom"></div>

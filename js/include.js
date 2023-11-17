@@ -204,14 +204,14 @@ function addButtonCSS() {
 
 function setBracket() {
 	if (bracket === 'am') {
-		AM_BRACKET_TITLE.classList.remove('hidden');
-		PM_BRACKET_TITLE.classList.add('hidden');
+		PM_BRACKET_TITLE.classList.add('inactive');
+		AM_BRACKET_TITLE.classList.remove('inactive');
 		GRID.classList.add('am');
 		GRID.classList.remove('pm');
 		AM_BRACKET_INPUT.checked = true;
 	} else {
-		AM_BRACKET_TITLE.classList.add('hidden');
-		PM_BRACKET_TITLE.classList.remove('hidden');
+		AM_BRACKET_TITLE.classList.add('inactive');
+		PM_BRACKET_TITLE.classList.remove('inactive');
 		GRID.classList.remove('am');
 		GRID.classList.add('pm');
 		PM_BRACKET_INPUT.checked = true;
