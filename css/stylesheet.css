@@ -295,7 +295,7 @@ h4 {
 	margin: 7em auto;
 }
 
-.archive {
+.nav {
 	width: 70px;
 	height: 70px;
 	margin: 0;
@@ -303,7 +303,7 @@ h4 {
 	position: absolute;
 }
 
-.archive-link {
+.nav-link {
 	background-color: orangered;
 	height: 100px;
 	left: -50px;
@@ -315,14 +315,22 @@ h4 {
 	transform: rotate(-45deg);
 }
 
-.archive-label {
-	color: #f5f5f5;
+.nav-label {
+	color: #000;
 	font-family: sans-serif;
 	font-size: 1.005em;
-	left: 19px;
-	top: 80px;
 	position: absolute;
 	width: 80px;
+}
+
+.archive-label-pos {
+	left: 19px;
+	top: 80px;
+}
+
+.home-label-pos {
+	left: 27px;
+	top: 80px;
 }
 
 @media only screen and (max-width: 1000px) {
