@@ -162,6 +162,10 @@ Date.prototype.customFormat = function (formatString) {
 		.replace('#AMPM#', AMPM);
 };
 
+function navigateTo(url) {
+	window.location.href = url;
+}
+
 function getDataFromURL() {
 	const url = window.location.href;
 	root_url = url.split('?')[0];

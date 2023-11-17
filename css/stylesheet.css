@@ -59,6 +59,10 @@
 	color: #000;
 }
 
+.c-pointer {
+	cursor: pointer;
+}
+
 .pm {
 	background-color: #a0c1ff;
 }
