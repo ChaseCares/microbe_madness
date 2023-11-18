@@ -65,6 +65,7 @@ const COMBATANTS = [
 
 var root_url;
 var bracket = 'am';
+var year = '2023';
 var seed = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 //*** This code is copyright 2002-2016 by Gavin Kistner, !@phrogz.net
@@ -340,6 +341,7 @@ function saveBracket() {
 			LAST_NAME.value,
 			OVERALL_WINNER.value,
 			btoa(seed),
+			year,
 			Date.now(),
 		]);
 	} else {
@@ -348,6 +350,7 @@ function saveBracket() {
 			LAST_NAME.value,
 			OVERALL_WINNER.value,
 			btoa(seed),
+			year,
 			Date.now(),
 		]);
 	}
@@ -359,15 +362,18 @@ function addBracketsToPageHelper(bracket) {
 	const lName = data[1];
 	const displayBracket = bracket.split('-')[0].toUpperCase();
 	let displayDate = 'No Date';
+	if (data[4] === year) {
+		if (data.length === 6) {
+			const date = new Date(Number(data[5]));
+			displayDate = date.customFormat('#DDD# #MMM# #DD# #YYYY# #hh#:#mm# #AMPM#');
+		}
 
-	if (data.length === 5) {
-		const date = new Date(Number(data[4]));
-		displayDate = date.customFormat('#DDD# #MMM# #DD# #YYYY# #hh#:#mm# #AMPM#');
+		PREVIOUS_BRACKETS.innerHTML += `<input type="button" value="Load ${fName} ${
+			Array.from(lName)[0]
+		}'s ${displayBracket} bracket, submitted on ${displayDate}" onclick="loadBracket('${bracket}')">`;
+		return true;
 	}
-
-	PREVIOUS_BRACKETS.innerHTML += `<input type="button" value="Load ${fName} ${
-		Array.from(lName)[0]
-	}'s ${displayBracket} bracket, submitted on ${displayDate}" onclick="loadBracket('${bracket}')">`;
+	return false;
 }
 
 function loadBracket(LocBracket) {
@@ -385,22 +391,20 @@ function loadBracket(LocBracket) {
 function addBracketsToPage() {
 	let bracketFound = false;
 	if (checkForBracket('am')) {
-		addBracketsToPageHelper('am');
+		bracketFound = addBracketsToPageHelper('am');
 		for (let i = 0; i <= localStorage.length; i++) {
 			if (localStorage.getItem(`am-${i}`)) {
 				addBracketsToPageHelper(`am-${i}`);
 			}
 		}
-		bracketFound = true;
 	}
 	if (checkForBracket('pm')) {
-		addBracketsToPageHelper('pm');
+		bracketFound = addBracketsToPageHelper('pm');
 		for (let i = 0; i <= localStorage.length; i++) {
 			if (localStorage.getItem(`pm-${i}`)) {
 				addBracketsToPageHelper(`pm-${i}`);
 			}
 		}
-		bracketFound = true;
 	}
 	if (bracketFound) {
 		PREVIOUS_BRACKETS_CONTAINER.classList.remove('hidden');
