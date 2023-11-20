@@ -171,7 +171,9 @@ function getDataFromURL() {
 			bracket = url.split('?')[1].split('&')[0].split('=')[1];
 		}
 		if (url.includes('seed')) {
-			seed = atob(url.split('?')[1].split('&')[1].split('=')[1]).split(',').map(Number);
+			let raw_seed = url.split('?')[1].split('&')[1].split('=')[1];
+			raw_seed = raw_seed.replace(/%3D/g, '');
+			seed = atob(raw_seed).split(',').map(Number);
 		}
 	} catch (err) {
 		console.log(err);
