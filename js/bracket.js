@@ -31,6 +31,9 @@ const PM_BRACKET_INPUT = document.getElementById('pm_bracket');
 const OVERALL_WINNER = document.getElementById('overall_winner');
 const CC_EMAIL_CONTAINER = document.getElementById('cc_email_container');
 const CC_EMAIL = document.getElementById('cc_email');
+const SUBMIT_BUTTON = document.getElementById('submit_button');
+const USER_FEEDBACK = document.getElementById('user_feedback');
+const THINKING_CONTAINER = document.getElementById('thinking_container');
 
 const ENCODED_SEED = document.getElementById('encoded_seed');
 const ENCODED_SEED_URL = document.getElementById('encoded_seed_url');
@@ -413,6 +416,21 @@ function addBracketsToPage() {
 	}
 }
 
+function sendUserFeedback(element) {
+	SUBMIT_BUTTON.classList.add('hidden');
+	USER_FEEDBACK.classList.remove('hidden');
+
+	let thinking_boi = setInterval(() => {
+		element.innerHTML += '🤔';
+	}, 1000);
+
+	setTimeout(() => {
+		clearInterval(thinking_boi);
+		USER_FEEDBACK.classList.add('hidden');
+		element.innerHTML = 'Something may have gone wrong. Please wait a moment and try again.';
+	}, 60000);
+}
+
 BRACKET_FORM.addEventListener('submit', (e) => {
 	if (verifyBracketComplete()) {
 		ENCODED_SEED.value = btoa(seed);
@@ -422,6 +440,7 @@ BRACKET_FORM.addEventListener('submit', (e) => {
 			CC_EMAIL_CONTAINER.innerHTML = '';
 		}
 		saveBracket();
+		sendUserFeedback(THINKING_CONTAINER);
 	} else {
 		e.preventDefault();
 	}
