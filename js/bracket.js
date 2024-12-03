@@ -232,16 +232,17 @@ function sendUserFeedback(element) {
 		element.innerHTML = 'Something may have gone wrong. Please wait a moment and try again.';
 	}, 60000);
 }
-
-BRACKET_FORM.addEventListener('submit', (e) => {
-	if (verifyBracketComplete()) {
-		ENCODED_SEED.value = encodeBoard(board);
-		saveBracket(ENCODED_SEED.value);
-		sendUserFeedback(THINKING_CONTAINER);
-	} else {
-		e.preventDefault();
-	}
-});
+if (!activeLinks) {
+	BRACKET_FORM.addEventListener('submit', (e) => {
+		if (verifyBracketComplete()) {
+			ENCODED_SEED.value = encodeBoard(board);
+			saveBracket(ENCODED_SEED.value);
+			sendUserFeedback(THINKING_CONTAINER);
+		} else {
+			e.preventDefault();
+		}
+	});
+}
 
 function initializeRounds(participants, roundsArray) {
 	let currentRound = participants.map((name) => ({ name }));
