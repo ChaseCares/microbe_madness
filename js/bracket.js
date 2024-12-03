@@ -336,7 +336,7 @@ function handleNameBoxClick(roundIndex, matchIndex, isMirrored = false) {
 		document.getElementById(`${side}_${targetRound}_${targetMatch}`).textContent = currentText;
 	} else {
 		board.overall_winner = currentText;
-		document.getElementById('overall_winner').textContent = currentText;
+		document.getElementById('overall_winner').textContent = currentText.replace(/^\d+\s/, '');
 	}
 
 	boardUpdate();
