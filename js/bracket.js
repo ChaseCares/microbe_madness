@@ -308,17 +308,33 @@ function createBracketSide(offsetX, roundsArray, isMirrored = false) {
 }
 
 function createTitle() {
-	return createText(
-		DIMENSIONS.window.width / 2 + DIMENSIONS.offsets.padding,
-		DIMENSIONS.window.titleHeight / 2 + 30,
-		'Your 2024 Bracket!',
-		false,
-		false,
-		null,
-		'middle',
-		40,
-		'bold'
-	);
+	let title;
+	if (activeLinks) {
+		title = createText(
+			DIMENSIONS.window.width / 2 + DIMENSIONS.offsets.padding,
+			DIMENSIONS.window.titleHeight / 2 + 30,
+			'2024 Tournament Results!',
+			false,
+			false,
+			null,
+			'middle',
+			40,
+			'bold'
+		);
+	} else {
+		title = createText(
+			DIMENSIONS.window.width / 2 + DIMENSIONS.offsets.padding,
+			DIMENSIONS.window.titleHeight / 2 + 30,
+			'Your 2024 Bracket!',
+			false,
+			false,
+			null,
+			'middle',
+			40,
+			'bold'
+		);
+	}
+	return title;
 }
 
 function getMatchY(roundsArray, roundIndex, matchIndex) {
