@@ -2,6 +2,7 @@ const SVG_NS = 'http://www.w3.org/2000/svg';
 
 const FIRST_NAME = document.getElementById('first_name');
 const LAST_NAME = document.getElementById('last_name');
+const FULL_URL = document.getElementById('full_url');
 const BRACKET_FORM = document.getElementById('bracketForm');
 const SUBMIT_BUTTON = document.getElementById('submit_button');
 const USER_FEEDBACK = document.getElementById('user_feedback');
@@ -152,6 +153,13 @@ function fillBoard() {
 			}
 		}
 	}
+
+	if (board.overall_winner !== null) {
+		document.getElementById('overall_winner').textContent = board.overall_winner.replace(
+			/^\d+\s/,
+			''
+		);
+	}
 }
 
 function showIncomplete() {
@@ -232,10 +240,12 @@ function sendUserFeedback(element) {
 		element.innerHTML = 'Something may have gone wrong. Please wait a moment and try again.';
 	}, 60000);
 }
+
 if (!activeLinks) {
 	BRACKET_FORM.addEventListener('submit', (e) => {
 		if (verifyBracketComplete()) {
 			ENCODED_SEED.value = encodeBoard(board);
+			FULL_URL.value = `${root_url}?bracket=${ENCODED_SEED.value}`;
 			saveBracket(ENCODED_SEED.value);
 			sendUserFeedback(THINKING_CONTAINER);
 		} else {
