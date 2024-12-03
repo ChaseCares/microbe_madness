@@ -16,7 +16,7 @@ const COLORS = {
 
 const DIMENSIONS = {
 	window: { width: 1950, height: 750, titleHeight: 50 },
-	nameBox: { height: 50, width: 165, textOffset: 30, flagOffset: 15 },
+	nameBox: { height: 50, width: 170, textOffset: 30, flagOffset: 15 },
 	offsets: { vertical: 100, horizontal: 250, padding: 50 },
 };
 
@@ -258,13 +258,16 @@ function createBracketSide(offsetX, roundsArray, isMirrored = false) {
 }
 
 function createTitle() {
-	const title = document.createElementNS(SVG_NS, 'text');
-	title.setAttribute('x', DIMENSIONS.window.width / 2 + DIMENSIONS.offsets.padding);
-	title.setAttribute('y', DIMENSIONS.window.titleHeight / 2 + 30);
-	title.setAttribute('text-anchor', 'middle');
-	title.setAttribute('font-size', '40');
-	title.textContent = 'Your 2024 Bracket!';
-	return title;
+	return createText(
+		DIMENSIONS.window.width / 2 + DIMENSIONS.offsets.padding,
+		DIMENSIONS.window.titleHeight / 2 + 30,
+		'Your 2024 Bracket!',
+		false,
+		false,
+		null,
+		'middle',
+		40
+	);
 }
 
 function getMatchY(roundsArray, roundIndex, matchIndex) {
@@ -392,7 +395,7 @@ function createLink(x, y, text, href, isMirrored, target = '_self') {
 	return link;
 }
 
-function createText(x, y, text, isMirrored, link = false, id = null, anchor = null) {
+function createText(x, y, text, isMirrored, link = false, id = null, anchor = null, fontSize = 18) {
 	let textAnchor;
 
 	if (anchor) {
@@ -414,6 +417,7 @@ function createText(x, y, text, isMirrored, link = false, id = null, anchor = nu
 	textElement.setAttribute('x', x);
 	textElement.setAttribute('y', y);
 	textElement.setAttribute('text-anchor', textAnchor);
+	textElement.setAttribute('font-size', fontSize);
 	textElement.textContent = text;
 
 	return textElement;
@@ -456,7 +460,7 @@ function createRect(x, y, height, width, fill, radius = 0, mouseoverFill = false
 
 function createConnection(start, end, strokeColor = COLORS.line, isMirrored = false) {
 	const adjustedStartX = isMirrored ? start.x - DIMENSIONS.nameBox.width : start.x;
-	const adjustedEndX = isMirrored ? end.x + DIMENSIONS.nameBox.width + 113 : end.x;
+	const adjustedEndX = isMirrored ? end.x + DIMENSIONS.nameBox.width + 107 : end.x;
 
 	const dx = ((adjustedEndX - adjustedStartX) / 2) * (isMirrored ? -1 : 1);
 	const dy = end.y - start.y;
@@ -522,7 +526,8 @@ function createWinnerBox() {
 		false,
 		false,
 		null,
-		'middle'
+		'middle',
+		25
 	);
 	winnerBox.appendChild(winnerTitle);
 
