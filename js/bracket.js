@@ -1,419 +1,187 @@
-const BOUT_1 = document.querySelectorAll('.bout-1');
-const BOUT_2 = document.querySelectorAll('.bout-2');
-const BOUT_3 = document.querySelectorAll('.bout-3');
-const BOUT_4 = document.querySelectorAll('.bout-4');
-const BOUT_5 = document.querySelectorAll('.bout-5');
-const BOUT_6 = document.querySelectorAll('.bout-6');
-const BOUT_7 = document.querySelectorAll('.bout-7');
-const BOUT_8 = document.querySelectorAll('.bout-8');
-const BOUT_9 = document.querySelectorAll('.bout-9');
-const BOUT_10 = document.querySelectorAll('.bout-10');
-const BOUT_11 = document.querySelectorAll('.bout-11');
-const BOUT_12 = document.querySelectorAll('.bout-12');
-const BOUT_13 = document.querySelectorAll('.bout-13');
-const BOUT_14 = document.querySelectorAll('.bout-14');
-const BOUT_15 = document.querySelectorAll('.bout-15');
-const WINNER = document.querySelector('.winner');
-
-const POSITION_4 = document.getElementById('position-4');
-const POSITION_5 = document.getElementById('position-5');
-const POSITION_6 = document.getElementById('position-6');
-const POSITION_7 = document.getElementById('position-7');
-const POSITION_8 = document.getElementById('position-8');
-const POSITION_9 = document.getElementById('position-9');
-const POSITION_10 = document.getElementById('position-10');
-
+const SVG_NS = 'http://www.w3.org/2000/svg';
 const BRACKET_FORM = document.getElementById('bracketForm');
-const FIRST_NAME = document.getElementById('first_name');
-const LAST_NAME = document.getElementById('last_name');
-const AM_BRACKET_INPUT = document.getElementById('am_bracket');
-const PM_BRACKET_INPUT = document.getElementById('pm_bracket');
-const OVERALL_WINNER = document.getElementById('overall_winner');
-const CC_EMAIL_CONTAINER = document.getElementById('cc_email_container');
-const CC_EMAIL = document.getElementById('cc_email');
 const SUBMIT_BUTTON = document.getElementById('submit_button');
 const USER_FEEDBACK = document.getElementById('user_feedback');
 const THINKING_CONTAINER = document.getElementById('thinking_container');
 
 const ENCODED_SEED = document.getElementById('encoded_seed');
-const ENCODED_SEED_URL = document.getElementById('encoded_seed_url');
-const RAW_SEED = document.getElementById('raw_seed');
 
-const AM_BRACKET_TITLE = document.querySelector('.am');
-const PM_BRACKET_TITLE = document.querySelector('.pm');
-const GRID = document.querySelector('.grid');
-
-const PREVIOUS_BRACKETS = document.getElementById('previous');
-const PREVIOUS_BRACKETS_CONTAINER = document.querySelector('.previous-container');
-
-const COMBATANTS = [
-	'',
-	'RSV',
-	'MRSA',
-	'Candida albicans',
-	'CRE',
-	'Pseudomonas aeruginosa',
-	'Clostridioides difficile',
-	'Streptococcus pyogenes',
-	'Rickettsia rickettsii',
-	'VRE',
-	'Streptococcus pneumoniae',
-	'MSSA',
-	'Staphylococcus lugdunensis',
-	'Klebsiella aerogenes',
-	'ESBL E. coli',
-	'Syphilis',
-	'HIV',
-];
-
-var root_url;
-var bracket = 'am';
-var year = '2023';
-var seed = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
-//*** This code is copyright 2002-2016 by Gavin Kistner, !@phrogz.net
-//*** It is covered under the license viewable at http://phrogz.net/JS/_ReuseLicense.txt
-//*** Reuse or modification is free provided you abide by the terms of that license.
-//*** (Including the first two lines above in your source code satisfies the conditions.)
-
-// Include this code (with notice above ;) in your library; read below for how to use it.
-
-Date.prototype.customFormat = function (formatString) {
-	var YYYY,
-		YY,
-		MMMM,
-		MMM,
-		MM,
-		M,
-		DDDD,
-		DDD,
-		DD,
-		D,
-		hhhh,
-		hhh,
-		hh,
-		h,
-		mm,
-		m,
-		ss,
-		s,
-		ampm,
-		AMPM,
-		dMod,
-		th;
-	var dateObject = this;
-	YY = ((YYYY = dateObject.getFullYear()) + '').slice(-2);
-	MM = (M = dateObject.getMonth() + 1) < 10 ? '0' + M : M;
-	MMM = (MMMM = [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'September',
-		'October',
-		'November',
-		'December',
-	][M - 1]).substring(0, 3);
-	DD = (D = dateObject.getDate()) < 10 ? '0' + D : D;
-	DDD = (DDDD = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][
-		dateObject.getDay()
-	]).substring(0, 3);
-	th =
-		D >= 10 && D <= 20
-			? 'th'
-			: (dMod = D % 10) == 1
-			? 'st'
-			: dMod == 2
-			? 'nd'
-			: dMod == 3
-			? 'rd'
-			: 'th';
-	formatString = formatString
-		.replace('#YYYY#', YYYY)
-		.replace('#YY#', YY)
-		.replace('#MMMM#', MMMM)
-		.replace('#MMM#', MMM)
-		.replace('#MM#', MM)
-		.replace('#M#', M)
-		.replace('#DDDD#', DDDD)
-		.replace('#DDD#', DDD)
-		.replace('#DD#', DD)
-		.replace('#D#', D)
-		.replace('#th#', th);
-
-	h = hhh = dateObject.getHours();
-	if (h == 0) h = 24;
-	if (h > 12) h -= 12;
-	hh = h < 10 ? '0' + h : h;
-	hhhh = hhh < 10 ? '0' + hhh : hhh;
-	AMPM = (ampm = hhh < 12 ? 'am' : 'pm').toUpperCase();
-	mm = (m = dateObject.getMinutes()) < 10 ? '0' + m : m;
-	ss = (s = dateObject.getSeconds()) < 10 ? '0' + s : s;
-	return formatString
-		.replace('#hhhh#', hhhh)
-		.replace('#hhh#', hhh)
-		.replace('#hh#', hh)
-		.replace('#h#', h)
-		.replace('#mm#', mm)
-		.replace('#m#', m)
-		.replace('#ss#', ss)
-		.replace('#s#', s)
-		.replace('#ampm#', ampm)
-		.replace('#AMPM#', AMPM);
+const COLORS = {
+	line: 'black',
+	fill: 'white',
+	winner: 'green',
+	loser: 'red',
+	neutral: 'gray',
 };
 
-function getDataFromURL() {
-	const url = window.location.href;
-	root_url = url.split('?')[0];
-	try {
-		if (url.includes('bracket')) {
-			bracket = url.split('?')[1].split('&')[0].split('=')[1];
+const DIMENSIONS = {
+	window: { width: 1950, height: 750, titleHeight: 50 },
+	nameBox: { height: 50, width: 165, textOffset: 30, flagOffset: 15 },
+	offsets: { vertical: 100, horizontal: 250, padding: 50 },
+};
+
+const BRACKET_VIEWBOX = `0 0 ${DIMENSIONS.window.width + DIMENSIONS.offsets.padding * 2} ${
+	DIMENSIONS.window.height + DIMENSIONS.offsets.padding * 2 + DIMENSIONS.window.titleHeight
+}`;
+
+const results = {
+	participants: {
+		left: [
+			'Kleb aerogenes',
+			'MRSA',
+			'Candida albicans',
+			'RSV',
+			'ESBL E. coli',
+			'C diff',
+			'Strep pyogenes',
+			'Strep pneumo',
+		],
+		right: [
+			'VRE',
+			'CRE',
+			'HIV',
+			'Staph lugdunensis',
+			'MSSA',
+			'Pseudomonas',
+			'Syphilis',
+			'Rickettsia',
+		],
+	},
+	rounds: {
+		left: [],
+		right: [],
+	},
+};
+
+let board = {
+	year: 2024,
+	version: 1,
+	left_1: {
+		0: null,
+		1: null,
+		2: null,
+		3: null,
+	},
+	left_2: {
+		0: null,
+		1: null,
+	},
+	left_3: {
+		0: null,
+	},
+	right_1: {
+		0: null,
+		1: null,
+		2: null,
+		3: null,
+	},
+	right_2: {
+		0: null,
+		1: null,
+	},
+	right_3: {
+		0: null,
+	},
+	overall_winner: null,
+};
+
+if (getURL()) {
+	board = decodeBoard(getURL());
+}
+
+const url = window.location.href;
+root_url = url.split('?')[0];
+
+const activeLinks = !url.includes('create.html');
+
+initializeRounds(results.participants.left, results.rounds.left);
+initializeRounds(results.participants.right, results.rounds.right);
+
+const bracketWindow = document.createElementNS(SVG_NS, 'svg');
+bracketWindow.setAttribute('id', 'map');
+bracketWindow.setAttribute('viewBox', BRACKET_VIEWBOX);
+bracketWindow.setAttribute('xmlns', SVG_NS);
+bracketWindow.setAttribute('preserveAspectRatio', 'xMinYMin');
+document.getElementById('bracket').appendChild(bracketWindow);
+
+const defs = createGradientBackground('#c5fcbe', '#a0c1ff', 310);
+bracketWindow.appendChild(defs);
+
+const windowBackground = createRect(
+	0,
+	0,
+	DIMENSIONS.window.height + DIMENSIONS.offsets.padding * 2 + DIMENSIONS.window.titleHeight,
+	DIMENSIONS.window.width + DIMENSIONS.offsets.padding * 2,
+	'url(#grad1)',
+	40
+);
+bracketWindow.appendChild(windowBackground);
+
+const title = createTitle();
+bracketWindow.appendChild(title);
+
+const bracket = document.createElementNS(SVG_NS, 'g');
+bracket.setAttribute('id', 'bracket');
+bracketWindow.appendChild(bracket);
+
+createBracketSide(DIMENSIONS.offsets.padding, results.rounds.left);
+createBracketSide(
+	DIMENSIONS.offsets.padding + DIMENSIONS.window.width - 164,
+	results.rounds.right,
+	true
+);
+
+const winnerBox = createWinnerBox(
+	DIMENSIONS.window.width / 2 - DIMENSIONS.nameBox.width / 2,
+	DIMENSIONS.window.height / 2 + DIMENSIONS.nameBox.height * 2
+);
+bracket.appendChild(winnerBox);
+
+fillBoard();
+
+function fillBoard() {
+	console.log('fillBoard');
+
+	const sections = ['left_1', 'left_2', 'left_3', 'right_1', 'right_2', 'right_3'];
+
+	for (const section of sections) {
+		for (const [index, match] of Object.entries(board[section])) {
+			if (match !== null) {
+				console.log('`${section}_${index}`', `${section}_${index}`);
+				document.getElementById(`${section}_${index}`).textContent = match;
+			}
 		}
-		if (url.includes('seed')) {
-			let raw_seed = url.split('?')[1].split('&')[1].split('=')[1];
-			raw_seed = raw_seed.replace(/%3D/g, '');
-			seed = atob(raw_seed).split(',').map(Number);
-		}
-	} catch (err) {
-		console.log(err);
-		setURL('am', 'MCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDA=');
 	}
 }
 
-function setURL(bracket, seed) {
-	history.replaceState({}, '', root_url + '?bracket=' + bracket + '&seed=' + btoa(seed));
-}
-
-function setCombatants() {
-	for (let i = 0; i < 15; i++) {
-		document.getElementById(`position-${i}`).innerHTML = COMBATANTS[seed[i]];
-	}
-}
-
-function addButtonCSS() {
-	let element;
-	for (let i = 0; i < 15; i++) {
-		element = document.getElementById(`position-${i}`);
-		if (element.innerHTML === '') {
-			element.classList.add('empty');
-			element.classList.remove('grid-item-button');
-		} else {
-			element.classList.add('grid-item-button');
-			element.classList.remove('empty');
-		}
-	}
-}
-
-function setBracket() {
-	if (bracket === 'am') {
-		PM_BRACKET_TITLE.classList.add('inactive');
-		AM_BRACKET_TITLE.classList.remove('inactive');
-		GRID.classList.add('am');
-		GRID.classList.remove('pm');
-		AM_BRACKET_INPUT.checked = true;
-	} else {
-		AM_BRACKET_TITLE.classList.add('inactive');
-		PM_BRACKET_TITLE.classList.remove('inactive');
-		GRID.classList.remove('am');
-		GRID.classList.add('pm');
-		PM_BRACKET_INPUT.checked = true;
-	}
-}
-
-function addClickListeners(from, to, nextBoutPos, index) {
-	from.forEach((bout) => {
-		bout.addEventListener('click', () => {
-			to[nextBoutPos].innerHTML = bout.innerHTML;
-			seed[index] = COMBATANTS.indexOf(bout.innerHTML);
-
-			verifyValidBracket();
-			verifyValidBracket();
-			verifyValidBracket();
-			verifyValidBracket();
-			addButtonCSS();
-		});
-	});
-}
-
-function addWinner(from, to, index) {
-	from.forEach((bout) => {
-		bout.addEventListener('click', () => {
-			to.innerHTML = bout.innerHTML;
-			seed[index] = COMBATANTS.indexOf(bout.innerHTML);
-			verifyValidBracket();
-		});
-	});
-}
-
-function toggleBracket(value) {
-	bracket = value;
-	setBracket();
-}
-
-function verifyValidBracket() {
-	let testSeed = [
-		[seed[0], seed[1], seed[2], seed[3]],
-		[seed[4], seed[5]],
-		[seed[6], seed[7], seed[8]],
-		[seed[9], seed[10]],
-		[seed[11], seed[12], seed[13], seed[14]],
+function showIncomplete() {
+	const sections = [
+		board.left_1,
+		board.left_2,
+		board.left_3,
+		board.right_1,
+		board.right_2,
+		board.right_3,
 	];
 
-	if (!testSeed[0].includes(testSeed[1][0])) {
-		POSITION_4.innerHTML = '';
-		seed[4] = 0;
-	}
-	if (!testSeed[0].includes(testSeed[1][1])) {
-		POSITION_5.innerHTML = '';
-		seed[5] = 0;
-	}
-
-	if (!testSeed[1].includes(testSeed[2][0])) {
-		POSITION_6.innerHTML = '';
-		seed[6] = 0;
+	for (const section of sections) {
+		for (const match of Object.values(section)) {
+			if (match === null) {
+				return true;
+			}
+		}
 	}
 
-	if (testSeed[2][1] !== testSeed[2][0] && testSeed[2][1] !== testSeed[2][2]) {
-		POSITION_7.innerHTML = '';
-		seed[7] = 0;
-	}
-
-	if (!testSeed[3].includes(testSeed[2][2])) {
-		POSITION_8.innerHTML = '';
-		seed[8] = 0;
-	}
-
-	if (!testSeed[4].includes(testSeed[3][0])) {
-		POSITION_9.innerHTML = '';
-		seed[9] = 0;
-	}
-	if (!testSeed[4].includes(testSeed[3][1])) {
-		POSITION_10.innerHTML = '';
-		seed[10] = 0;
-	}
-	setURL(bracket, seed);
-	showIncomplete(true);
-	addButtonCSS();
+	return board.overall_winner === null;
 }
 
 function verifyBracketComplete() {
-	if (seed.includes(0)) {
-		showIncomplete();
-		return false;
-	} else {
-		return true;
-	}
-}
-
-function showIncomplete(onlyRemove = false) {
-	let element;
-	for (let i = 0; i < seed.length; i++) {
-		element = document.getElementById(`position-${i}`);
-		if (element.innerHTML === '') {
-			if (!onlyRemove) {
-				element.classList.add('incomplete');
-			}
-		} else {
-			element.classList.remove('incomplete');
-		}
-	}
-}
-
-function checkForBracket(bracket) {
-	if (localStorage.getItem(bracket)) {
-		return true;
-	} else {
+	console.log(board);
+	if (showIncomplete()) {
+		alert('Please complete your bracket before submitting.');
 		return false;
 	}
-}
-
-function checkForNumOfBracket(bracket) {
-	for (let i = 0; i <= localStorage.length; i++) {
-		if (!localStorage.getItem(`${bracket}-${i}`)) {
-			return i;
-		}
-	}
-}
-
-function saveBracket() {
-	if (!checkForBracket(bracket)) {
-		localStorage.setItem(bracket, [
-			FIRST_NAME.value,
-			LAST_NAME.value,
-			OVERALL_WINNER.value,
-			btoa(seed),
-			year,
-			Date.now(),
-		]);
-	} else {
-		localStorage.setItem(`${bracket}-${checkForNumOfBracket(bracket)}`, [
-			FIRST_NAME.value,
-			LAST_NAME.value,
-			OVERALL_WINNER.value,
-			btoa(seed),
-			year,
-			Date.now(),
-		]);
-	}
-}
-
-function addBracketsToPageHelper(bracket) {
-	const data = localStorage.getItem(bracket).split(',');
-	const fName = data[0];
-	const lName = data[1];
-	const displayBracket = bracket.split('-')[0].toUpperCase();
-	let displayDate = 'No Date';
-	if (data[4] === year) {
-		if (data.length === 6) {
-			const date = new Date(Number(data[5]));
-			displayDate = date.customFormat('#DDD# #MMM# #DD# #YYYY# #hh#:#mm# #AMPM#');
-		}
-
-		PREVIOUS_BRACKETS.innerHTML += `<input type="button" value="Load ${fName} ${
-			Array.from(lName)[0]
-		}'s ${displayBracket} bracket, submitted on ${displayDate}" onclick="loadBracket('${bracket}')">`;
-		return true;
-	}
-	return false;
-}
-
-function loadBracket(LocBracket) {
-	const LOC_BRACKET_DATA = localStorage.getItem(LocBracket).split(',');
-	FIRST_NAME.value = LOC_BRACKET_DATA[0];
-	OVERALL_WINNER.value = LOC_BRACKET_DATA[2];
-	seed = atob(LOC_BRACKET_DATA[3]).split(',').map(Number);
-	bracket = LocBracket.split('-')[0];
-	setURL(bracket, seed);
-	setBracket();
-	setCombatants();
-	addButtonCSS();
-}
-
-function addBracketsToPage() {
-	let bracketFound = false;
-	if (checkForBracket('am')) {
-		bracketFound = addBracketsToPageHelper('am');
-		for (let i = 0; i <= localStorage.length; i++) {
-			if (localStorage.getItem(`am-${i}`)) {
-				addBracketsToPageHelper(`am-${i}`);
-			}
-		}
-	}
-	if (checkForBracket('pm')) {
-		bracketFound = addBracketsToPageHelper('pm');
-		for (let i = 0; i <= localStorage.length; i++) {
-			if (localStorage.getItem(`pm-${i}`)) {
-				addBracketsToPageHelper(`pm-${i}`);
-			}
-		}
-	}
-	if (bracketFound) {
-		PREVIOUS_BRACKETS_CONTAINER.classList.remove('hidden');
-	}
+	return true;
 }
 
 function sendUserFeedback(element) {
@@ -433,48 +201,352 @@ function sendUserFeedback(element) {
 
 BRACKET_FORM.addEventListener('submit', (e) => {
 	if (verifyBracketComplete()) {
-		ENCODED_SEED.value = btoa(seed);
-		ENCODED_SEED_URL.value = window.location.href;
-		RAW_SEED.value = seed;
-		if (CC_EMAIL.value == '') {
-			CC_EMAIL_CONTAINER.innerHTML = '';
-		}
-		saveBracket();
+		ENCODED_SEED.value = encodeBoard(board);
 		sendUserFeedback(THINKING_CONTAINER);
 	} else {
 		e.preventDefault();
 	}
 });
 
-function init() {
-	addBracketsToPage();
-	getDataFromURL();
-	setBracket();
-	setCombatants();
-	verifyValidBracket();
-	addButtonCSS();
-
-	addClickListeners(BOUT_1, BOUT_5, 0, 0);
-	addClickListeners(BOUT_2, BOUT_5, 1, 1);
-	addClickListeners(BOUT_3, BOUT_6, 0, 2);
-	addClickListeners(BOUT_4, BOUT_6, 1, 3);
-
-	addClickListeners(BOUT_5, BOUT_7, 0, 4);
-	addClickListeners(BOUT_6, BOUT_7, 1, 5);
-
-	addClickListeners(BOUT_7, BOUT_8, 0, 6);
-
-	addWinner(BOUT_8, WINNER, 7);
-
-	addClickListeners(BOUT_9, BOUT_8, 1, 8);
-
-	addClickListeners(BOUT_10, BOUT_9, 0, 9);
-	addClickListeners(BOUT_11, BOUT_9, 1, 10);
-
-	addClickListeners(BOUT_12, BOUT_10, 0, 11);
-	addClickListeners(BOUT_13, BOUT_10, 1, 12);
-	addClickListeners(BOUT_14, BOUT_11, 0, 13);
-	addClickListeners(BOUT_15, BOUT_11, 1, 14);
+function initializeRounds(participants, roundsArray) {
+	let currentRound = participants.map((name) => ({ name }));
+	while (currentRound.length > 1) {
+		roundsArray.push(currentRound);
+		currentRound = Array.from({ length: currentRound.length / 2 }, () => ({
+			name: null,
+		}));
+	}
+	roundsArray.push(currentRound);
 }
 
-init();
+function createBracketSide(offsetX, roundsArray, isMirrored = false) {
+	const connections = [];
+	roundsArray.forEach((round, roundIndex) => {
+		round.forEach((match, matchIndex) => {
+			const x = offsetX + (isMirrored ? -1 : 1) * roundIndex * DIMENSIONS.offsets.horizontal;
+			match.y = getMatchY(roundsArray, roundIndex, matchIndex);
+
+			const side = isMirrored ? 'right' : 'left';
+
+			const nameBox = createNameBox(
+				x,
+				match.y,
+				match.name,
+				null,
+				isMirrored,
+				`handleNameBoxClick(${roundIndex}, ${matchIndex}, ${isMirrored})`,
+				`${side}_${roundIndex}_${matchIndex}`
+			);
+			bracket.appendChild(nameBox);
+
+			if (roundIndex > 0) {
+				const end = { x, y: match.y + DIMENSIONS.nameBox.height / 2 };
+				const prevRound = roundsArray[roundIndex - 1];
+				[0, 1].forEach((i) => {
+					const start = {
+						x:
+							offsetX +
+							(isMirrored ? -1 : 1) * (roundIndex - 1) * DIMENSIONS.offsets.horizontal +
+							DIMENSIONS.nameBox.width,
+						y: prevRound[matchIndex * 2 + i].y + DIMENSIONS.nameBox.height / 2,
+					};
+					connections.push({ start, end });
+				});
+			}
+		});
+	});
+
+	connections.forEach(({ start, end }) =>
+		bracket.appendChild(createConnection(start, end, COLORS.line, isMirrored))
+	);
+}
+
+function createTitle() {
+	const title = document.createElementNS(SVG_NS, 'text');
+	title.setAttribute('x', DIMENSIONS.window.width / 2 + DIMENSIONS.offsets.padding);
+	title.setAttribute('y', DIMENSIONS.window.titleHeight / 2 + 30);
+	title.setAttribute('text-anchor', 'middle');
+	title.setAttribute('font-size', '40');
+	title.textContent = 'Your 2024 Bracket!';
+	return title;
+}
+
+function getMatchY(roundsArray, roundIndex, matchIndex) {
+	return roundIndex === 0
+		? matchIndex * DIMENSIONS.offsets.vertical +
+				DIMENSIONS.nameBox.height +
+				DIMENSIONS.window.titleHeight
+		: (roundsArray[roundIndex - 1][matchIndex * 2].y +
+				roundsArray[roundIndex - 1][matchIndex * 2 + 1].y) /
+				2;
+}
+
+function encodeBoard(board) {
+	const boardString = JSON.stringify(board);
+	const boardBase64 = btoa(boardString);
+	return boardBase64;
+}
+
+function decodeBoard(boardBase64) {
+	const boardString = atob(boardBase64);
+	const board = JSON.parse(boardString);
+	return board;
+}
+
+function setURL() {
+	const boardBase64 = encodeBoard(board);
+	const bracketURL = `${root_url}?bracket=${boardBase64}`;
+	window.history.pushState({ path: bracketURL }, '', bracketURL);
+}
+
+function getURL() {
+	const urlParams = new URLSearchParams(window.location.search);
+	if (!urlParams.has('bracket')) {
+		return null;
+	}
+
+	const bracketBase64 = urlParams.get('bracket');
+	return bracketBase64;
+}
+
+function boardUpdate() {
+	console.log('boardUpdate');
+	setURL();
+}
+
+function handleNameBoxClick(roundIndex, matchIndex, isMirrored = false) {
+	const side = isMirrored ? 'right' : 'left';
+	const targetRound = roundIndex + 1;
+	const targetMatch = Math.floor(matchIndex / 2);
+	const currentText = document.getElementById(`${side}_${roundIndex}_${matchIndex}`).textContent;
+
+	let targetMatchIndex = targetMatch;
+	for (let i = roundIndex + 1; i < 5; i++) {
+		if (i === 4) {
+			document.getElementById('overall_winner').textContent = null;
+			board.overall_winner = null;
+			break;
+		}
+		board[`${side}_${i}`][targetMatchIndex] = null;
+		document.getElementById(`${side}_${i}_${targetMatchIndex}`).textContent = null;
+		targetMatchIndex = Math.floor(targetMatchIndex / 2);
+	}
+
+	if (targetRound != 4) {
+		board[`${side}_${targetRound}`][targetMatch] = currentText;
+		document.getElementById(`${side}_${targetRound}_${targetMatch}`).textContent = currentText;
+	} else {
+		board.overall_winner = currentText;
+		console.log('currentText', currentText);
+		document.getElementById('overall_winner').textContent = currentText;
+	}
+
+	boardUpdate();
+}
+
+function createNameBox(x, y, name, winner, isMirrored = false, onClick = null, id = null) {
+	const nameBox = document.createElementNS(SVG_NS, 'g');
+
+	if (onClick) {
+		nameBox.setAttribute('onclick', onClick);
+	}
+
+	nameBox.appendChild(
+		createRect(
+			x,
+			y,
+			DIMENSIONS.nameBox.height,
+			DIMENSIONS.nameBox.width,
+			COLORS.fill,
+			0,
+			'lightgray'
+		)
+	);
+
+	const flagColor =
+		winner === true ? COLORS.winner : winner === false ? COLORS.loser : COLORS.neutral;
+	const flagX = isMirrored ? x + DIMENSIONS.nameBox.width - DIMENSIONS.nameBox.flagOffset : x;
+	nameBox.appendChild(
+		createRect(flagX, y, DIMENSIONS.nameBox.height, DIMENSIONS.nameBox.flagOffset, flagColor)
+	);
+
+	const textX = isMirrored
+		? x + DIMENSIONS.nameBox.width - DIMENSIONS.nameBox.textOffset + 10
+		: x + DIMENSIONS.nameBox.textOffset - 10;
+
+	if (activeLinks) {
+		nameBox.appendChild(
+			createLink(textX, y + DIMENSIONS.nameBox.textOffset, name, `#${name}`, isMirrored)
+		);
+	} else {
+		nameBox.appendChild(
+			createText(textX, y + DIMENSIONS.nameBox.textOffset, name, isMirrored, false, id)
+		);
+	}
+
+	return nameBox;
+}
+
+function createLink(x, y, text, href, isMirrored, target = '_blank') {
+	const link = document.createElementNS(SVG_NS, 'a');
+	link.setAttribute('href', href);
+	link.setAttribute('target', target);
+	link.appendChild(createText(x, y, text, isMirrored, true));
+
+	return link;
+}
+
+function createText(x, y, text, isMirrored, link = false, id = null, anchor = null) {
+	let textAnchor;
+
+	if (anchor) {
+		textAnchor = anchor;
+	} else {
+		textAnchor = isMirrored ? 'end' : 'start';
+	}
+
+	const textElement = document.createElementNS(SVG_NS, 'text');
+
+	if (link) {
+		textElement.setAttribute('style', 'text-decoration: underline; cursor: pointer;');
+	}
+
+	if (id) {
+		textElement.setAttribute('id', id);
+	}
+
+	textElement.setAttribute('x', x);
+	textElement.setAttribute('y', y);
+	textElement.setAttribute('text-anchor', textAnchor);
+	textElement.textContent = text;
+
+	return textElement;
+}
+
+function createRect(x, y, height, width, fill, radius = 0, mouseoverFill = false) {
+	const rect = document.createElementNS(SVG_NS, 'rect');
+	rect.setAttribute('x', x);
+	rect.setAttribute('y', y);
+	rect.setAttribute('height', height);
+	rect.setAttribute('width', width);
+
+	if (mouseoverFill && !activeLinks) {
+		console.log('mouseover');
+		rect.addEventListener('mouseover', () => {
+			rect.setAttribute('fill', mouseoverFill);
+		});
+		rect.addEventListener('mouseout', () => {
+			rect.setAttribute('fill', fill);
+		});
+	}
+	rect.setAttribute('fill', fill);
+	rect.setAttribute('stroke', COLORS.line);
+	rect.setAttribute('rx', radius);
+	rect.setAttribute('ry', radius);
+	return rect;
+}
+
+function createConnection(start, end, strokeColor = COLORS.line, isMirrored = false) {
+	const adjustedStartX = isMirrored ? start.x - DIMENSIONS.nameBox.width : start.x;
+	const adjustedEndX = isMirrored ? end.x + DIMENSIONS.nameBox.width + 113 : end.x;
+
+	const dx = ((adjustedEndX - adjustedStartX) / 2) * (isMirrored ? -1 : 1);
+	const dy = end.y - start.y;
+	const radiusX = Math.min(15, Math.abs(dx)) * (isMirrored ? -1 : 1);
+	const radiusY = Math.min(15, Math.abs(dy) / 2) * Math.sign(dy);
+
+	const pathData = `
+        M ${adjustedStartX} ${start.y}
+        h ${dx - Math.abs(radiusX)}
+        q ${radiusX} 0 ${radiusX} ${radiusY}
+        V ${end.y - radiusY}
+        q 0 ${radiusY} ${radiusX} ${radiusY}
+        h ${dx - Math.abs(radiusX)}`.trim();
+
+	const path = document.createElementNS(SVG_NS, 'path');
+	path.setAttribute('d', pathData);
+	path.setAttribute('fill', 'none');
+	path.setAttribute('stroke', strokeColor);
+	path.setAttribute('stroke-width', 2);
+	return path;
+}
+
+function createWinnerBox() {
+	const oversizeWith = 50;
+	const oversizeHeight = 10;
+
+	const centerX =
+		DIMENSIONS.window.width / 2 - DIMENSIONS.nameBox.width / 2 + DIMENSIONS.offsets.padding;
+	const centerY =
+		DIMENSIONS.window.height / 2 -
+		DIMENSIONS.nameBox.height / 2 +
+		DIMENSIONS.offsets.padding +
+		DIMENSIONS.window.titleHeight;
+
+	const offsetY = 140;
+
+	const winnerBox = document.createElementNS(SVG_NS, 'g');
+	winnerBox.appendChild(
+		createRect(
+			centerX - oversizeWith / 2,
+			centerY - oversizeHeight / 2 + offsetY,
+			DIMENSIONS.nameBox.height + oversizeHeight,
+			DIMENSIONS.nameBox.width + oversizeWith,
+			COLORS.fill
+		)
+	);
+
+	const winnerText = createText(
+		centerX + DIMENSIONS.nameBox.width / 2,
+		centerY + DIMENSIONS.nameBox.height / 2 + offsetY + 5,
+		null,
+		false,
+		false,
+		'overall_winner',
+		'middle'
+	);
+	winnerBox.appendChild(winnerText);
+
+	const winnerTitle = createText(
+		centerX + DIMENSIONS.nameBox.width / 2,
+		centerY - DIMENSIONS.nameBox.height / 2 + offsetY + 5,
+		'🏆 Overall Winner 🏆',
+		false,
+		false,
+		null,
+		'middle'
+	);
+	winnerBox.appendChild(winnerTitle);
+
+	return winnerBox;
+}
+
+function createGradientBackground(color1, color2, angle) {
+	const defs = document.createElementNS(SVG_NS, 'defs');
+	const linearGradient = document.createElementNS(SVG_NS, 'linearGradient');
+	linearGradient.setAttribute('id', 'grad1');
+
+	const x1 = Math.round(50 + 50 * Math.cos(((angle - 90) * Math.PI) / 180));
+	const y1 = Math.round(50 + 50 * Math.sin(((angle - 90) * Math.PI) / 180));
+	const x2 = Math.round(50 + 50 * Math.cos(((angle + 90) * Math.PI) / 180));
+	const y2 = Math.round(50 + 50 * Math.sin(((angle + 90) * Math.PI) / 180));
+
+	linearGradient.setAttribute('x1', `${x1}%`);
+	linearGradient.setAttribute('y1', `${y1}%`);
+	linearGradient.setAttribute('x2', `${x2}%`);
+	linearGradient.setAttribute('y2', `${y2}%`);
+
+	const stop1 = document.createElementNS(SVG_NS, 'stop');
+	stop1.setAttribute('offset', '0%');
+	stop1.setAttribute('style', `stop-color:${color1};stop-opacity:1`);
+
+	const stop2 = document.createElementNS(SVG_NS, 'stop');
+	stop2.setAttribute('offset', '100%');
+	stop2.setAttribute('style', `stop-color:${color2};stop-opacity:1`);
+
+	linearGradient.appendChild(stop1);
+	linearGradient.appendChild(stop2);
+	defs.appendChild(linearGradient);
+
+	return defs;
+}

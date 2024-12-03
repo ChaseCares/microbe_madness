@@ -93,6 +93,10 @@
 	width: 85%;
 }
 
+.w-100 {
+	width: 100%;
+}
+
 body {
 	background-color: #353535;
 	margin: 2px;
@@ -202,7 +206,7 @@ h5 {
 
 .instructions {
 	background-color: #fff;
-	border-radius: 50px;
+	border-radius: 20px;
 	margin-right: 15px;
 	text-align: center;
 	width: 100%;
@@ -221,7 +225,7 @@ h5 {
 
 .create-bracket {
 	background-color: #fff;
-	border-radius: 50px;
+	border-radius: 20px;
 	margin-left: 15px;
 	width: 100%;
 	padding-bottom: 15px;
@@ -276,7 +280,7 @@ h5 {
 
 .info {
 	background-color: #fff;
-	border-radius: 50px;
+	border-radius: 30px;
 	border: 2px solid #7e7e7e;
 	margin: 0 auto;
 	width: 90%;

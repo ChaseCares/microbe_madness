@@ -9,6 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./css/stylesheet.css?v=0.1.1" />
 		<script src="./js/helper.js?v=0.1.1" defer></script>
+		<script src="./js/bracket.js?v=0.1.3" defer></script>
 		<link href="./img/favicon.ico" rel="icon" type="image/x-icon" />
 		<title>Microbe Madness</title>
 	</head>
@@ -18,7 +19,7 @@
 				<span class="nav-label archive-label-pos">Archives</span>
 			</div>
 		</div>
-		<h1 class="shadow">Microbe Madness 2023</h1>
+		<h1 class="shadow">Microbe Madness 2024</h1>
 		<br />
 		<div class="info">
 			<h3>About</h3>
@@ -26,34 +27,34 @@
 				Antimicrobial Awareness Week is part of a global campaign that occurs annually (November
 				18-24) to improve awareness and understanding of antimicrobial resistance and the importance
 				of appropriate antibiotic use. The CDC has many educational resources and can be found at
-				<a href="https://www.cdc.gov/antibiotic-use/week/" target="_blank">
-					cdc.gov/antibiotic-use/week
+				<a
+					href="https://www.cdc.gov/antimicrobial-resistance/communication-resources/usaaw.html"
+					target="_blank"
+				>
+					cdc.gov
 				</a>
 				<br />
 				Microbe Madness celebrates some of the micro-organisms that we know and love. These
-				organisms will compete in two March Madness-style tournaments as reflected in the AM and PM
-				brackets.
+				organisms will compete in a March Madness-style tournament as reflected in this year's
+				bracket.
 			</p>
 			<hr class="w-85" />
 			<div class="info-container fs-1_2 text-center p-15">
 				<div class="w-30 p-15-l">
 					<h4 class="black">When?</h4>
 					<p>
-						The AM tournament rounds will occur in the DRAH inpatient pharmacy after 0700 on 11/27,
-						11/28, 11/29, and 11/30. The PM tournament rounds will occur these same days in the
-						afternoons as time allows.
+						The 2024 Microbe Madness tournament will occur in the Duke Raleigh inpatient pharmacy
+						during the second week in December.
 					</p>
 				</div>
 				<hr />
 				<div class="w-30">
 					<h4 class="black">Rules</h4>
 					<p>
-						You can submit as many dashboards as you like and may submit for both the AM and PM
-						tournaments, but only your last bracket submitted before the deadline
-						<time datetime="2023-11-27T07:00">(11/27/23 at 0700</time>
-						for AM bracket,
-						<time datetime="2023-11-27T15:30">11/27/23 at 1530</time>
-						for PM bracket) will be eligible for prizes.
+						You can submit as many brackets as you like, but only your last bracket submitted before
+						the deadline
+						<time datetime="2024-12-09T07:00">(12/09/24 at 0700</time>
+						) will be eligible for prizes.
 					</p>
 				</div>
 				<hr />
@@ -61,7 +62,7 @@
 					<h4 class="black">Prizes</h4>
 					<p>
 						Prizes will be available for
-						<b>DRAH pharmacy department employee</b>
+						<b>Duke Raleigh pharmacy department employee</b>
 						participants (all shifts, inpatient and outpatient) who select the winning organism as
 						well as for who has the most accurate bracket.
 					</p>
@@ -72,220 +73,8 @@
 				<a class="fs-1_5" href="/create.html">Create Your Own Bracket Here</a>
 			</div>
 		</div>
-		<div class="container">
-			<div>
-				<h3 class="am bracket bracket-r bracket-l">AM Bracket</h3>
-				<div class="am grid">
-					<div class="col-1 row-1 grid-item"><a href="#RSV">RSV</a></div>
-					<div class="col-1 row-2 b-top b-right b-bottom"></div>
-					<div class="col-1 row-3 grid-item">
-						<a href="#MRSA">MRSA</a>
-					</div>
-					<div class="col-1 row-5 grid-item">
-						<a href="#Candida_albicans">Candida albicans</a>
-					</div>
-					<div class="col-1 row-6 b-top b-right b-bottom"></div>
-					<div class="col-1 row-7 grid-item">
-						<a href="#CRE">CRE</a>
-					</div>
-					<div class="col-1 row-9 grid-item">
-						<a href="#Pseudomonas_aeruginosa">Pseudomonas aeruginosa</a>
-					</div>
-					<div class="col-1 row-10 b-top b-right b-bottom"></div>
-					<div class="col-1 row-11 grid-item">
-						<a href="#Clostridioides_difficile">Clostridioides difficile</a>
-					</div>
-					<div class="col-1 row-13 grid-item">
-						<a href="#Streptococcus_pyogenes">Streptococcus pyogenes</a>
-					</div>
-					<div class="col-1 row-14 b-top b-right b-bottom"></div>
-					<div class="col-1 row-15 grid-item">
-						<a href="#Rickettsia_rickettsii">Rickettsia rickettsii</a>
-					</div>
+		<div id="bracket" class="container bracket"></div>
 
-					<div class="col-2 row-2 grid-item">RSV</div>
-					<div class="col-2 row-3 b-top b-right"></div>
-					<div class="col-2 row-4 b-right"></div>
-					<div class="col-2 row-5 b-bottom b-right"></div>
-					<div class="col-2 row-6 grid-item">CRE</div>
-					<div class="col-2 row-10 grid-item">Clostridioides difficile</div>
-					<div class="col-2 row-11 b-top b-right"></div>
-					<div class="col-2 row-12 b-right"></div>
-					<div class="col-2 row-13 b-bottom b-right"></div>
-					<div class="col-2 row-14 grid-item">Streptococcus pyogenes</div>
-
-					<div class="col-3 row-4 grid-item">RSV</div>
-					<div class="col-3 row-5 b-top b-right"></div>
-					<div class="col-3 row-6 b-right"></div>
-					<div class="col-3 row-7 b-right"></div>
-					<div class="col-3 row-8 b-right"></div>
-					<div class="col-3 row-9 b-right"></div>
-					<div class="col-3 row-10 b-right"></div>
-					<div class="col-3 row-11 b-bottom b-right"></div>
-					<div class="col-3 row-12 grid-item">Clostridioides difficile</div>
-
-					<div class="col-4 row-6 grid-item">Clostridioides difficile</div>
-					<div class="col-4 row-7 b-bottom"></div>
-					<div class="col-4 row-8 grid-item">🏆 Clostridioides difficile 🏆</div>
-					<div class="col-4 row-9 b-top"></div>
-					<div class="col-4 row-10 grid-item">MSSA</div>
-
-					<div class="col-5 row-4 grid-item">MSSA</div>
-					<div class="col-5 row-5 b-top b-left"></div>
-					<div class="col-5 row-6 b-left"></div>
-					<div class="col-5 row-7 b-left"></div>
-					<div class="col-5 row-8 b-left"></div>
-					<div class="col-5 row-9 b-left"></div>
-					<div class="col-5 row-10 b-left"></div>
-					<div class="col-5 row-11 b-bottom b-left"></div>
-					<div class="col-5 row-12 grid-item">ESBL E. coli</div>
-
-					<div class="col-6 row-2 grid-item">VRE</div>
-					<div class="col-6 row-3 b-top b-left"></div>
-					<div class="col-6 row-4 b-left"></div>
-					<div class="col-6 row-5 b-bottom b-left"></div>
-					<div class="col-6 row-6 grid-item">MSSA</div>
-					<div class="col-6 row-10 grid-item">ESBL E. coli</div>
-					<div class="col-6 row-11 b-top b-left"></div>
-					<div class="col-6 row-12 b-left"></div>
-					<div class="col-6 row-13 b-bottom b-left"></div>
-					<div class="col-6 row-14 grid-item">HIV</div>
-
-					<div class="col-7 row-1 grid-item"><a href="#VRE">VRE</a></div>
-					<div class="col-7 row-2 b-top b-left b-bottom"></div>
-					<div class="col-7 row-3 grid-item">
-						<a href="#Streptococcus_pneumoniae">Streptococcus pneumoniae</a>
-					</div>
-					<div class="col-7 row-5 grid-item">
-						<a href="#MSSA">MSSA</a>
-					</div>
-					<div class="col-7 row-6 b-top b-left b-bottom"></div>
-					<div class="col-7 row-7 grid-item">
-						<a href="#Staphylococcus_lugdunensis">Staphylococcus lugdunensis</a>
-					</div>
-					<div class="col-7 row-9 grid-item">
-						<a href="#Klebsiella_aerogenes">Klebsiella aerogenes</a>
-					</div>
-					<div class="col-7 row-10 b-top b-left b-bottom"></div>
-					<div class="col-7 row-11 grid-item">
-						<a href="#ESBL_E_coli">ESBL E. coli</a>
-					</div>
-					<div class="col-7 row-13 grid-item">
-						<a href="#Syphilis">Syphilis</a>
-					</div>
-					<div class="col-7 row-14 b-top b-left b-bottom"></div>
-					<div class="col-7 row-15 grid-item">
-						<a href="#HIV">HIV</a>
-					</div>
-				</div>
-			</div>
-			<div>
-				<h3 class="pm bracket bracket-r bracket-l">PM Bracket</h3>
-				<div class="pm grid">
-					<div class="col-1 row-1 grid-item"><a href="#RSV">RSV</a></div>
-					<div class="col-1 row-2 b-top b-right b-bottom"></div>
-					<div class="col-1 row-3 grid-item">
-						<a href="#MRSA">MRSA</a>
-					</div>
-					<div class="col-1 row-5 grid-item">
-						<a href="#Candida_albicans">Candida albicans</a>
-					</div>
-					<div class="col-1 row-6 b-top b-right b-bottom"></div>
-					<div class="col-1 row-7 grid-item">
-						<a href="#CRE">CRE</a>
-					</div>
-					<div class="col-1 row-9 grid-item">
-						<a href="#Pseudomonas_aeruginosa">Pseudomonas aeruginosa</a>
-					</div>
-					<div class="col-1 row-10 b-top b-right b-bottom"></div>
-					<div class="col-1 row-11 grid-item">
-						<a href="#Clostridioides_difficile">Clostridioides difficile</a>
-					</div>
-					<div class="col-1 row-13 grid-item">
-						<a href="#Streptococcus_pyogenes">Streptococcus pyogenes</a>
-					</div>
-					<div class="col-1 row-14 b-top b-right b-bottom"></div>
-					<div class="col-1 row-15 grid-item">
-						<a href="#Rickettsia_rickettsii">Rickettsia rickettsii</a>
-					</div>
-
-					<div class="col-2 row-2 grid-item">RSV</div>
-					<div class="col-2 row-3 b-top b-right"></div>
-					<div class="col-2 row-4 b-right"></div>
-					<div class="col-2 row-5 b-bottom b-right"></div>
-					<div class="col-2 row-6 grid-item">CRE</div>
-					<div class="col-2 row-10 grid-item">Pseudomonas aeruginosa</div>
-					<div class="col-2 row-11 b-top b-right"></div>
-					<div class="col-2 row-12 b-right"></div>
-					<div class="col-2 row-13 b-bottom b-right"></div>
-					<div class="col-2 row-14 grid-item">Rickettsia rickettsii</div>
-
-					<div class="col-3 row-4 grid-item">CRE</div>
-					<div class="col-3 row-5 b-top b-right"></div>
-					<div class="col-3 row-6 b-right"></div>
-					<div class="col-3 row-7 b-right"></div>
-					<div class="col-3 row-8 b-right"></div>
-					<div class="col-3 row-9 b-right"></div>
-					<div class="col-3 row-10 b-right"></div>
-					<div class="col-3 row-11 b-bottom b-right"></div>
-					<div class="col-3 row-12 grid-item">Pseudomonas aeruginosa</div>
-
-					<div class="col-4 row-6 grid-item">Pseudomonas aeruginosa</div>
-					<div class="col-4 row-7 b-bottom"></div>
-					<div class="col-4 row-8 grid-item">🏆 VRE 🏆</div>
-					<div class="col-4 row-9 b-top"></div>
-					<div class="col-4 row-10 grid-item">VRE</div>
-
-					<div class="col-5 row-4 grid-item">VRE</div>
-					<div class="col-5 row-5 b-top b-left"></div>
-					<div class="col-5 row-6 b-left"></div>
-					<div class="col-5 row-7 b-left"></div>
-					<div class="col-5 row-8 b-left"></div>
-					<div class="col-5 row-9 b-left"></div>
-					<div class="col-5 row-10 b-left"></div>
-					<div class="col-5 row-11 b-bottom b-left"></div>
-					<div class="col-5 row-12 grid-item">Syphilis</div>
-
-					<div class="col-6 row-2 grid-item">VRE</div>
-					<div class="col-6 row-3 b-top b-left"></div>
-					<div class="col-6 row-4 b-left"></div>
-					<div class="col-6 row-5 b-bottom b-left"></div>
-					<div class="col-6 row-6 grid-item">MSSA</div>
-					<div class="col-6 row-10 grid-item">Klebsiella aerogenes</div>
-					<div class="col-6 row-11 b-top b-left"></div>
-					<div class="col-6 row-12 b-left"></div>
-					<div class="col-6 row-13 b-bottom b-left"></div>
-					<div class="col-6 row-14 grid-item">Syphilis</div>
-
-					<div class="col-7 row-1 grid-item"><a href="#VRE">VRE</a></div>
-					<div class="col-7 row-2 b-top b-left b-bottom"></div>
-					<div class="col-7 row-3 grid-item">
-						<a href="#Streptococcus_pneumoniae">Streptococcus pneumoniae</a>
-					</div>
-					<div class="col-7 row-5 grid-item">
-						<a href="#MSSA">MSSA</a>
-					</div>
-					<div class="col-7 row-6 b-top b-left b-bottom"></div>
-					<div class="col-7 row-7 grid-item">
-						<a href="#Staphylococcus_lugdunensis">Staphylococcus lugdunensis</a>
-					</div>
-					<div class="col-7 row-9 grid-item">
-						<a href="#Klebsiella_aerogenes">Klebsiella aerogenes</a>
-					</div>
-					<div class="col-7 row-10 b-top b-left b-bottom"></div>
-					<div class="col-7 row-11 grid-item">
-						<a href="#ESBL_E_coli">ESBL E. coli</a>
-					</div>
-					<div class="col-7 row-13 grid-item">
-						<a href="#Syphilis">Syphilis</a>
-					</div>
-					<div class="col-7 row-14 b-top b-left b-bottom"></div>
-					<div class="col-7 row-15 grid-item">
-						<a href="#HIV">HIV</a>
-					</div>
-				</div>
-			</div>
-		</div>
 		<br />
 		<br />
 		<h1>Organisms</h1>
