@@ -16,7 +16,7 @@ const COLORS = {
 
 const DIMENSIONS = {
 	window: { width: 1950, height: 750, titleHeight: 50 },
-	nameBox: { height: 50, width: 170, textOffset: 30, flagOffset: 15 },
+	nameBox: { height: 50, width: 200, textOffset: 30, flagOffset: 15 },
 	offsets: { vertical: 100, horizontal: 250, padding: 50 },
 };
 
@@ -27,24 +27,24 @@ const BRACKET_VIEWBOX = `0 0 ${DIMENSIONS.window.width + DIMENSIONS.offsets.padd
 const results = {
 	participants: {
 		left: [
-			'Kleb aerogenes',
-			'MRSA',
-			'Candida albicans',
-			'RSV',
-			'ESBL E. coli',
-			'C diff',
-			'Strep pyogenes',
-			'Strep pneumo',
+			'5 Kleb aerogenes',
+			'8 MRSA',
+			'10 Candida albicans',
+			'6 RSV',
+			'4 ESBL E. coli',
+			'7 C diff',
+			'13 Strep pyogenes',
+			'12Strep pneumo',
 		],
 		right: [
-			'VRE',
-			'CRE',
-			'HIV',
-			'Staph lugdunensis',
-			'MSSA',
-			'Pseudomonas',
-			'Syphilis',
-			'Rickettsia',
+			'1 VRE',
+			'3 CRE',
+			'16 HIV',
+			'11 Staph lugdunensis',
+			'9 MSSA',
+			'2 Pseudomonas',
+			'15 Syphilis',
+			'14 Rickettsia',
 		],
 	},
 	rounds: {
@@ -126,7 +126,7 @@ bracketWindow.appendChild(bracket);
 
 createBracketSide(DIMENSIONS.offsets.padding, results.rounds.left);
 createBracketSide(
-	DIMENSIONS.offsets.padding + DIMENSIONS.window.width - 164,
+	DIMENSIONS.offsets.padding + DIMENSIONS.window.width - 200,
 	results.rounds.right,
 	true
 );
@@ -266,7 +266,8 @@ function createTitle() {
 		false,
 		null,
 		'middle',
-		40
+		40,
+		'bold'
 	);
 }
 
@@ -395,7 +396,17 @@ function createLink(x, y, text, href, isMirrored, target = '_self') {
 	return link;
 }
 
-function createText(x, y, text, isMirrored, link = false, id = null, anchor = null, fontSize = 18) {
+function createText(
+	x,
+	y,
+	text,
+	isMirrored,
+	link = false,
+	id = null,
+	anchor = null,
+	fontSize = 18,
+	fontWeight = 'normal'
+) {
 	let textAnchor;
 
 	if (anchor) {
@@ -418,6 +429,7 @@ function createText(x, y, text, isMirrored, link = false, id = null, anchor = nu
 	textElement.setAttribute('y', y);
 	textElement.setAttribute('text-anchor', textAnchor);
 	textElement.setAttribute('font-size', fontSize);
+	textElement.setAttribute('font-weight', fontWeight);
 	textElement.textContent = text;
 
 	return textElement;
@@ -460,7 +472,7 @@ function createRect(x, y, height, width, fill, radius = 0, mouseoverFill = false
 
 function createConnection(start, end, strokeColor = COLORS.line, isMirrored = false) {
 	const adjustedStartX = isMirrored ? start.x - DIMENSIONS.nameBox.width : start.x;
-	const adjustedEndX = isMirrored ? end.x + DIMENSIONS.nameBox.width + 107 : end.x;
+	const adjustedEndX = isMirrored ? end.x + DIMENSIONS.nameBox.width + 67 : end.x;
 
 	const dx = ((adjustedEndX - adjustedStartX) / 2) * (isMirrored ? -1 : 1);
 	const dy = end.y - start.y;
@@ -484,7 +496,7 @@ function createConnection(start, end, strokeColor = COLORS.line, isMirrored = fa
 }
 
 function createWinnerBox() {
-	const oversizeWith = 50;
+	const oversizeWith = 100;
 	const oversizeHeight = 10;
 
 	const centerX =
@@ -495,7 +507,7 @@ function createWinnerBox() {
 		DIMENSIONS.offsets.padding +
 		DIMENSIONS.window.titleHeight;
 
-	const offsetY = 140;
+	const offsetY = 145;
 
 	const winnerBox = document.createElementNS(SVG_NS, 'g');
 	winnerBox.appendChild(
@@ -510,12 +522,13 @@ function createWinnerBox() {
 
 	const winnerText = createText(
 		centerX + DIMENSIONS.nameBox.width / 2,
-		centerY + DIMENSIONS.nameBox.height / 2 + offsetY + 5,
+		centerY + DIMENSIONS.nameBox.height / 2 + offsetY + 8,
 		null,
 		false,
 		false,
 		'overall_winner',
-		'middle'
+		'middle',
+		25
 	);
 	winnerBox.appendChild(winnerText);
 
@@ -527,7 +540,8 @@ function createWinnerBox() {
 		false,
 		null,
 		'middle',
-		25
+		25,
+		'bold'
 	);
 	winnerBox.appendChild(winnerTitle);
 
