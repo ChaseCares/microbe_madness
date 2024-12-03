@@ -386,6 +386,7 @@ function createLink(x, y, text, href, isMirrored, target = '_self') {
 	const link = document.createElementNS(SVG_NS, 'a');
 	link.setAttribute('href', href.replace(/ /g, '_').replace('.', ''));
 	link.setAttribute('target', target);
+	link.setAttribute('fill', 'blue');
 	link.appendChild(createText(x, y, text, isMirrored, true));
 
 	return link;
