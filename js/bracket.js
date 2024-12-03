@@ -59,7 +59,7 @@ const results = {
 
 let board = {
 	year: 2024,
-	version: 1,
+	version: 2,
 	left_1: {
 		0: null,
 		1: null,
