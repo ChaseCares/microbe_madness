@@ -211,6 +211,29 @@ h5 {
 	text-align: center;
 	width: 100%;
 }
+.rankInfo {
+	background-color: #fff;
+	border-radius: 20px;
+	margin-top: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+	width: 100%;
+}
+
+.rankTable {
+	margin: 0 auto;
+	width: 100%;
+}
+
+tr:first-child {
+	background-color: #0f9ed5;
+}
+
+tr:nth-child(even) {
+	background-color: #caedfb;
+}
 
 #overall_winner {
 	border: 1px solid #000;
@@ -388,6 +411,12 @@ h5 {
 	}
 
 	.instructions {
+		margin: 0;
+		margin-bottom: 30px;
+		padding-bottom: 20px;
+		width: auto;
+	}
+	.rankInfo {
 		margin: 0;
 		margin-bottom: 30px;
 		padding-bottom: 20px;

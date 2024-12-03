@@ -8,7 +8,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./css/stylesheet.css?v=0.2.1" />
-		<script src="./js/helper.js?v=0.2.1" defer></script>
+		<script src="./js/helper.js?v=0.2.2" defer></script>
 		<script src="./js/bracket.js?v=0.2.11" defer></script>
 		<link href="./img/favicon.ico" rel="icon" type="image/x-icon" />
 		<title>Create Bracket</title>
@@ -62,6 +62,129 @@
 
 					<div id="thinking_container"></div>
 				</form>
+			</div>
+		</div>
+		<div class="banner-container fs-1_5">
+			<div class="rankInfo">
+				<h3>How do the rankings work?</h3>
+				<p>
+					I created the rankings using the following variables: How hard is the bug to treat, how
+					likely will the bug develop resistance, how common is the bug, and how fatal is the bug
+					(assuming appropriate treatment). Rank 1 is the “hardest” to beat, rank 16 the “easiest”
+					to beat.
+				</p>
+				<p>
+					Each person shooting for each bug will shoot using different distances from the hoop and
+					different “ball” types to vary how challenging it is to score. I’m going to leave it up to
+					the individuals how far away from the basket they want to shoot and which bug/ball they
+					want to shoot with, so there can absolutely be upsets!
+				</p>
+				<p>The table below explains the variables that will be used for each bug:</p>
+
+				<table class="rankTable">
+					<tr>
+						<th>Rank</th>
+						<th>Bug</th>
+						<th>Distance of shooter from hoop</th>
+						<th>Ball type</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>VRV</td>
+						<td>Close</td>
+						<td>Easy</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Pseudomonas</td>
+						<td>Close</td>
+						<td>Easy</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>CRE</td>
+						<td>Close</td>
+						<td>Easy</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>ESBL E. coli</td>
+						<td>Middle</td>
+						<td>Medium</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Klebsiella aerogenes</td>
+						<td>Middle</td>
+						<td>Medium</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>RSV</td>
+						<td>Middle</td>
+						<td>Easy</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>C diff</td>
+						<td>Middle</td>
+						<td>Easy</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>MRSA</td>
+						<td>Middle</td>
+						<td>Medium</td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>MSSA</td>
+						<td>Middle</td>
+						<td>Difficult</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>Candida albicans</td>
+						<td>Middle</td>
+						<td>Medium</td>
+					</tr>
+					<tr>
+						<td>11</td>
+						<td>Staphylococcus lugdunensis</td>
+						<td>Middle</td>
+						<td>Medium</td>
+					</tr>
+					<tr>
+						<td>12</td>
+						<td>Streptococcus pneumoniae</td>
+						<td>Middle</td>
+						<td>Difficult</td>
+					</tr>
+					<tr>
+						<td>13</td>
+						<td>Streptococcus pyogenes</td>
+						<td>Middle</td>
+						<td>Difficult</td>
+					</tr>
+					<tr>
+						<td>14</td>
+						<td>Rickettsia rickettsii</td>
+						<td>Middle</td>
+						<td>Medium</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>Syphilis</td>
+						<td>Far</td>
+						<td>Medium</td>
+					</tr>
+					<tr>
+						<td>16</td>
+						<td>HIV</td>
+						<td>Far</td>
+						<td>Medium</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 		<div id="bracket" class="container bracket"></div>
