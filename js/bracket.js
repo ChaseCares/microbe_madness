@@ -1,4 +1,7 @@
 const SVG_NS = 'http://www.w3.org/2000/svg';
+
+const FIRST_NAME = document.getElementById('first_name');
+const LAST_NAME = document.getElementById('last_name');
 const BRACKET_FORM = document.getElementById('bracketForm');
 const SUBMIT_BUTTON = document.getElementById('submit_button');
 const USER_FEEDBACK = document.getElementById('user_feedback');
@@ -172,6 +175,41 @@ function showIncomplete() {
 	return board.overall_winner === null;
 }
 
+function checkForBracket(bracket) {
+	if (localStorage.getItem(bracket)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function checkForNumOfBracket(bracket) {
+	for (let i = 0; i <= localStorage.length; i++) {
+		if (!localStorage.getItem(`${bracket}-${i}`)) {
+			return i;
+		}
+	}
+}
+
+function saveBracket(encodedBoard) {
+	const bracket = 'bracket';
+	if (!checkForBracket(`${bracket}-0`)) {
+		localStorage.setItem(`${bracket}-0`, [
+			FIRST_NAME.value,
+			LAST_NAME.value,
+			Date.now(),
+			encodedBoard,
+		]);
+	} else {
+		localStorage.setItem(`${bracket}-${checkForNumOfBracket(bracket)}`, [
+			FIRST_NAME.value,
+			LAST_NAME.value,
+			Date.now(),
+			encodedBoard,
+		]);
+	}
+}
+
 function verifyBracketComplete() {
 	if (showIncomplete()) {
 		alert('Please complete your bracket before submitting.');
@@ -198,6 +236,7 @@ function sendUserFeedback(element) {
 BRACKET_FORM.addEventListener('submit', (e) => {
 	if (verifyBracketComplete()) {
 		ENCODED_SEED.value = encodeBoard(board);
+		saveBracket(ENCODED_SEED.value);
 		sendUserFeedback(THINKING_CONTAINER);
 	} else {
 		e.preventDefault();
