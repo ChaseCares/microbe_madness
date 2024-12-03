@@ -387,9 +387,9 @@ function createNameBox(x, y, name, winner, isMirrored = false, onClick = null, i
 	return nameBox;
 }
 
-function createLink(x, y, text, href, isMirrored, target = '_blank') {
+function createLink(x, y, text, href, isMirrored, target = '_self') {
 	const link = document.createElementNS(SVG_NS, 'a');
-	link.setAttribute('href', href.replace(/ /g, '_'));
+	link.setAttribute('href', href.replace(/ /g, '_').replace('.', ''));
 	link.setAttribute('target', target);
 	link.appendChild(createText(x, y, text, isMirrored, true));
 
