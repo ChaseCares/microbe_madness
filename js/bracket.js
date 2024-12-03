@@ -34,7 +34,7 @@ const results = {
 			'4 ESBL E. coli',
 			'7 C diff',
 			'13 Strep pyogenes',
-			'12Strep pneumo',
+			'12 Strep pneumo',
 		],
 		right: [
 			'1 VRE',
