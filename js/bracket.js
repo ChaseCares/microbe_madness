@@ -353,7 +353,8 @@ function createNameBox(x, y, name, winner, isMirrored = false, onClick = null, i
 			DIMENSIONS.nameBox.width,
 			COLORS.fill,
 			0,
-			'lightgray'
+			'lightgray',
+			id
 		)
 	);
 
@@ -417,7 +418,7 @@ function createText(x, y, text, isMirrored, link = false, id = null, anchor = nu
 	return textElement;
 }
 
-function createRect(x, y, height, width, fill, radius = 0, mouseoverFill = false) {
+function createRect(x, y, height, width, fill, radius = 0, mouseoverFill = false, id = null) {
 	const rect = document.createElementNS(SVG_NS, 'rect');
 	rect.setAttribute('x', x);
 	rect.setAttribute('y', y);
@@ -426,9 +427,22 @@ function createRect(x, y, height, width, fill, radius = 0, mouseoverFill = false
 
 	if (mouseoverFill && !activeLinks) {
 		rect.addEventListener('mouseover', () => {
+			const correspondingText = document.getElementById(id);
+
+			if (correspondingText.textContent === '') {
+				return;
+			}
+
+			correspondingText.addEventListener('mouseover', () => {
+				rect.setAttribute('fill', mouseoverFill);
+			});
 			rect.setAttribute('fill', mouseoverFill);
 		});
 		rect.addEventListener('mouseout', () => {
+			const correspondingText = document.getElementById(id);
+			correspondingText.addEventListener('mouseout', () => {
+				rect.setAttribute('fill', fill);
+			});
 			rect.setAttribute('fill', fill);
 		});
 	}
