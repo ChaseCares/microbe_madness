@@ -427,13 +427,14 @@ function createNameBox(x, y, name, winner, isMirrored = false, onClick = null, i
 		? x + DIMENSIONS.nameBox.width - DIMENSIONS.nameBox.textOffset + 10
 		: x + DIMENSIONS.nameBox.textOffset - 10;
 
+	let url_name;
 	if (name) {
-		name = name.replace(/^\d+\s/, '');
+		url_name = name.replace(/^\d+\s/, '');
 	}
 
 	if (activeLinks) {
 		nameBox.appendChild(
-			createLink(textX, y + DIMENSIONS.nameBox.textOffset, name, `#${name}`, isMirrored)
+			createLink(textX, y + DIMENSIONS.nameBox.textOffset, name, `#${url_name}`, isMirrored)
 		);
 	} else {
 		nameBox.appendChild(
