@@ -8,7 +8,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./css/stylesheet.css?v=0.2.1" />
-		<script src="./js/helper.js?v=0.2.2" defer></script>
+		<script src="./js/helper.js?v=0.2.3" defer></script>
 		<script src="./js/bracket.js?v=0.2.11" defer></script>
 		<link href="./img/favicon.ico" rel="icon" type="image/x-icon" />
 		<title>Create Bracket</title>
@@ -64,20 +64,19 @@
 				</form>
 			</div>
 		</div>
+		<div id="bracket" class="container bracket"></div>
 		<div class="banner-container fs-1_5">
 			<div class="rankInfo">
 				<h3>How do the rankings work?</h3>
 				<p>
-					I created the rankings using the following variables: How hard is the bug to treat, how
+					The rankings were created using the following variables: How hard is the bug to treat, how
 					likely will the bug develop resistance, how common is the bug, and how fatal is the bug
 					(assuming appropriate treatment). Rank 1 is the “hardest” to beat, rank 16 the “easiest”
 					to beat.
 				</p>
 				<p>
-					Each person shooting for each bug will shoot using different distances from the hoop and
-					different “ball” types to vary how challenging it is to score. I’m going to leave it up to
-					the individuals how far away from the basket they want to shoot and which bug/ball they
-					want to shoot with, so there can absolutely be upsets!
+					Each person playing for each bug will throw using different distances from the hoop and
+					different ball types to vary how challenging it is to score.
 				</p>
 				<p>The table below explains the variables that will be used for each bug:</p>
 
@@ -85,12 +84,12 @@
 					<tr>
 						<th>Rank</th>
 						<th>Bug</th>
-						<th>Distance of shooter from hoop</th>
+						<th>Distance of player from hoop</th>
 						<th>Ball type</th>
 					</tr>
 					<tr>
 						<td>1</td>
-						<td>VRV</td>
+						<td>VRE</td>
 						<td>Close</td>
 						<td>Easy</td>
 					</tr>
@@ -187,6 +186,5 @@
 				</table>
 			</div>
 		</div>
-		<div id="bracket" class="container bracket"></div>
 	</body>
 </html>
