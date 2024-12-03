@@ -354,6 +354,10 @@ function boardUpdate() {
 }
 
 function handleNameBoxClick(roundIndex, matchIndex, isMirrored = false) {
+	if (activeLinks) {
+		return;
+	}
+
 	const side = isMirrored ? 'right' : 'left';
 	const targetRound = roundIndex + 1;
 	const targetMatch = Math.floor(matchIndex / 2);
