@@ -2,4 +2,4 @@
 
 <https://MicrobeMadness.com>
 
-© 2023 Chase Curtis. All rights reserved.
+© 2024 Chase Curtis. All rights reserved.
