@@ -140,14 +140,11 @@ bracket.appendChild(winnerBox);
 fillBoard();
 
 function fillBoard() {
-	console.log('fillBoard');
-
 	const sections = ['left_1', 'left_2', 'left_3', 'right_1', 'right_2', 'right_3'];
 
 	for (const section of sections) {
 		for (const [index, match] of Object.entries(board[section])) {
 			if (match !== null) {
-				console.log('`${section}_${index}`', `${section}_${index}`);
 				document.getElementById(`${section}_${index}`).textContent = match;
 			}
 		}
@@ -176,7 +173,6 @@ function showIncomplete() {
 }
 
 function verifyBracketComplete() {
-	console.log(board);
 	if (showIncomplete()) {
 		alert('Please complete your bracket before submitting.');
 		return false;
@@ -310,7 +306,6 @@ function getURL() {
 }
 
 function boardUpdate() {
-	console.log('boardUpdate');
 	setURL();
 }
 
@@ -337,7 +332,6 @@ function handleNameBoxClick(roundIndex, matchIndex, isMirrored = false) {
 		document.getElementById(`${side}_${targetRound}_${targetMatch}`).textContent = currentText;
 	} else {
 		board.overall_winner = currentText;
-		console.log('currentText', currentText);
 		document.getElementById('overall_winner').textContent = currentText;
 	}
 
@@ -431,7 +425,6 @@ function createRect(x, y, height, width, fill, radius = 0, mouseoverFill = false
 	rect.setAttribute('width', width);
 
 	if (mouseoverFill && !activeLinks) {
-		console.log('mouseover');
 		rect.addEventListener('mouseover', () => {
 			rect.setAttribute('fill', mouseoverFill);
 		});
