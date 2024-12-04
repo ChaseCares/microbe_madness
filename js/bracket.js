@@ -527,8 +527,10 @@ function createRect(x, y, height, width, fill, radius = 0, mouseoverFill = false
 
 			correspondingText.addEventListener('mouseover', () => {
 				rect.setAttribute('fill', mouseoverFill);
+				correspondingText.setAttribute('cursor', 'pointer');
 			});
 			rect.setAttribute('fill', mouseoverFill);
+			rect.setAttribute('cursor', 'pointer');
 		});
 		rect.addEventListener('mouseout', () => {
 			const correspondingText = document.getElementById(id);
