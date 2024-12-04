@@ -179,6 +179,18 @@ h5 {
 	padding-top: 10px;
 }
 
+.hovered rect[fill='gray'] {
+	fill: dimgray;
+}
+
+.hovered rect[fill='white'] {
+	fill: lightgray;
+}
+
+.hovered {
+	cursor: pointer;
+}
+
 .title-bar {
 	display: flex;
 }

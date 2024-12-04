@@ -414,6 +414,7 @@ function handleNameBoxClick(roundIndex, matchIndex, isMirrored = false) {
 
 function createNameBox(x, y, name, winner, isMirrored = false, onClick = null, id = null) {
 	const nameBox = document.createElementNS(SVG_NS, 'g');
+	nameBox.setAttribute('id', `g_${id}`);
 
 	if (onClick) {
 		nameBox.setAttribute('onclick', onClick);
@@ -436,7 +437,16 @@ function createNameBox(x, y, name, winner, isMirrored = false, onClick = null, i
 		winner === true ? COLORS.winner : winner === false ? COLORS.loser : COLORS.neutral;
 	const flagX = isMirrored ? x + DIMENSIONS.nameBox.width - DIMENSIONS.nameBox.flagOffset : x;
 	nameBox.appendChild(
-		createRect(flagX, y, DIMENSIONS.nameBox.height, DIMENSIONS.nameBox.flagOffset, flagColor)
+		createRect(
+			flagX,
+			y,
+			DIMENSIONS.nameBox.height,
+			DIMENSIONS.nameBox.flagOffset,
+			flagColor,
+			0,
+			'gray',
+			id
+		)
 	);
 
 	const textX = isMirrored
@@ -518,26 +528,23 @@ function createRect(x, y, height, width, fill, radius = 0, mouseoverFill = false
 	rect.setAttribute('width', width);
 
 	if (mouseoverFill && !activeLinks) {
-		rect.addEventListener('mouseover', () => {
-			const correspondingText = document.getElementById(id);
-
-			if (correspondingText.textContent === '') {
+		rect.addEventListener('mouseenter', () => {
+			const correspondingTaxt = document.getElementById(id);
+			if (correspondingTaxt.textContent === '') {
 				return;
 			}
 
-			correspondingText.addEventListener('mouseover', () => {
-				rect.setAttribute('fill', mouseoverFill);
-				correspondingText.setAttribute('cursor', 'pointer');
+			const group = document.getElementById(`g_${id}`);
+			group.classList.add('hovered');
+
+			correspondingTaxt.addEventListener('mouseenter', () => {
+				group.classList.add('hovered');
 			});
-			rect.setAttribute('fill', mouseoverFill);
-			rect.setAttribute('cursor', 'pointer');
 		});
-		rect.addEventListener('mouseout', () => {
-			const correspondingText = document.getElementById(id);
-			correspondingText.addEventListener('mouseout', () => {
-				rect.setAttribute('fill', fill);
-			});
-			rect.setAttribute('fill', fill);
+
+		rect.addEventListener('mouseleave', () => {
+			const group = document.getElementById(`g_${id}`);
+			group.classList.remove('hovered');
 		});
 	}
 	rect.setAttribute('fill', fill);
