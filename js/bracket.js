@@ -661,3 +661,64 @@ function createGradientBackground(color1, color2, angle) {
 
 	return defs;
 }
+
+function addTextToNameBox(nameBoxID, text) {
+	const nameBox = document.getElementById(nameBoxID);
+	nameBox.removeChild(nameBox.childNodes[2]);
+
+	const nameBox_x = nameBox.childNodes[0].getAttribute('x');
+	const nameBox_y = nameBox.childNodes[0].getAttribute('y');
+
+	const textElement = createText(
+		parseInt(nameBox_x) + DIMENSIONS.nameBox.textOffset,
+		parseInt(nameBox_y) + DIMENSIONS.nameBox.textOffset,
+		text,
+		false,
+		false,
+		null,
+		'start',
+		18,
+		'normal'
+	);
+	nameBox.appendChild(textElement);
+}
+
+function markOutcome(nameBoxID, outcome = 'winner') {
+	const nameBox = document.getElementById(nameBoxID);
+
+	if (outcome === 'loser') {
+		nameBox.childNodes[1].setAttribute('fill', COLORS.loser);
+
+		return;
+	}
+	nameBox.childNodes[1].setAttribute('fill', COLORS.winner);
+}
+
+// updates TODO: Make this much better
+markOutcome('g_left_0_0');
+markOutcome('g_left_0_1', 'loser');
+markOutcome('g_left_0_2', 'loser');
+markOutcome('g_left_0_3');
+markOutcome('g_left_0_4');
+markOutcome('g_left_0_5', 'loser');
+markOutcome('g_left_0_6', 'loser');
+markOutcome('g_left_0_7');
+
+addTextToNameBox('g_left_1_0', 'Kleb aerogenes');
+addTextToNameBox('g_left_1_1', 'RSV');
+addTextToNameBox('g_left_1_2', 'ESBL E. coli');
+addTextToNameBox('g_left_1_3', 'Strep pneumo');
+
+markOutcome('g_right_0_0');
+markOutcome('g_right_0_1', 'loser');
+markOutcome('g_right_0_2', 'loser');
+markOutcome('g_right_0_3');
+markOutcome('g_right_0_4');
+markOutcome('g_right_0_5', 'loser');
+markOutcome('g_right_0_6', 'loser');
+markOutcome('g_right_0_7');
+
+addTextToNameBox('g_right_1_0', 'VRE');
+addTextToNameBox('g_right_1_1', 'Staph lugdunensis');
+addTextToNameBox('g_right_1_2', 'MSSA');
+addTextToNameBox('g_right_1_3', 'Rickettsia');
