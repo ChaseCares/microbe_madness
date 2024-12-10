@@ -695,6 +695,7 @@ function markOutcome(nameBoxID, outcome = 'winner') {
 }
 
 // updates TODO: Make this much better
+// Round one
 markOutcome('g_left_0_0');
 markOutcome('g_left_0_1', 'loser');
 markOutcome('g_left_0_2', 'loser');
@@ -722,3 +723,20 @@ addTextToNameBox('g_right_1_0', 'VRE');
 addTextToNameBox('g_right_1_1', 'Staph lugdunensis');
 addTextToNameBox('g_right_1_2', 'MSSA');
 addTextToNameBox('g_right_1_3', 'Rickettsia');
+
+// Round two
+markOutcome('g_left_1_0', 'loser');
+markOutcome('g_left_1_1');
+markOutcome('g_left_1_2', 'loser');
+markOutcome('g_left_1_3');
+
+addTextToNameBox('g_left_2_0', 'RSV');
+addTextToNameBox('g_left_2_1', 'Strep pneumo');
+
+markOutcome('g_right_1_0');
+markOutcome('g_right_1_1', 'loser');
+markOutcome('g_right_1_2');
+markOutcome('g_right_1_3', 'loser');
+
+addTextToNameBox('g_right_2_0', 'VRE');
+addTextToNameBox('g_right_2_1', 'MSSA');
