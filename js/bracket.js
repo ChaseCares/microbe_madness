@@ -740,3 +740,27 @@ markOutcome('g_right_1_3', 'loser');
 
 addTextToNameBox('g_right_2_0', 'VRE');
 addTextToNameBox('g_right_2_1', 'MSSA');
+
+// Round three
+markOutcome('g_left_2_0');
+markOutcome('g_left_2_1', 'loser');
+
+addTextToNameBox('g_left_3_0', 'RSV');
+
+markOutcome('g_right_2_0');
+markOutcome('g_right_2_1', 'loser');
+
+addTextToNameBox('g_right_3_0', 'VRE');
+
+// Round four
+markOutcome('g_left_3_0', 'loser');
+markOutcome('g_right_3_0');
+
+const overall_winner = document.getElementById('overall_winner');
+overall_winner.textContent = 'VRE';
+
+ConfettiCannon(
+	DIMENSIONS.window.width / 2 + DIMENSIONS.offsets.padding,
+	DIMENSIONS.window.height / 2 + DIMENSIONS.nameBox.height * 2,
+	Math.PI / 2
+);
