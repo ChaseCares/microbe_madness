@@ -694,73 +694,73 @@ function markOutcome(nameBoxID, outcome = 'winner') {
 	nameBox.childNodes[1].setAttribute('fill', COLORS.winner);
 }
 
-// updates TODO: Make this much better
-// Round one
-markOutcome('g_left_0_0');
-markOutcome('g_left_0_1', 'loser');
-markOutcome('g_left_0_2', 'loser');
-markOutcome('g_left_0_3');
-markOutcome('g_left_0_4');
-markOutcome('g_left_0_5', 'loser');
-markOutcome('g_left_0_6', 'loser');
-markOutcome('g_left_0_7');
+function CreateOutcomeText() {
+	// updates TODO: Make this much better
+	// Round one
+	markOutcome('g_left_0_0');
+	markOutcome('g_left_0_1', 'loser');
+	markOutcome('g_left_0_2', 'loser');
+	markOutcome('g_left_0_3');
+	markOutcome('g_left_0_4');
+	markOutcome('g_left_0_5', 'loser');
+	markOutcome('g_left_0_6', 'loser');
+	markOutcome('g_left_0_7');
 
-addTextToNameBox('g_left_1_0', 'Kleb aerogenes');
-addTextToNameBox('g_left_1_1', 'RSV');
-addTextToNameBox('g_left_1_2', 'ESBL E. coli');
-addTextToNameBox('g_left_1_3', 'Strep pneumo');
+	addTextToNameBox('g_left_1_0', 'Kleb aerogenes');
+	addTextToNameBox('g_left_1_1', 'RSV');
+	addTextToNameBox('g_left_1_2', 'ESBL E. coli');
+	addTextToNameBox('g_left_1_3', 'Strep pneumo');
 
-markOutcome('g_right_0_0');
-markOutcome('g_right_0_1', 'loser');
-markOutcome('g_right_0_2', 'loser');
-markOutcome('g_right_0_3');
-markOutcome('g_right_0_4');
-markOutcome('g_right_0_5', 'loser');
-markOutcome('g_right_0_6', 'loser');
-markOutcome('g_right_0_7');
+	markOutcome('g_right_0_0');
+	markOutcome('g_right_0_1', 'loser');
+	markOutcome('g_right_0_2', 'loser');
+	markOutcome('g_right_0_3');
+	markOutcome('g_right_0_4');
+	markOutcome('g_right_0_5', 'loser');
+	markOutcome('g_right_0_6', 'loser');
+	markOutcome('g_right_0_7');
 
-addTextToNameBox('g_right_1_0', 'VRE');
-addTextToNameBox('g_right_1_1', 'Staph lugdunensis');
-addTextToNameBox('g_right_1_2', 'MSSA');
-addTextToNameBox('g_right_1_3', 'Rickettsia');
+	addTextToNameBox('g_right_1_0', 'VRE');
+	addTextToNameBox('g_right_1_1', 'Staph lugdunensis');
+	addTextToNameBox('g_right_1_2', 'MSSA');
+	addTextToNameBox('g_right_1_3', 'Rickettsia');
 
-// Round two
-markOutcome('g_left_1_0', 'loser');
-markOutcome('g_left_1_1');
-markOutcome('g_left_1_2', 'loser');
-markOutcome('g_left_1_3');
+	// Round two
+	markOutcome('g_left_1_0', 'loser');
+	markOutcome('g_left_1_1');
+	markOutcome('g_left_1_2', 'loser');
+	markOutcome('g_left_1_3');
 
-addTextToNameBox('g_left_2_0', 'RSV');
-addTextToNameBox('g_left_2_1', 'Strep pneumo');
+	addTextToNameBox('g_left_2_0', 'RSV');
+	addTextToNameBox('g_left_2_1', 'Strep pneumo');
 
-markOutcome('g_right_1_0');
-markOutcome('g_right_1_1', 'loser');
-markOutcome('g_right_1_2');
-markOutcome('g_right_1_3', 'loser');
+	markOutcome('g_right_1_0');
+	markOutcome('g_right_1_1', 'loser');
+	markOutcome('g_right_1_2');
+	markOutcome('g_right_1_3', 'loser');
 
-addTextToNameBox('g_right_2_0', 'VRE');
-addTextToNameBox('g_right_2_1', 'MSSA');
+	addTextToNameBox('g_right_2_0', 'VRE');
+	addTextToNameBox('g_right_2_1', 'MSSA');
 
-// Round three
-markOutcome('g_left_2_0');
-markOutcome('g_left_2_1', 'loser');
+	// Round three
+	markOutcome('g_left_2_0');
+	markOutcome('g_left_2_1', 'loser');
 
-addTextToNameBox('g_left_3_0', 'RSV');
+	addTextToNameBox('g_left_3_0', 'RSV');
 
-markOutcome('g_right_2_0');
-markOutcome('g_right_2_1', 'loser');
+	markOutcome('g_right_2_0');
+	markOutcome('g_right_2_1', 'loser');
 
-addTextToNameBox('g_right_3_0', 'VRE');
+	addTextToNameBox('g_right_3_0', 'VRE');
 
-// Round four
-markOutcome('g_left_3_0', 'loser');
-markOutcome('g_right_3_0');
+	// Round four
+	markOutcome('g_left_3_0', 'loser');
+	markOutcome('g_right_3_0');
 
-const overall_winner = document.getElementById('overall_winner');
-overall_winner.textContent = 'VRE';
+	const overall_winner = document.getElementById('overall_winner');
+	overall_winner.textContent = 'VRE';
+}
 
-ConfettiCannon(
-	DIMENSIONS.window.width / 2 + DIMENSIONS.offsets.padding,
-	DIMENSIONS.window.height / 2 + DIMENSIONS.nameBox.height * 2,
-	Math.PI / 2
-);
+if (activeLinks) {
+	CreateOutcomeText();
+}
