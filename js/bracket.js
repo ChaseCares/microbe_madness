@@ -662,11 +662,17 @@ function createGradientBackground(color1, color2, angle) {
 	return defs;
 }
 
-function addTextToNameBox(nameBoxID, text) {
+function addTextToNameBox(nameBoxID, text, anchor = 'start') {
 	const nameBox = document.getElementById(nameBoxID);
 	nameBox.removeChild(nameBox.childNodes[2]);
 
-	const nameBox_x = nameBox.childNodes[0].getAttribute('x');
+	let nameBox_x;
+	if (anchor === 'start') {
+		nameBox_x = Number(nameBox.childNodes[0].getAttribute('x')) - 10;
+	} else {
+		nameBox_x = Number(nameBox.childNodes[0].getAttribute('x')) + 150;
+	}
+
 	const nameBox_y = nameBox.childNodes[0].getAttribute('y');
 
 	const textElement = createText(
@@ -676,7 +682,7 @@ function addTextToNameBox(nameBoxID, text) {
 		false,
 		false,
 		null,
-		'start',
+		anchor,
 		18,
 		'normal'
 	);
@@ -720,10 +726,10 @@ function CreateOutcomeText() {
 	markOutcome('g_right_0_6', 'loser');
 	markOutcome('g_right_0_7');
 
-	addTextToNameBox('g_right_1_0', 'VRE');
-	addTextToNameBox('g_right_1_1', 'Staph lugdunensis');
-	addTextToNameBox('g_right_1_2', 'MSSA');
-	addTextToNameBox('g_right_1_3', 'Rickettsia');
+	addTextToNameBox('g_right_1_0', 'VRE', 'end');
+	addTextToNameBox('g_right_1_1', 'Staph lugdunensis', 'end');
+	addTextToNameBox('g_right_1_2', 'MSSA', 'end');
+	addTextToNameBox('g_right_1_3', 'Rickettsia', 'end');
 
 	// Round two
 	markOutcome('g_left_1_0', 'loser');
@@ -739,8 +745,8 @@ function CreateOutcomeText() {
 	markOutcome('g_right_1_2');
 	markOutcome('g_right_1_3', 'loser');
 
-	addTextToNameBox('g_right_2_0', 'VRE');
-	addTextToNameBox('g_right_2_1', 'MSSA');
+	addTextToNameBox('g_right_2_0', 'VRE', 'end');
+	addTextToNameBox('g_right_2_1', 'MSSA', 'end');
 
 	// Round three
 	markOutcome('g_left_2_0');
@@ -751,7 +757,7 @@ function CreateOutcomeText() {
 	markOutcome('g_right_2_0');
 	markOutcome('g_right_2_1', 'loser');
 
-	addTextToNameBox('g_right_3_0', 'VRE');
+	addTextToNameBox('g_right_3_0', 'VRE', 'end');
 
 	// Round four
 	markOutcome('g_left_3_0', 'loser');
